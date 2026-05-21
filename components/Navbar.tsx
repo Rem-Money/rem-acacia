@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -51,10 +52,38 @@ export function Navbar() {
         transition: "background var(--duration-normal) var(--ease-out-quart)",
       }}
     >
-      <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, padding: "4px 6px" }}>
-        <Logo />
-        <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, letterSpacing: "-0.02em" }}>
+      <Link href="/" style={{ display: "flex", alignItems: "center", gap: 8, padding: "4px 6px" }}>
+        <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, letterSpacing: "-0.02em", display: "inline-flex", alignItems: "center", gap: 8 }}>
           Acacia<span style={{ color: "var(--yellow)" }}>.</span>
+        </span>
+        <span
+          aria-hidden
+          style={{
+            width: 1,
+            height: 14,
+            background: "var(--border)",
+            display: "inline-block",
+          }}
+        />
+        <span
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 5,
+            fontSize: 11,
+            color: "var(--text-dim)",
+            letterSpacing: "0.02em",
+          }}
+        >
+          <span style={{ opacity: 0.85 }}>by</span>
+          <Image
+            src="/rem.png"
+            alt="rem.money"
+            width={16}
+            height={16}
+            style={{ borderRadius: 3, display: "block" }}
+          />
+          <span style={{ color: "rgba(255,255,255,0.78)", fontWeight: 600 }}>rem</span>
         </span>
       </Link>
 
@@ -142,22 +171,13 @@ export function Navbar() {
         </div>
       )}
 
-      <style jsx>{`
+      <style>{`
         @media (max-width: 880px) {
-          :global(.nav-links) { display: none !important; }
-          :global(.nav-hamburger) { display: inline-flex !important; }
+          .nav-links { display: none !important; }
+          .nav-hamburger { display: inline-flex !important; }
         }
       `}</style>
     </nav>
   );
 }
 
-function Logo() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-hidden>
-      <rect x="2" y="2" width="28" height="28" rx="8" stroke="rgba(252,191,72,0.4)" strokeWidth="1.5" />
-      <path d="M9 22 L16 8 L23 22" stroke="var(--yellow)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      <circle cx="16" cy="22" r="1.6" fill="var(--yellow)" />
-    </svg>
-  );
-}

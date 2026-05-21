@@ -75,9 +75,14 @@ export default function Home() {
           </Reveal>
           <Reveal delay={200}>
             <div style={{ marginTop: 30, display: "flex", gap: 10, flexWrap: "wrap" }}>
-              <Link className="btn btn-primary" href="/road-ahead">
-                Read the road ahead →
-              </Link>
+              <a
+                className="btn btn-primary"
+                href="https://www.rba.gov.au/payments-and-infrastructure/central-bank-digital-currency/pdf/project-acacia-final-report.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read the original report →
+              </a>
               <Link className="btn btn-ghost" href="/use-cases">
                 Explore all 20 use cases
               </Link>
