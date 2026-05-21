@@ -109,6 +109,23 @@ export function Navbar() {
             </Link>
           );
         })}
+        <Link
+          href="/with-rem"
+          style={{
+            fontSize: 13,
+            fontWeight: 600,
+            padding: "7px 12px",
+            marginLeft: 6,
+            color: pathname === "/with-rem" ? "#0b0b0b" : "var(--yellow)",
+            background: pathname === "/with-rem" ? "var(--yellow)" : "rgba(252,191,72,0.10)",
+            border: "1px solid rgba(252,191,72,0.32)",
+            borderRadius: 8,
+            transition: "color var(--duration-fast), background var(--duration-fast)",
+            whiteSpace: "nowrap",
+          }}
+        >
+          Work with rem →
+        </Link>
       </div>
 
       <button
@@ -169,6 +186,22 @@ export function Navbar() {
               {l.label}
             </Link>
           ))}
+          <Link
+            href="/with-rem"
+            style={{
+              display: "block",
+              padding: "10px 12px",
+              fontSize: 14,
+              fontWeight: 600,
+              color: "var(--yellow)",
+              background: "rgba(252,191,72,0.10)",
+              border: "1px solid rgba(252,191,72,0.28)",
+              borderRadius: 8,
+              marginTop: 6,
+            }}
+          >
+            Work with rem →
+          </Link>
         </div>
       )}
 

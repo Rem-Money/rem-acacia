@@ -2,6 +2,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Pill } from "@/components/Pill";
 import { Callout } from "@/components/Callout";
+import { RemCTA } from "@/components/RemCTA";
 
 export const metadata = { title: "Legal & Regulatory — Acacia" };
 
@@ -188,6 +189,8 @@ export default function Regulation() {
           </div>
         </div>
       </section>
+
+      <RemCTA variant="regulation" />
     </>
   );
 }

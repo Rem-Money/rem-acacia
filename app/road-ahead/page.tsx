@@ -1,6 +1,7 @@
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Pill } from "@/components/Pill";
+import { RemCTA } from "@/components/RemCTA";
 
 export const metadata = { title: "Road Ahead — Acacia" };
 
@@ -177,6 +178,8 @@ export default function RoadAhead() {
           </Reveal>
         </div>
       </section>
+
+      <RemCTA variant="road-ahead" />
     </>
   );
 }

@@ -2,6 +2,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Callout } from "@/components/Callout";
 import { Pill } from "@/components/Pill";
+import { RemCTA } from "@/components/RemCTA";
 import { Figure23DvpAtomic } from "@/components/figures/Figure23DvpAtomic";
 import { Figure4Interchange } from "@/components/figures/Figure4Interchange";
 
@@ -262,6 +263,8 @@ export default function Money() {
           </Reveal>
         </div>
       </section>
+
+      <RemCTA variant="money" />
     </>
   );
 }

@@ -17,47 +17,47 @@ const COPY: Record<Variant, { eyebrow: string; title: string; body: string }> = 
   overview: {
     eyebrow: "Build with rem",
     title: "Twenty experiments. One question — who builds the next twenty?",
-    body: "rem partners with issuers, banks and infrastructure providers to turn tokenised finance pilots into live wholesale rails.",
+    body: "rem works with issuers, banks and infrastructure providers thinking about turning tokenised finance pilots into live wholesale rails.",
   },
   introduction: {
     eyebrow: "Build with rem",
     title: "Tokenisation is moving from experiment to infrastructure. Move with it.",
-    body: "rem helps institutions step into the global tokenisation curve — RWA issuance, programmable money rails, on-chain market connectivity.",
+    body: "If your team is thinking about RWA issuance, programmable money rails, or on-chain market connectivity — let's talk about what a first step could look like.",
   },
   project: {
     eyebrow: "Build with rem",
-    title: "From pilot to production wholesale rails.",
-    body: "rem builds the integration layer between traditional FMIs, DLT platforms and digital money — so the next Acacia-class pilot can graduate into a live market.",
+    title: "From pilot to production.",
+    body: "rem partners with teams trying to move beyond a one-off pilot — mapping out what production-grade tokenised market infrastructure could look like for your asset and your stakeholders.",
   },
   tokenisation: {
     eyebrow: "Build with rem",
-    title: "Tokenise an asset class — without the bespoke build-out.",
-    body: "rem ships the issuance, custody and lifecycle plumbing for tokenised fixed income, securitised products and private markets, across DLT platforms used by Acacia participants.",
+    title: "Tokenise an asset class — with a partner who has read the room.",
+    body: "Whether you're exploring fixed income, securitised products, private markets or carbon — we'll help you think through the right DLT, the lifecycle, the disclosure, and what an honest MVP looks like.",
   },
   money: {
     eyebrow: "Build with rem",
-    title: "Wire up the money leg.",
-    body: "rem connects wCBDC, ESAs, deposit tokens and stablecoins to the DLT platforms where tokenised assets live — synchronisation, bridges, on/off-chain orchestration.",
+    title: "Think through the money leg.",
+    body: "wCBDC, ESAs, deposit tokens, regulated stablecoins — the choice of settlement asset shapes everything else. rem can help you reason about which combination fits your use case and what synchronisation actually requires.",
   },
   regulation: {
     eyebrow: "Build with rem",
-    title: "Navigate the sandbox.",
-    body: "rem partners with issuers and infrastructure providers preparing submissions to the DFMI sandbox and ASIC ERS — designing experiments that satisfy settlement finality, prudential and AML/CTF lenses.",
+    title: "Plan for the sandbox.",
+    body: "If you're thinking about a DFMI sandbox or ASIC ERS submission, rem can help you frame the experiment so the settlement-finality, prudential and AML/CTF questions are answered before the regulator has to ask.",
   },
   "road-ahead": {
     eyebrow: "Build with rem",
     title: "Join the program. Don't watch it.",
-    body: "Across all eleven post-Acacia initiatives — sandbox, deposit token interoperability, tokenised government bonds, cross-border — rem is building the connective tissue. Get in early.",
+    body: "Eleven post-Acacia initiatives are in motion — sandbox, deposit token interoperability, tokenised government bonds, cross-border. If any of them touch your roadmap, let's talk early.",
   },
   "use-cases": {
     eyebrow: "Build with rem",
-    title: "See a use case that maps to your business? Let's build it.",
-    body: "From tokenised corporate bonds to carbon credits to private markets — rem has built integrations across Redbelly, Canvas, Hedera, Ethereum L2s and more. Bring the asset; we'll bring the rails.",
+    title: "See a use case that maps to your business? Let's talk.",
+    body: "Corporate bonds, securitised products, private markets, carbon — if a pattern from the cohort looks adjacent to what you're building, we'd like to hear about it and think it through with you.",
   },
   participants: {
     eyebrow: "Build with rem",
     title: "Want to be on the next cohort list?",
-    body: "rem helps prospective participants architect their tokenisation thesis, choose DLT platforms, line up settlement assets, and prepare for the next round of industry experiments.",
+    body: "rem can help prospective participants frame a tokenisation thesis, think through DLT and settlement-asset choices, and prepare for the next round of industry experiments.",
   },
 };
 
@@ -150,7 +150,7 @@ export function RemCTA({ variant }: { variant: Variant }) {
                 Talk to rem →
               </Link>
               <span style={{ fontSize: 11, color: "var(--text-dim)", letterSpacing: "0.02em" }}>
-                Tokenised finance, built end-to-end.
+                A conversation, not a pitch.
               </span>
             </div>
           </div>

@@ -205,40 +205,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container-rem">
-          <Reveal>
-            <div
-              style={{
-                background: "var(--card-plus)",
-                border: "1px solid rgba(141,240,204,0.18)",
-                borderRadius: 20,
-                padding: 36,
-                display: "grid",
-                gridTemplateColumns: "1fr auto",
-                gap: 24,
-                alignItems: "center",
-              }}
-            >
-              <div>
-                <div className="eyebrow" style={{ color: "var(--green)" }}>Post-Acacia</div>
-                <h3 style={{ margin: "10px 0 8px", fontSize: "1.6rem" }}>
-                  A new multi-stream, multi-agency program of work.
-                </h3>
-                <p style={{ color: "var(--text-muted)", margin: 0, maxWidth: 680 }}>
-                  Eleven initiatives across regulator, industry and RBA workstreams — from a DFMI sandbox to deposit
-                  token interoperability to cross-border payment exploration.
-                </p>
-              </div>
-              <Link className="btn btn-primary" href="/road-ahead">
-                View the program →
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       <RemCTA variant="overview" />
     </>
   );

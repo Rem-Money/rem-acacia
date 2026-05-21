@@ -14,6 +14,7 @@ const pages: { href: string; label: string }[] = [
   { href: "/road-ahead", label: "Road Ahead" },
   { href: "/use-cases", label: "Use Cases" },
   { href: "/participants", label: "Participants" },
+  { href: "/with-rem", label: "Work with rem" },
 ];
 
 const REPORT_URL =

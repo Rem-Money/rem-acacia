@@ -3,6 +3,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { StatCard } from "@/components/StatCard";
 import { Callout } from "@/components/Callout";
 import { Pill } from "@/components/Pill";
+import { RemCTA } from "@/components/RemCTA";
 import { Graph3UseCases } from "@/components/figures/Graph3UseCases";
 
 export const metadata = { title: "Asset Tokenisation — Acacia" };
@@ -214,6 +215,8 @@ export default function Tokenisation() {
           <style>{`@media (max-width: 880px) { .grid-barriers { grid-template-columns: 1fr !important; } }`}</style>
         </div>
       </section>
+
+      <RemCTA variant="tokenisation" />
     </>
   );
 }

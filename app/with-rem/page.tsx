@@ -7,7 +7,7 @@ import { StatCard } from "@/components/StatCard";
 export const metadata = {
   title: "Build with rem — Project Acacia",
   description:
-    "rem.money builds tokenised wholesale finance infrastructure — issuance, settlement, custody and digital money rails for issuers, banks and FMIs.",
+    "rem.money partners with issuers, banks and FMIs thinking through tokenised wholesale finance — assets, digital money, interoperability and regulation.",
 };
 
 const CONTACT_EMAIL = "hello@rem.money";
@@ -16,26 +16,26 @@ const pillars = [
   {
     n: "01",
     label: "Asset tokenisation",
-    title: "Issuance & lifecycle",
-    body: "Fixed income, securitised products, private markets, carbon — tokenised on the DLT platforms used in Acacia (Redbelly, Canvas, Hedera, Ethereum L2s, Corda). Issuance, registry, corporate actions, redemption.",
+    title: "Issuance & lifecycle thinking",
+    body: "We help you reason about how to bring an asset on-chain — fixed income, securitised products, private markets, carbon — and what issuance, registry, corporate-actions and redemption need to look like for it to be a real security rather than a wrapper.",
   },
   {
     n: "02",
     label: "Digital money",
     title: "wCBDC, deposit tokens, stablecoins",
-    body: "Money-leg orchestration across central bank money (wCBDC, ESAs), tokenised commercial bank money (deposit tokens) and regulated stablecoins. Atomic DvP, PvP and synchronisation patterns.",
+    body: "We work through the money-leg with you — central bank money (wCBDC, ESAs), tokenised commercial bank money (deposit tokens) and regulated stablecoins — and where atomic DvP, PvP or synchronisation is the right pattern for what you're trying to do.",
   },
   {
     n: "03",
     label: "Interoperability",
-    title: "Cross-chain & cross-rail",
-    body: "Bridges, synchronisation oracles, and HTLC-style coordination between traditional FMIs (RITS, Austraclear, CHESS), public chains and private permissioned networks.",
+    title: "Cross-chain & cross-rail design",
+    body: "Bridges, synchronisation, HTLC-style coordination between traditional FMIs (RITS, Austraclear, CHESS), public chains and private permissioned networks — we'll help you design for the interop story instead of leaving it for later.",
   },
   {
     n: "04",
     label: "Regulation",
-    title: "Sandbox-ready experiments",
-    body: "We help structure experiments for the DFMI sandbox and ASIC ERS — settlement finality, prudential treatment, AML/CTF and consumer protection lenses baked in from day one.",
+    title: "Sandbox-ready experiment design",
+    body: "We help you frame experiments for the DFMI sandbox or ASIC ERS so that settlement finality, prudential treatment, AML/CTF and consumer protection are answered in the design — not in the regulator's first round of questions.",
   },
 ];
 
@@ -43,34 +43,34 @@ const helpAreas = [
   {
     title: "If you're an issuer",
     bullets: [
-      "Tokenise corporate bonds, securitised products or private credit on a DLT that matches your distributor & investor base.",
-      "Architect the cash-leg — wCBDC, deposit tokens, or regulated stablecoin — for atomic settlement.",
-      "Build the disclosure, registry and corporate-actions layer so the token is a real security, not a wrapper.",
+      "Think through tokenising corporate bonds, securitised products or private credit on a DLT that fits your distributor and investor base.",
+      "Reason about the cash-leg — wCBDC, deposit tokens, or regulated stablecoin — and what settlement model your counterparties will actually accept.",
+      "Plan the disclosure, registry and corporate-actions layer so the token holds up as a security.",
     ],
   },
   {
     title: "If you're a bank or FMI",
     bullets: [
-      "Issue and distribute a deposit token with bank-on-bank interoperability — without locking yourself into one rail.",
-      "Connect existing infrastructure (RITS, Austraclear, CHESS, core ledger) to tokenised asset platforms.",
-      "Stand up a wCBDC distribution capability for the next pilot round.",
+      "Frame a deposit-token thesis with bank-on-bank interoperability in mind — without locking into one rail prematurely.",
+      "Map how existing infrastructure (RITS, Austraclear, CHESS, core ledger) could connect to tokenised asset platforms.",
+      "Think through what a wCBDC distribution role would look like in a next pilot round.",
     ],
   },
   {
     title: "If you're a platform or PSP",
     bullets: [
-      "Plug tokenised assets and tokenised money into your existing wallet, custody or trading product.",
-      "Get a sandbox submission across the line — technical design, legal mapping, regulator engagement.",
-      "Operate the bridge between public-chain liquidity and Australian regulated rails.",
+      "Work through how tokenised assets and tokenised money could plug into your existing wallet, custody or trading product.",
+      "Shape a sandbox submission — technical design, legal mapping, regulator engagement.",
+      "Reason about the bridge between public-chain liquidity and Australian regulated rails.",
     ],
   },
 ];
 
 const proofPoints = [
   { value: "20", label: "Acacia use cases mapped", hint: "Issuer, settlement, DLT pairings indexed" },
-  { value: "5+", label: "DLT platforms integrated", hint: "Redbelly, Canvas, Hedera, EVM L2s, Corda" },
-  { value: "4", label: "Settlement asset types", hint: "wCBDC, ESAs, deposit tokens, stablecoins", accent: "green" as const },
-  { value: "11", label: "Post-Acacia initiatives tracked", hint: "Across regulator, industry, RBA" , accent: "muted" as const },
+  { value: "4", label: "Forms of digital money", hint: "wCBDC, ESAs, deposit tokens, stablecoins" },
+  { value: "11", label: "Post-Acacia initiatives tracked", hint: "Across regulator, industry, RBA", accent: "green" as const },
+  { value: "1", label: "Conversation away", hint: "From a design sketch on your problem", accent: "muted" as const },
 ];
 
 export default function WithRem() {
@@ -97,14 +97,14 @@ export default function WithRem() {
               }}
             >
               Tokenised wholesale finance,{" "}
-              <span style={{ color: "var(--text-muted)" }}>built end-to-end.</span>
+              <span style={{ color: "var(--text-muted)" }}>thought through with you.</span>
             </h1>
           </Reveal>
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 22, maxWidth: 780 }}>
-              rem.money builds the infrastructure that turns Acacia-class experiments into live wholesale rails —
-              tokenised assets, programmable money, regulatory navigation, and the integration layer that wires it
-              all to the institutions you already work with.
+              rem.money is a small team thinking hard about the same questions Project Acacia surfaces — tokenised
+              assets, programmable money, interoperability, and regulation. If you're sketching what comes after a
+              pilot, we'd like to be in the room with you.
             </p>
           </Reveal>
           <Reveal delay={200}>
@@ -152,14 +152,13 @@ export default function WithRem() {
       <section className="section">
         <div className="container-rem">
           <Reveal>
-            <div className="eyebrow">What we build</div>
+            <div className="eyebrow">Where we focus</div>
             <h2 style={{ margin: "10px 0 14px", fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
-              Four layers. One delivery team.
+              Four layers. One conversation.
             </h2>
             <p className="lead" style={{ maxWidth: 760 }}>
               The Acacia report identifies asset tokenisation, money tokenisation, interoperability and regulation
-              as the four levers. rem.money builds across all four — so the integration risk lives in one place
-              instead of fanning out across vendors.
+              as the four levers. We think about all four together — because in practice they don't decouple.
             </p>
           </Reveal>
 
@@ -227,7 +226,7 @@ export default function WithRem() {
           <Reveal>
             <div className="eyebrow">How we can help</div>
             <h2 style={{ margin: "10px 0 14px", fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
-              Three starting points, mapped to the Acacia cohort.
+              Three starting points, depending on where you sit.
             </h2>
           </Reveal>
 
@@ -302,15 +301,15 @@ export default function WithRem() {
               >
                 <Reason
                   title="We read the report — we built the site."
-                  body="This entire interpretation of Project Acacia was crafted by rem. The same team will architect your build."
+                  body="This entire interpretation of Project Acacia was crafted by rem. The same team will sit on the other side of the table with you."
                 />
                 <Reason
                   title="DLT-agnostic, asset-agnostic."
-                  body="We've shipped across Redbelly, Canvas, Hedera, EVM L2s and Corda. We choose the rail that fits the asset — not the other way round."
+                  body="We don't lead with a preferred rail. The right DLT is the one that fits the asset, the counterparties and the settlement model — and we'll talk that through honestly."
                 />
                 <Reason
-                  title="Money + assets in one team."
-                  body="Most vendors do one. We orchestrate the cash-leg and the asset-leg together, so atomic settlement isn't a slide — it's the default."
+                  title="Money + assets, thought about together."
+                  body="The cash-leg and the asset-leg shape each other. We approach them as one problem rather than two separate workstreams."
                 />
               </div>
               <style>{`

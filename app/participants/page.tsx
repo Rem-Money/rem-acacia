@@ -7,6 +7,7 @@ import { Pill } from "@/components/Pill";
 import { participants, participantFilters } from "@/lib/participants";
 import { useCases } from "@/lib/usecases";
 import { CATEGORY, TYPE, tagSwatch, type Swatch } from "@/lib/palette";
+import { RemCTA } from "@/components/RemCTA";
 
 type Category = "All" | (typeof participantFilters.category)[number];
 
@@ -268,6 +269,8 @@ export default function ParticipantsPage() {
           `}</style>
         </div>
       </section>
+
+      <RemCTA variant="participants" />
     </>
   );
 }

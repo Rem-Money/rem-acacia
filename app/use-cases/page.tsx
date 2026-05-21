@@ -6,6 +6,7 @@ import { Pill } from "@/components/Pill";
 import { useCases, filters, type UseCase } from "@/lib/usecases";
 import { ASSET_CLASS, TYPE, tagSwatch, type Swatch } from "@/lib/palette";
 import { UseCaseDetailModal, type UseCaseModalData } from "@/components/UseCaseDetailModal";
+import { RemCTA } from "@/components/RemCTA";
 
 type Type = "All" | (typeof filters.type)[number];
 type AssetClass = "All" | (typeof filters.assetClass)[number];
@@ -287,6 +288,8 @@ export default function UseCases() {
           `}</style>
         </div>
       </section>
+
+      <RemCTA variant="use-cases" />
 
       {selected && (
         <UseCaseDetailModal data={useCaseToModalData(selected)} onClose={() => setSelected(null)} />
