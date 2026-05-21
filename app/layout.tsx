@@ -17,7 +17,7 @@ const body = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Project Acacia — Dashboard",
+  title: "Project Acacia -  Dashboard",
   description:
     "An interactive breakdown of the RBA & DFCRC Project Acacia final report: tokenised wholesale asset markets, digital money, and the road ahead.",
 };

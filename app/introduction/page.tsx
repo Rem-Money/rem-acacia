@@ -7,7 +7,7 @@ import { RemCTA } from "@/components/RemCTA";
 import { Graph1RwaGrowth } from "@/components/figures/Graph1RwaGrowth";
 import { Graph2MmfMarket } from "@/components/figures/Graph2MmfMarket";
 
-export const metadata = { title: "Global Context — Project Acacia" };
+export const metadata = { title: "Global Context -  Project Acacia" };
 
 export default function Introduction() {
   return (
@@ -25,7 +25,7 @@ export default function Introduction() {
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 18, maxWidth: 760 }}>
               Stablecoin issuance has crossed the third of a trillion mark. Tokenised real-world assets are climbing. Central banks and
-              exchanges are running serious pilots. Australia's wholesale markets sit in a system that hasn't been recomposed in a generation —
+              exchanges are running serious pilots. Australia's wholesale markets sit in a system that hasn't been recomposed in a generation -
               and Project Acacia asked what role digital money should play in rewriting it.
             </p>
           </Reveal>
@@ -61,16 +61,16 @@ export default function Introduction() {
               <h2 style={{ margin: "10px 0 16px", fontSize: "1.8rem" }}>Fixed income is the centre of gravity.</h2>
               <ul style={{ display: "flex", flexDirection: "column", gap: 14, paddingLeft: 0, listStyle: "none" }}>
                 <Bullet>
-                  <b>Public-sector issuances</b> — Hong Kong digital green bonds, EIB €100M, Slovenia €30M, World Bank/SNB CHF200M.
+                  <b>Public-sector issuances</b> -  Hong Kong digital green bonds, EIB €100M, Slovenia €30M, World Bank/SNB CHF200M.
                 </Bullet>
                 <Bullet>
-                  <b>Private-sector</b> — Siemens €300M; KfW across Clearstream D7 and SIX; JPM tokenised commercial paper on Solana settling in USDC.
+                  <b>Private-sector</b> -  Siemens €300M; KfW across Clearstream D7 and SIX; JPM tokenised commercial paper on Solana settling in USDC.
                 </Bullet>
                 <Bullet>
-                  <b>Tokenised MMFs</b> — ~US$15B across 66 products, 62k+ investors. BlackRock BUIDL ~$2.4B; Franklin Templeton BENJI ~$2.2B.
+                  <b>Tokenised MMFs</b> -  ~US$15B across 66 products, 62k+ investors. BlackRock BUIDL ~$2.4B; Franklin Templeton BENJI ~$2.2B.
                 </Bullet>
                 <Bullet>
-                  <b>Collateral mobility</b> — Broadridge DLR averaged US$368B/day in repo volume in April 2026.
+                  <b>Collateral mobility</b> -  Broadridge DLR averaged US$368B/day in repo volume in April 2026.
                 </Bullet>
               </ul>
             </div>
@@ -91,9 +91,9 @@ export default function Introduction() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container-rem">
           <Reveal>
-            <Callout label="Box A" title="International tokenisation initiatives — focus on fixed income">
+            <Callout label="Box A" title="International tokenisation initiatives -  focus on fixed income">
               <p style={{ marginTop: 0 }}>
-                Fixed income — particularly government bonds — is regarded as the major asset class likely to benefit from tokenisation.
+                Fixed income -  particularly government bonds -  is regarded as the major asset class likely to benefit from tokenisation.
                 Bonds are an estimated US$110T market; government bonds are also collateral, benchmark, and safe-asset bedrock. Tokenised MMFs
                 have emerged as another prominent application, alongside collateral-mobility platforms like JPM's Tokenised Collateral Network
                 and Broadridge's DLR.
@@ -106,10 +106,10 @@ export default function Introduction() {
       {/* Australian context */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container-rem">
-          <SectionHeading eyebrow="Australia" title="A short — and still nascent — local history." />
+          <SectionHeading eyebrow="Australia" title="A short -  and still nascent -  local history." />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }} className="grid-context">
             <Mini year="2018" name="CBA Bond-i" desc="World's first bond issued + managed throughout its lifecycle on DLT, with the World Bank." />
-            <Mini year="2022" name="ANZ stablecoin" desc="First A$DC stablecoin payment — early commercial-bank exploration of tokenised money." />
+            <Mini year="2022" name="ANZ stablecoin" desc="First A$DC stablecoin payment -  early commercial-bank exploration of tokenised money." />
             <Mini year="2022–23" name="CBDC Pilot" desc="RBA + DFCRC's first CBDC Pilot Project, exploring early retail and wholesale use cases on a central platform." />
             <Mini year="2024–26" name="Project Acacia" desc="Twenty industry-led use cases. The pilot wCBDC issued onto third-party DLT platforms for the first time." />
           </div>

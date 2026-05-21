@@ -166,7 +166,7 @@ export default function UseCases() {
                       "--card-accent": classSw.color,
                     }}
                   >
-                    {/* Left accent stripe — asset class colour */}
+                    {/* Left accent stripe -  asset class colour */}
                     <span
                       aria-hidden
                       style={{

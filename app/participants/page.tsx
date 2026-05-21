@@ -50,7 +50,7 @@ export default function ParticipantsPage() {
           </Reveal>
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 18, maxWidth: 800 }}>
-              Companies, platforms and authorities behind Acacia — lead participants, DLT networks, distributors and regulators. Filter by
+              Companies, platforms and authorities behind Acacia -  lead participants, DLT networks, distributors and regulators. Filter by
               role or project tag, or jump from a participant straight into the use cases they ran.
             </p>
           </Reveal>
@@ -150,7 +150,7 @@ export default function ParticipantsPage() {
                       overflow: "hidden",
                     }}
                   >
-                    {/* Top accent stripe — category colour */}
+                    {/* Top accent stripe -  category colour */}
                     <span
                       aria-hidden
                       style={{

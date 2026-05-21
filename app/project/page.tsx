@@ -6,7 +6,7 @@ import { Pill } from "@/components/Pill";
 import { RemCTA } from "@/components/RemCTA";
 import { Figure1UseCaseMatrix } from "@/components/figures/Figure1UseCaseMatrix";
 
-export const metadata = { title: "Project Overview — Acacia" };
+export const metadata = { title: "Project Overview -  Acacia" };
 
 export default function ProjectOverview() {
   return (
@@ -61,7 +61,7 @@ export default function ProjectOverview() {
           <SectionHeading
             eyebrow="Figure 1"
             title="The use case landscape."
-            description="Use cases were arranged by asset class (fixed income / other) and by whether settlement used central-bank or private money. The infrastructure row sits below — AP+ explored token interchange and NPP integration."
+            description="Use cases were arranged by asset class (fixed income / other) and by whether settlement used central-bank or private money. The infrastructure row sits below -  AP+ explored token interchange and NPP integration."
           />
           <Reveal>
             <Figure1UseCaseMatrix />
@@ -78,7 +78,7 @@ export default function ProjectOverview() {
               <h2 style={{ margin: "10px 0 12px", fontSize: "1.8rem" }}>Real legal claim, third-party platforms, controlled issuance.</h2>
               <p style={{ color: "var(--text-muted)" }}>
                 Distinct from the 2022–2023 CBDC Pilot, Acacia issued pilot wCBDC onto external DLT platforms. The implementation used ERC‑20 on
-                EVM-compatible chains with embedded controls — mint/burn, pause transfers, allow/block addresses.
+                EVM-compatible chains with embedded controls -  mint/burn, pause transfers, allow/block addresses.
               </p>
             </div>
           </Reveal>
@@ -103,7 +103,7 @@ export default function ProjectOverview() {
                 tokens. Banks: <b>ANZ, CBA, NAB, Westpac</b>. Observers: <b>RBA, ASIC, APRA, AUSTRAC, Treasury</b>. Legal support from Ashurst.
               </p>
               <p style={{ marginTop: 10 }}>
-                Two transferability models were tested — a near-term <b>burn-and-reissue</b> approach and a more novel <b>assignable</b> model.
+                Two transferability models were tested -  a near-term <b>burn-and-reissue</b> approach and a more novel <b>assignable</b> model.
                 See the Money chapter for the deeper breakdown.
               </p>
             </Callout>

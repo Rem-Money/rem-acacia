@@ -1,8 +1,8 @@
-# Rem — Design System
+# Rem -  Design System
 
 ## Overview
 
-Rem is research and development labs for stablecoin and tokenisation infrastructure. The design language is **dark, precise, and institutional** — built to pass a bank's vendor review while feeling like the future of finance.
+Rem is research and development labs for stablecoin and tokenisation infrastructure. The design language is **dark, precise, and institutional** -  built to pass a bank's vendor review while feeling like the future of finance.
 
 **Brand in three words**: Precise. Kinetic. Trusted.
 
@@ -18,7 +18,7 @@ Set in `app/layout.tsx` via Next.js font optimization.
 |-----------|-----------------------|-------------------|------------------------------------|
 | Display   | Bricolage Grotesque   | `--font-display`  | All headings (h1–h6), display text |
 | Body      | Hanken Grotesk        | `--font-body`     | Body copy, UI labels, inputs       |
-| Monospace | Menlo / Monaco / Courier New | —          | Code blocks                        |
+| Monospace | Menlo / Monaco / Courier New | -           | Code blocks                        |
 
 ---
 
@@ -40,7 +40,7 @@ Defined as CSS custom properties in `app/globals.css`.
 
 | Token       | Value       | Usage                                        |
 |-------------|-------------|----------------------------------------------|
-| `--yellow`  | `#fcbf48`   | Logo, CTAs, focus states, key data — primary |
+| `--yellow`  | `#fcbf48`   | Logo, CTAs, focus states, key data -  primary |
 | `--green`   | `#8DF0CC`   | Success states, compliance signals           |
 
 ### Text Opacity Hierarchy
@@ -68,12 +68,12 @@ Defined as CSS custom properties in `app/globals.css`.
 ## Typography Scale
 
 ```css
---text-xs:   0.75rem   /* 12px — captions, legal     */
---text-sm:   0.875rem  /* 14px — metadata, badges    */
---text-base: 1rem      /* 16px — body text           */
---text-lg:   1.25rem   /* 20px — lead / intro text   */
---text-xl:   1.75rem   /* 28px — subheadings         */
---text-2xl:  2.25rem   /* 36px — section headings    */
+--text-xs:   0.75rem   /* 12px -  captions, legal     */
+--text-sm:   0.875rem  /* 14px -  metadata, badges    */
+--text-base: 1rem      /* 16px -  body text           */
+--text-lg:   1.25rem   /* 20px -  lead / intro text   */
+--text-xl:   1.75rem   /* 28px -  subheadings         */
+--text-2xl:  2.25rem   /* 36px -  section headings    */
 ```
 
 ### Font Weights
@@ -108,7 +108,7 @@ Defined as CSS custom properties in `app/globals.css`.
 
 ## Spacing
 
-No strict spacing scale token — patterns extracted from components.
+No strict spacing scale token -  patterns extracted from components.
 
 | Context                    | Value           |
 |----------------------------|-----------------|
@@ -175,7 +175,7 @@ No strict spacing scale token — patterns extracted from components.
 .reveal.is-visible /* revealed: opacity 1, translateY(0), 500ms */
 ```
 
-Scroll reveals use Intersection Observer via `components/Reveal.tsx` — threshold `0.1`, root margin `0px 0px -40px 0px`.
+Scroll reveals use Intersection Observer via `components/Reveal.tsx` -  threshold `0.1`, root margin `0px 0px -40px 0px`.
 
 **Reduced motion**: All animations collapse to `0.01ms` via `prefers-reduced-motion: reduce`.
 
@@ -313,6 +313,6 @@ All breakpoints are used inline via scoped `<style>` tags inside components.
 
 1. **Yellow is the signal.** `#fcbf48` is reserved for the logo, primary CTAs, and critical data. It is the "kinetic" energy of moving money.
 2. **Trust through precision.** Consistent spacing, tight type scale, perfect alignment. Zero slop.
-3. **Infrastructure as the hero.** Partners (Tempo, Solana, Base) and protocols (x402, MCP) get visual weight — they are the trust foundation.
+3. **Infrastructure as the hero.** Partners (Tempo, Solana, Base) and protocols (x402, MCP) get visual weight -  they are the trust foundation.
 4. **No wasted surface.** Every section should feel like a premium component of a larger machine.
 5. **Dark. Always dark.** The theme is fixed dark. No light mode.

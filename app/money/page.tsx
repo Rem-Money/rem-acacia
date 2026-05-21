@@ -6,14 +6,14 @@ import { RemCTA } from "@/components/RemCTA";
 import { Figure23DvpAtomic } from "@/components/figures/Figure23DvpAtomic";
 import { Figure4Interchange } from "@/components/figures/Figure4Interchange";
 
-export const metadata = { title: "Forms of Money — Acacia" };
+export const metadata = { title: "Forms of Money -  Acacia" };
 
 const moneyForms = [
   {
     name: "ESA balances",
     sub: "Existing central bank money",
     bullets: [
-      "Liabilities of the RBA — free of counterparty risk.",
+      "Liabilities of the RBA -  free of counterparty risk.",
       "Today's foundation for interbank settlement.",
       "Eligibility restricted to ADIs + select financial institutions.",
     ],
@@ -25,7 +25,7 @@ const moneyForms = [
     bullets: [
       "Pilot issued under a deed poll; real legal claim on the RBA.",
       "Enabled true atomic settlement and composable smart-contract flows.",
-      "Production form still TBD — could be a digital twin of ESAs, or distinct.",
+      "Production form still TBD -  could be a digital twin of ESAs, or distinct.",
     ],
     tone: "yellow" as const,
   },
@@ -33,7 +33,7 @@ const moneyForms = [
     name: "Deposit tokens",
     sub: "Tokenised commercial bank money",
     bullets: [
-      "Claim on issuing bank — leverages existing prudential oversight.",
+      "Claim on issuing bank -  leverages existing prudential oversight.",
       "DTWG examined two transferability models (Box D).",
       "Tested by CBA (repo) and ANZ (corporate bond + trade payable).",
     ],
@@ -54,7 +54,7 @@ const moneyForms = [
 const dtwgModels = [
   {
     title: "Model 1 · Burn-and-reissue",
-    summary: "Closer to today's payments. A deposit token isn't transferable to a non-customer — instead, an interbank payment is triggered and the original token is destroyed, with a new token issued by the payee's bank.",
+    summary: "Closer to today's payments. A deposit token isn't transferable to a non-customer -  instead, an interbank payment is triggered and the original token is destroyed, with a new token issued by the payee's bank.",
     feasibility: "Near-term feasible · sits well within existing legal frameworks",
   },
   {
@@ -134,7 +134,7 @@ export default function Money() {
           <SectionHeading
             eyebrow="Box C · Composability"
             title="Atomic settlement vs. traditional DvP."
-            description="In traditional markets, DvP is a chain of linked-but-separate steps across custodians, FMIs, and the RTGS. On a single tokenised platform, the whole chain can become a single all-or-nothing smart-contract operation — and interchange between different money tokens can happen inside the same atomic transaction."
+            description="In traditional markets, DvP is a chain of linked-but-separate steps across custodians, FMIs, and the RTGS. On a single tokenised platform, the whole chain can become a single all-or-nothing smart-contract operation -  and interchange between different money tokens can happen inside the same atomic transaction."
           />
           <Reveal>
             <Figure23DvpAtomic />
@@ -143,16 +143,16 @@ export default function Money() {
           <div style={{ marginTop: 30, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="grid-2">
             <Reveal>
               <div className="card">
-                <h3 style={{ fontSize: "1.1rem", marginTop: 0 }}>NotCentralised — collateralised loan</h3>
+                <h3 style={{ fontSize: "1.1rem", marginTop: 0 }}>NotCentralised -  collateralised loan</h3>
                 <p style={{ color: "var(--text-muted)", fontSize: 14 }}>
-                  Loan, collateral and payment token composed into a single atomic transaction. Collateral released instantly on repayment —
+                  Loan, collateral and payment token composed into a single atomic transaction. Collateral released instantly on repayment -
                   no multi-system orchestration, no delays.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={60}>
               <div className="card">
-                <h3 style={{ fontSize: "1.1rem", marginTop: 0 }}>Canvas — bond coupon</h3>
+                <h3 style={{ fontSize: "1.1rem", marginTop: 0 }}>Canvas -  bond coupon</h3>
                 <p style={{ color: "var(--text-muted)", fontSize: 14 }}>
                   With the bond and money token on the same ledger, coupon calculation, distribution and settlement execute as a single atomic
                   transaction governed by the bond token.
@@ -209,7 +209,7 @@ export default function Money() {
           <SectionHeading
             eyebrow="Figure 4"
             title="Interchange between forms of private money."
-            description="Use cases mostly aligned with Model E from the consultation paper — wCBDC plays the ESA-like role between issuers of different private monies. The AP+ variant kept wCBDC on a private chain and used a 'white coin' digital twin on the public chain, with a synchroniser keeping them aligned."
+            description="Use cases mostly aligned with Model E from the consultation paper -  wCBDC plays the ESA-like role between issuers of different private monies. The AP+ variant kept wCBDC on a private chain and used a 'white coin' digital twin on the public chain, with a synchroniser keeping them aligned."
           />
           <Reveal>
             <Figure4Interchange />
@@ -243,9 +243,9 @@ export default function Money() {
           <Reveal>
             <Callout label="Box F" title="Issuing wCBDC onto third-party DLT">
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
-                <li><b>Transaction finality & ledger integrity</b> — private-permissioned easiest; public-permissioned feasible if deterministic; public-permissionless generally not viable for central banks.</li>
-                <li><b>Governance & compliance</b> — central bank must exclusively control mint/burn and have visibility into validators.</li>
-                <li><b>Integration</b> — EVM compatibility enabled the same wCBDC code to be reused across all platforms in the pilot.</li>
+                <li><b>Transaction finality & ledger integrity</b> -  private-permissioned easiest; public-permissioned feasible if deterministic; public-permissionless generally not viable for central banks.</li>
+                <li><b>Governance & compliance</b> -  central bank must exclusively control mint/burn and have visibility into validators.</li>
+                <li><b>Integration</b> -  EVM compatibility enabled the same wCBDC code to be reused across all platforms in the pilot.</li>
               </ul>
             </Callout>
           </Reveal>

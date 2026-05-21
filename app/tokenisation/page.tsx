@@ -6,7 +6,7 @@ import { Pill } from "@/components/Pill";
 import { RemCTA } from "@/components/RemCTA";
 import { Graph3UseCases } from "@/components/figures/Graph3UseCases";
 
-export const metadata = { title: "Asset Tokenisation — Acacia" };
+export const metadata = { title: "Asset Tokenisation -  Acacia" };
 
 const capabilities = [
   {
@@ -15,7 +15,7 @@ const capabilities = [
     points: [
       "Lower-cost issuance via automated legal, compliance and ops tasks.",
       "End-to-end straight-through settlement; shorter, more predictable cycles.",
-      "Automated lifecycle — coupon calc, bondholder voting, distribution.",
+      "Automated lifecycle -  coupon calc, bondholder voting, distribution.",
       "Embedded KYC/AML and sanctions checks in token logic.",
     ],
   },
@@ -23,7 +23,7 @@ const capabilities = [
     n: "02",
     title: "Transferability & fractionalisation",
     points: [
-      "Streamlined transfers — fewer legal/operational frictions.",
+      "Streamlined transfers -  fewer legal/operational frictions.",
       "Smaller minimum investment sizes broaden the investor base.",
       "Illiquid assets (real estate, private credit, royalties) gain access.",
     ],
@@ -60,7 +60,7 @@ const capabilities = [
 const barriers = [
   {
     title: "Legal & regulatory uncertainty",
-    body: "Tokenisation, smart contracts and atomic settlement raise issues current frameworks didn't anticipate — particularly in post-trade.",
+    body: "Tokenisation, smart contracts and atomic settlement raise issues current frameworks didn't anticipate -  particularly in post-trade.",
   },
   {
     title: "Coordination across competing stakeholders",
@@ -88,7 +88,7 @@ export default function Tokenisation() {
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 18, maxWidth: 760 }}>
               Participants were prepared to expend serious resources on time-bound experiments. The asset class breakdown mirrored the
-              international picture — fixed income led, with significant interest in managed funds, repos, structured products, carbon credits,
+              international picture -  fixed income led, with significant interest in managed funds, repos, structured products, carbon credits,
               mining royalties and trade receivables.
             </p>
           </Reveal>
@@ -137,7 +137,7 @@ export default function Tokenisation() {
               <h2 style={{ margin: "10px 0 12px", fontSize: "1.8rem" }}>13 of 20 use cases were fixed income.</h2>
               <p style={{ color: "var(--text-muted)" }}>
                 Project Acacia explored a wide spread: managed investment schemes, interbank repos, structured products, carbon credits,
-                mining royalties and receivables. But the centre of gravity stayed in fixed income — where the manual, multi-party,
+                mining royalties and receivables. But the centre of gravity stayed in fixed income -  where the manual, multi-party,
                 phone-and-email-bound wholesale processes have the most to gain.
               </p>
             </div>
@@ -151,7 +151,7 @@ export default function Tokenisation() {
           <SectionHeading
             eyebrow="Five capability categories"
             title="Where the tokenisation prize lives."
-            description="Acacia participants demonstrated benefits across five capability buckets. Some can be achieved with traditional tech in more advanced ways — but tokenisation makes them simpler, faster, more scalable."
+            description="Acacia participants demonstrated benefits across five capability buckets. Some can be achieved with traditional tech in more advanced ways -  but tokenisation makes them simpler, faster, more scalable."
           />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }} className="grid-caps">
             {capabilities.map((c, i) => (
@@ -200,7 +200,7 @@ export default function Tokenisation() {
       {/* Barriers */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container-rem">
-          <SectionHeading eyebrow="Adoption barriers" title="Why it hasn't happened yet — and what unblocks it." />
+          <SectionHeading eyebrow="Adoption barriers" title="Why it hasn't happened yet -  and what unblocks it." />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }} className="grid-barriers">
             {barriers.map((b, i) => (
               <Reveal key={b.title} delay={i * 50}>

@@ -13,7 +13,7 @@ const sw = (color: string, alpha = 0.12, ringAlpha = 0.45): Swatch => {
   };
 };
 
-/* Settlement-asset families — match Figure 1 taxonomy */
+/* Settlement-asset families -  match Figure 1 taxonomy */
 export const FAMILY = {
   wcbdc: sw("#fcbf48"),
   rails: sw("#fd9a73"),
@@ -73,7 +73,7 @@ const NEUTRAL: Swatch = {
 };
 
 /**
- * Resolve a tag string to a swatch by semantic guesswork — money/asset/network
+ * Resolve a tag string to a swatch by semantic guesswork -  money/asset/network
  * families share the same hues so the colour stays meaningful across pages.
  */
 export function tagSwatch(raw: string): Swatch {

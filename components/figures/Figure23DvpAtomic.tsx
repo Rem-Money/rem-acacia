@@ -7,7 +7,7 @@ export function Figure23DvpAtomic() {
         <Lane
           variant="traditional"
           title="DvP settlement via an FMI"
-          subtitle="Six sequential steps across custodians, FMI and RTGS — each a potential failure point."
+          subtitle="Six sequential steps across custodians, FMI and RTGS -  each a potential failure point."
           steps={[
             { actor: "Seller / Custodian", action: "Submit settlement instruction" },
             { actor: "Buyer / Custodian", action: "Submit settlement instruction" },

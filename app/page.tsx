@@ -7,11 +7,11 @@ import { RemCTA } from "@/components/RemCTA";
 const findings = [
   {
     title: "Two-tier monetary system reaffirmed",
-    body: "Central bank money remains the 'anchor and enabler' — tokenised forms of private money (stablecoins, deposit tokens) can complement it without displacing it.",
+    body: "Central bank money remains the 'anchor and enabler' -  tokenised forms of private money (stablecoins, deposit tokens) can complement it without displacing it.",
   },
   {
     title: "Atomic settlement unlocks real efficiency",
-    body: "Co-locating tokenised assets and money enables instantaneous, all-or-nothing DvP — cutting counterparty risk and freeing collateral.",
+    body: "Co-locating tokenised assets and money enables instantaneous, all-or-nothing DvP -  cutting counterparty risk and freeing collateral.",
   },
   {
     title: "Fixed income leads adoption interest",
@@ -61,32 +61,32 @@ export default function Home() {
                 maxWidth: 1000,
               }}
             >
-              Project Acacia.{" "}
+              Project Acacia,{" "}
               <span style={{ color: "var(--text-muted)" }}>
-                The role of digital money in wholesale tokenised asset markets.
+                read like a dashboard.
               </span>
             </h1>
           </Reveal>
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 22, maxWidth: 760 }}>
-              Twenty industry-led experiments. A pilot wholesale CBDC issued onto third-party DLT platforms. A working
-              group on deposit tokens. A coordinated read on what's blocking — and what could unlock — Australia's
-              wholesale market dynamism.
+              Australia's flagship study of digital money in wholesale tokenised markets -  twenty industry
+              experiments, a pilot wCBDC, and a clear-eyed read on what's blocking the next leg. Distilled
+              into seven sections you can navigate in an afternoon.
             </p>
           </Reveal>
           <Reveal delay={200}>
             <div style={{ marginTop: 30, display: "flex", gap: 10, flexWrap: "wrap" }}>
+              <Link className="btn btn-primary" href="/introduction">
+                Start with the context →
+              </Link>
               <a
-                className="btn btn-primary"
+                className="btn btn-ghost"
                 href="https://www.rba.gov.au/payments-and-infrastructure/central-bank-digital-currency/pdf/project-acacia-final-report.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Read the original report →
+                Read the original report
               </a>
-              <Link className="btn btn-ghost" href="/use-cases">
-                Explore all 20 use cases
-              </Link>
             </div>
           </Reveal>
 

@@ -5,7 +5,7 @@ import { FigureFrame } from "./FigureFrame";
 import { UseCaseDetailModal, type UseCaseModalData } from "../UseCaseDetailModal";
 
 /* ────────────────────────────────────────────────
-   Colour taxonomy — each settlement-asset family gets a token.
+   Colour taxonomy -  each settlement-asset family gets a token.
    These are deliberately distinct so the matrix reads at a glance.
    ──────────────────────────────────────────────── */
 
@@ -14,37 +14,37 @@ type Family = "wcbdc" | "rails" | "deposit" | "hybrid" | "stable";
 const family: Record<Family, { name: string; color: string; bg: string; ring: string }> = {
   wcbdc: {
     name: "wCBDC",
-    color: "#fcbf48", // brand yellow — public, on-chain
+    color: "#fcbf48", // brand yellow -  public, on-chain
     bg: "rgba(252,191,72,0.10)",
     ring: "rgba(252,191,72,0.45)",
   },
   rails: {
     name: "NPP / RITS",
-    color: "#fd9a73", // coral — public, off-chain rails
+    color: "#fd9a73", // coral -  public, off-chain rails
     bg: "rgba(253,154,115,0.10)",
     ring: "rgba(253,154,115,0.45)",
   },
   deposit: {
     name: "Deposit token",
-    color: "#7dd3fc", // sky — private bank balance sheet
+    color: "#7dd3fc", // sky -  private bank balance sheet
     bg: "rgba(125,211,252,0.10)",
     ring: "rgba(125,211,252,0.45)",
   },
   hybrid: {
     name: "wCBDC-backed token",
-    color: "#8DF0CC", // mint — hybrid
+    color: "#8DF0CC", // mint -  hybrid
     bg: "rgba(141,240,204,0.10)",
     ring: "rgba(141,240,204,0.45)",
   },
   stable: {
     name: "Stablecoin",
-    color: "#c7e36a", // lime — private money
+    color: "#c7e36a", // lime -  private money
     bg: "rgba(199,227,106,0.10)",
     ring: "rgba(199,227,106,0.45)",
   },
 };
 
-/* DLT networks — small coloured dots */
+/* DLT networks -  small coloured dots */
 type Net =
   | "Redbelly"
   | "Canvas Connect"
@@ -75,13 +75,13 @@ type Tag = { f: Family; raw: string };
 type Cell = {
   lead: string;
   name: string;
-  tags: Tag[]; // settlement assets, in display order — first is the primary
+  tags: Tag[]; // settlement assets, in display order -  first is the primary
   net: Net;
   type: "Pilot" | "PoC";
 };
 
 /* ────────────────────────────────────────────────
-   Per-use-case detail — surfaced in the modal.
+   Per-use-case detail -  surfaced in the modal.
    Sourced from the Project Acacia final report.
    ──────────────────────────────────────────────── */
 
@@ -104,7 +104,7 @@ const details: Record<string, Detail> = {
   },
   [detailKey("Canvas", "Government Bond")]: {
     summary:
-      "Canvas tokenised digital twins of Australian Government bonds on Canvas Connect (a private EVM-compatible L2) with wCBDC settlement on the same ledger. Two tokenisation structures were tested — TCP-aligned beneficial ownership and SPV debt claims — alongside collateralised lending, repos, secondary trading and coupon payments.",
+      "Canvas tokenised digital twins of Australian Government bonds on Canvas Connect (a private EVM-compatible L2) with wCBDC settlement on the same ledger. Two tokenisation structures were tested -  TCP-aligned beneficial ownership and SPV debt claims -  alongside collateralised lending, repos, secondary trading and coupon payments.",
     participants: ["Canvas"],
     mechanism: "Permissioned EVM L2 with underlying bonds held in registered custody (Austraclear off-chain).",
     findings: "Demonstrated diversified settlement and collateral workflows across multiple tokenisation structures.",
@@ -128,7 +128,7 @@ const details: Record<string, Detail> = {
       "Network-agnostic PoC exploring how the NPP PayTo Biller service could facilitate near-real-time atomic settlement of tokenised term deposits. Connects domestic real-time payment infrastructure with emerging tokenised asset platforms.",
     participants: ["Westpac"],
     mechanism: "PayTo Biller synchronised against RITS Fast Settlement Service.",
-    findings: "Split DvP into a tangible first step using existing RITS rails — a practical path for industry adoption.",
+    findings: "Split DvP into a tangible first step using existing RITS rails -  a practical path for industry adoption.",
   },
   [detailKey("ANZ", "Corporate Bond")]: {
     summary:
@@ -153,7 +153,7 @@ const details: Record<string, Detail> = {
   },
   [detailKey("Imperium", "Annuities")]: {
     summary:
-      "Annuities tokenised and traded on Hedera/HashSphere using the same settlement architecture — wCBDC-backed Cuscal stablecoin with settlement-coordinator escrow and atomic swaps. Explored pension and insurance product tokenisation as digital twins.",
+      "Annuities tokenised and traded on Hedera/HashSphere using the same settlement architecture -  wCBDC-backed Cuscal stablecoin with settlement-coordinator escrow and atomic swaps. Explored pension and insurance product tokenisation as digital twins.",
     participants: ["Imperium Markets", "Cuscal", "superannuation, banking and insurance participants"],
     mechanism: "Atomic DvP via settlement coordinator on Hedera / HashSphere.",
     findings: "Enabled direct on-chain custody and secondary trading of insurance-style products.",
@@ -181,7 +181,7 @@ const details: Record<string, Detail> = {
   },
   [detailKey("Macropod", "Corporate Bond")]: {
     summary:
-      "Pilot of tokenised corporate bonds on Redbelly — issuance, secondary trading, coupon payments and maturity — via the Imperium Marketplace. Settlement used Macropod's AUD-denominated AUDM stablecoin.",
+      "Pilot of tokenised corporate bonds on Redbelly -  issuance, secondary trading, coupon payments and maturity -  via the Imperium Marketplace. Settlement used Macropod's AUD-denominated AUDM stablecoin.",
     participants: ["Macropod", "Imperium Markets"],
     mechanism: "Permissioned settlement on Redbelly with AUDM stablecoin.",
     findings: "Validated digital-native corporate debt markets running alongside Macropod's managed-fund pilot.",
@@ -212,7 +212,7 @@ const details: Record<string, Detail> = {
       "Pilot of tokenised units in a wholesale managed investment scheme on Redbelly, with AUDM stablecoin settlement. Issuance, trading and redemption ran through the Tokeniser platform.",
     participants: ["Macropod"],
     mechanism: "Permissioned settlement on Redbelly with AUDM stablecoin via Tokeniser.",
-    findings: "Validated digital-native fund distribution and fractionalised manager structures — paired with the corporate-bond pilot.",
+    findings: "Validated digital-native fund distribution and fractionalised manager structures -  paired with the corporate-bond pilot.",
   },
   [detailKey("ProspEx", "Mining Royalty Interests")]: {
     summary:
@@ -233,12 +233,12 @@ const details: Record<string, Detail> = {
       "Research and PoC for an industry utility and scheme rules supporting value transfers between traditional commercial bank accounts and private money tokens via the NPP and the RITS Fast Settlement Service.",
     participants: ["AP+"],
     mechanism: "Settlement coordination across NPP-connected bank accounts and tokenised payment networks.",
-    findings: "Examined funding and redeeming stablecoins / deposit tokens from NPP-connected accounts — bridging legacy and tokenised payment infrastructure.",
+    findings: "Examined funding and redeeming stablecoins / deposit tokens from NPP-connected accounts -  bridging legacy and tokenised payment infrastructure.",
   },
 };
 
 /* ────────────────────────────────────────────────
-   The matrix layout — exact placements from the report.
+   The matrix layout -  exact placements from the report.
    ──────────────────────────────────────────────── */
 
 const matrix: { row: string; cb: Cell[]; pv: Cell[] }[] = [
@@ -516,7 +516,7 @@ function CellGroup({ cells, columnTone, onOpen }: { cells: Cell[]; columnTone: "
       {cells.map((c) => (
         <CaseChip key={`${c.lead}-${c.name}`} cell={c} columnTone={columnTone} onOpen={onOpen} />
       ))}
-      {cells.length === 0 && <div style={{ color: "var(--text-dim)", fontSize: 12, fontStyle: "italic", padding: "8px 4px" }}>—</div>}
+      {cells.length === 0 && <div style={{ color: "var(--text-dim)", fontSize: 12, fontStyle: "italic", padding: "8px 4px" }}>- </div>}
     </div>
   );
 }
@@ -553,7 +553,7 @@ function CaseChip({ cell, columnTone, onOpen }: { cell: Cell; columnTone: "cb" |
         "--chip-glow": primary.color,
       }}
     >
-      {/* Left accent stripe — settlement asset family colour */}
+      {/* Left accent stripe -  settlement asset family colour */}
       <span
         aria-hidden
         style={{
@@ -567,7 +567,7 @@ function CaseChip({ cell, columnTone, onOpen }: { cell: Cell; columnTone: "cb" |
         }}
       />
 
-      {/* Header — lead + P/C */}
+      {/* Header -  lead + P/C */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 6 }}>
         <span
           style={{
