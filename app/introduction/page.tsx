@@ -1,9 +1,10 @@
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { StatCard } from "@/components/StatCard";
-import { Figure } from "@/components/Figure";
 import { Callout } from "@/components/Callout";
 import { Pill } from "@/components/Pill";
+import { Graph1RwaGrowth } from "@/components/figures/Graph1RwaGrowth";
+import { Graph2MmfMarket } from "@/components/figures/Graph2MmfMarket";
 
 export const metadata = { title: "Global Context — Project Acacia" };
 
@@ -51,12 +52,7 @@ export default function Introduction() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container-rem" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 36, alignItems: "center" }}>
           <Reveal>
-            <Figure
-              src="/figures/graph-1-rwa-growth.png"
-              alt="Graph 1: Growth in tokenised real-world asset issuance"
-              caption="Graph 1 — Global tokenised real-world asset issuance has grown sharply, even as it remains modest vs. total global financial assets."
-              source="RBA / RWA.xyz"
-            />
+            <Graph1RwaGrowth />
           </Reveal>
           <Reveal delay={80}>
             <div>
@@ -85,12 +81,7 @@ export default function Introduction() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container-rem">
           <Reveal>
-            <Figure
-              src="/figures/graph-2-tokenised-mmf.png"
-              alt="Graph 2: Tokenised money market fund growth"
-              caption="Graph 2 — The US tokenised MMF market climbed to ~US$15B by Q2 2026, driven by participation from established institutions."
-              source="RBA"
-            />
+            <Graph2MmfMarket />
           </Reveal>
         </div>
       </section>

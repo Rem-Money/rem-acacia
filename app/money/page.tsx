@@ -1,8 +1,9 @@
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { Figure } from "@/components/Figure";
 import { Callout } from "@/components/Callout";
 import { Pill } from "@/components/Pill";
+import { Figure23DvpAtomic } from "@/components/figures/Figure23DvpAtomic";
+import { Figure4Interchange } from "@/components/figures/Figure4Interchange";
 
 export const metadata = { title: "Forms of Money — Acacia" };
 
@@ -135,12 +136,7 @@ export default function Money() {
             description="In traditional markets, DvP is a chain of linked-but-separate steps across custodians, FMIs, and the RTGS. On a single tokenised platform, the whole chain can become a single all-or-nothing smart-contract operation — and interchange between different money tokens can happen inside the same atomic transaction."
           />
           <Reveal>
-            <Figure
-              src="/figures/figures-2-3-dvp-atomic.png"
-              alt="Figures 2 & 3 — Traditional DvP via FMI vs. composed atomic settlement"
-              caption="Figures 2 & 3 — DvP settlement of a fixed-income security with an FMI (top) vs. composed atomic settlement in a tokenised environment (bottom)."
-              source="RBA"
-            />
+            <Figure23DvpAtomic />
           </Reveal>
 
           <div style={{ marginTop: 30, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="grid-2">
@@ -215,12 +211,7 @@ export default function Money() {
             description="Use cases mostly aligned with Model E from the consultation paper — wCBDC plays the ESA-like role between issuers of different private monies. The AP+ variant kept wCBDC on a private chain and used a 'white coin' digital twin on the public chain, with a synchroniser keeping them aligned."
           />
           <Reveal>
-            <Figure
-              src="/figures/figure-4-interchange.png"
-              alt="Figure 4 — Interchange using wCBDC"
-              caption="Figure 4 — Interchange between private money tokens using wCBDC. Left: Model E with wCBDC on the same chain. Right: AP+ Token Interchange use case using a synchronised white coin."
-              source="DFCRC / RBA"
-            />
+            <Figure4Interchange />
           </Reveal>
 
           <div style={{ marginTop: 30, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="grid-2">

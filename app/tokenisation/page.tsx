@@ -1,9 +1,9 @@
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { StatCard } from "@/components/StatCard";
-import { Figure } from "@/components/Figure";
 import { Callout } from "@/components/Callout";
 import { Pill } from "@/components/Pill";
+import { Graph3UseCases } from "@/components/figures/Graph3UseCases";
 
 export const metadata = { title: "Asset Tokenisation — Acacia" };
 
@@ -128,12 +128,7 @@ export default function Tokenisation() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container-rem" style={{ display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: 36, alignItems: "center" }}>
           <Reveal>
-            <Figure
-              src="/figures/graph-3-use-cases-by-asset-class.png"
-              alt="Graph 3 — Use cases by asset class"
-              caption="Graph 3 — Use cases by asset class. Fixed income dominated, consistent with international experience."
-              source="RBA"
-            />
+            <Graph3UseCases />
           </Reveal>
           <Reveal delay={80}>
             <div>

@@ -1,9 +1,9 @@
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { StatCard } from "@/components/StatCard";
-import { Figure } from "@/components/Figure";
 import { Callout } from "@/components/Callout";
 import { Pill } from "@/components/Pill";
+import { Figure1UseCaseMatrix } from "@/components/figures/Figure1UseCaseMatrix";
 
 export const metadata = { title: "Project Overview — Acacia" };
 
@@ -63,12 +63,7 @@ export default function ProjectOverview() {
             description="Use cases were arranged by asset class (fixed income / other) and by whether settlement used central-bank or private money. The infrastructure row sits below — AP+ explored token interchange and NPP integration."
           />
           <Reveal>
-            <Figure
-              src="/figures/figure-1-use-case-landscape.png"
-              alt="Figure 1 — Project Acacia use case landscape"
-              caption="Figure 1 — Project Acacia use case landscape, classifying all 20 use cases by asset class, settlement asset and DLT network."
-              source="DFCRC / RBA"
-            />
+            <Figure1UseCaseMatrix />
           </Reveal>
         </div>
       </section>
