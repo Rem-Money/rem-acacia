@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FigureFrame } from "./FigureFrame";
+import { UseCaseDetailModal, type UseCaseModalData } from "../UseCaseDetailModal";
 
 /* ────────────────────────────────────────────────
    Colour taxonomy — each settlement-asset family gets a token.
@@ -77,6 +78,163 @@ type Cell = {
   tags: Tag[]; // settlement assets, in display order — first is the primary
   net: Net;
   type: "Pilot" | "PoC";
+};
+
+/* ────────────────────────────────────────────────
+   Per-use-case detail — surfaced in the modal.
+   Sourced from the Project Acacia final report.
+   ──────────────────────────────────────────────── */
+
+type Detail = {
+  summary: string;
+  participants?: string[];
+  mechanism?: string;
+  findings?: string;
+};
+
+const detailKey = (lead: string, name: string) => `${lead}__${name}`;
+
+const details: Record<string, Detail> = {
+  [detailKey("Australian Bond Exchange", "Corporate Bond")]: {
+    summary:
+      "Secondary-market transactions in tokenised corporate bonds tested on Redbelly Network, with wCBDC settlement issued on the same network. The pilot connected issuers and investors directly for early redemptions and covenant voting, demonstrating digital-twin tokenisation with on-chain settlement.",
+    participants: ["Australian Bond Exchange", "Fieldrock", "Fireblocks", "Rand Low"],
+    mechanism: "Digital-twin tokenisation on Redbelly with same-ledger wCBDC settlement.",
+    findings: "Explored efficiency gains in processing times and direct issuer–investor interaction for corporate-action events.",
+  },
+  [detailKey("Canvas", "Government Bond")]: {
+    summary:
+      "Canvas tokenised digital twins of Australian Government bonds on Canvas Connect (a private EVM-compatible L2) with wCBDC settlement on the same ledger. Two tokenisation structures were tested — TCP-aligned beneficial ownership and SPV debt claims — alongside collateralised lending, repos, secondary trading and coupon payments.",
+    participants: ["Canvas"],
+    mechanism: "Permissioned EVM L2 with underlying bonds held in registered custody (Austraclear off-chain).",
+    findings: "Demonstrated diversified settlement and collateral workflows across multiple tokenisation structures.",
+  },
+  [detailKey("CBA", "Intraday Repo")]: {
+    summary:
+      "Multi-platform PoC for intraday repurchase agreements in Commonwealth and semi-government securities, with CBA deposit tokens used for settlement on Kinexys and wCBDC interchange across ledgers. Smart contracts orchestrated DvP across Gravital, HQLAx and Kinexys.",
+    participants: ["CBA", "Gravital", "HQLAx", "Kinexys"],
+    mechanism: "Cross-ledger DvP via smart contracts spanning a digital registry, a repo execution venue and a CSD.",
+    findings: "Tested interoperability requirements among the three platforms for intraday liquidity workflows.",
+  },
+  [detailKey("Fireblocks", "Corporate Bond with Interchange")]: {
+    summary:
+      "PoC demonstrating tokenised corporate bond issuance, trading and settlement on Redbelly using wCBDC and multiple stablecoins. Interchange was achieved via smart contracts converting between stablecoins and wCBDC, with a settlement contract calling 'singleness' contracts deployed by each stablecoin issuer.",
+    participants: ["Fireblocks"],
+    mechanism: "Settlement contract orchestrating issuer-specific singleness contracts; wCBDC as interchange asset.",
+    findings: "Showed wCBDC could serve as interchange settlement, ultimately delivering the seller's preferred stablecoin.",
+  },
+  [detailKey("Westpac", "Term Deposit")]: {
+    summary:
+      "Network-agnostic PoC exploring how the NPP PayTo Biller service could facilitate near-real-time atomic settlement of tokenised term deposits. Connects domestic real-time payment infrastructure with emerging tokenised asset platforms.",
+    participants: ["Westpac"],
+    mechanism: "PayTo Biller synchronised against RITS Fast Settlement Service.",
+    findings: "Split DvP into a tangible first step using existing RITS rails — a practical path for industry adoption.",
+  },
+  [detailKey("ANZ", "Corporate Bond")]: {
+    summary:
+      "Private ZK L2 PoC simulating a tokenised corporate bond lifecycle including issuance, coupons and redemption. AUD-referenced payment tokens (stablecoins or deposit tokens) were used for bookbuilds, with wCBDC providing settlement and interchange between the buyer's and seller's preferred tokens.",
+    participants: ["ANZ"],
+    mechanism: "Multi-token settlement coordination on a private ZK L2; coupon payments in the private payment token.",
+    findings: "Showed how programmable interchange can let counterparties hold different forms of money pre- and post-settlement.",
+  },
+  [detailKey("Imperium", "Term Deposit")]: {
+    summary:
+      "Pilot of tokenised short-term wholesale term deposits on Hedera and HashSphere, settled using a Cuscal-issued stablecoin backed by wCBDC on private networks. Asset tokens were digital twins recorded and custodied on-chain.",
+    participants: ["Imperium Markets", "Cuscal", "AustralianSuper", "major banks", "insurance providers"],
+    mechanism: "Settlement coordinator handled smart-contract-based escrow and atomic DvP swaps.",
+    findings: "Demonstrated atomic settlement of wholesale money-market instruments using wCBDC-backed private money.",
+  },
+  [detailKey("Imperium", "Certificates of Deposit")]: {
+    summary:
+      "Negotiable certificates of deposit (NCDs) issued as digital twins on Hedera and HashSphere, using an AP+-developed settlement coordinator for atomic DvP via smart-contract escrow. Settlement used a wCBDC-backed Cuscal stablecoin on the same DLTs.",
+    participants: ["Imperium Markets", "AP+", "Cuscal"],
+    mechanism: "Settlement-coordinator escrow with atomic swap on Hedera / HashSphere.",
+    findings: "Demonstrated scalable on-chain money-market infrastructure for NCDs.",
+  },
+  [detailKey("Imperium", "Annuities")]: {
+    summary:
+      "Annuities tokenised and traded on Hedera/HashSphere using the same settlement architecture — wCBDC-backed Cuscal stablecoin with settlement-coordinator escrow and atomic swaps. Explored pension and insurance product tokenisation as digital twins.",
+    participants: ["Imperium Markets", "Cuscal", "superannuation, banking and insurance participants"],
+    mechanism: "Atomic DvP via settlement coordinator on Hedera / HashSphere.",
+    findings: "Enabled direct on-chain custody and secondary trading of insurance-style products.",
+  },
+  [detailKey("Forte", "Government Bond")]: {
+    summary:
+      "Pilot of Australian Government bonds as digital twins on public Ethereum, with settlement via the AUDF stablecoin through a purpose-built DvP mechanism. Coupon payments to tokenised bond holders were facilitated in AUDF, with reserves held by an ESA holder (Cuscal) in segregated accounts.",
+    participants: ["Forte", "Cuscal"],
+    mechanism: "Public-chain DvP with central-bank-money-backed stablecoin reserves.",
+    findings: "Demonstrated government-bond settlement on a public network with regulated stablecoin backing.",
+  },
+  [detailKey("Zerocap", "Government Bond")]: {
+    summary:
+      "Pilot of tokenised Australian Government bonds as digital twins on the public-permissioned XRP Ledger, with settlement via RLUSD. The end-to-end lifecycle covered primary issuance, secondary trading (CLOB and AMM) and redemption.",
+    participants: ["Zerocap", "JPMorgan", "BGC Brokers", "Chainlink Labs", "Fireblocks"],
+    mechanism: "Off-chain custody via JPMorgan / BGC; on-ledger trading on XRPL with RLUSD settlement.",
+    findings: "Tested both order-book and AMM market structures for tokenised sovereign debt.",
+  },
+  [detailKey("NotCentralised", "Collateralised Loans")]: {
+    summary:
+      "Pilot of tokenised structured-finance securities backed by loans on Redbelly, with settlement via a private payment token backed by wCBDC. Asset issuance, management and associated payment flows occurred on-chain.",
+    participants: ["NotCentralised"],
+    mechanism: "On-chain composability between bond exchange and private money token settlement.",
+    findings: "Tested structured-finance automation and programmable loan-lifecycle workflows.",
+  },
+  [detailKey("Macropod", "Corporate Bond")]: {
+    summary:
+      "Pilot of tokenised corporate bonds on Redbelly — issuance, secondary trading, coupon payments and maturity — via the Imperium Marketplace. Settlement used Macropod's AUD-denominated AUDM stablecoin.",
+    participants: ["Macropod", "Imperium Markets"],
+    mechanism: "Permissioned settlement on Redbelly with AUDM stablecoin.",
+    findings: "Validated digital-native corporate debt markets running alongside Macropod's managed-fund pilot.",
+  },
+  [detailKey("Canvas", "Private Credit Fund")]: {
+    summary:
+      "Pilot of tokenised shares in an SPV investing in real-estate credit funds on Canvas Connect, exploring primary issuance, secondary trading, distributions and collateralised lending. wCBDC issued on the same permissioned EVM L2 facilitated settlement.",
+    participants: ["Canvas"],
+    mechanism: "Same-ledger wCBDC settlement on a permissioned EVM L2.",
+    findings: "Extended tokenisation testing beyond government bonds into alternative asset classes and fund distribution.",
+  },
+  [detailKey("ANZ", "Trade Payable")]: {
+    summary:
+      "Private ZK L2 PoC addressing trade-finance inefficiencies by tokenising trade invoices as payment obligations and assignments in digital form. The tokenised invoice was exchanged for an AUD-referenced payment token on ANZ's network, with wCBDC providing settlement and interchange between buyer and seller tokens.",
+    participants: ["ANZ"],
+    mechanism: "Token exchange on private ZK L2 with wCBDC interchange.",
+    findings: "Enabled fractionalised trade finance and direct invoice assignment.",
+  },
+  [detailKey("Northern Trust", "Carbon Credits")]: {
+    summary:
+      "Simulated synchronised DvP of tokenised carbon credits on permissioned Matrix Zenith (Hyperledger Besu), using traditional payment rails (RITS via SWIFT) rather than tokenised money.",
+    participants: ["Northern Trust", "SWIFT"],
+    mechanism: "SWIFT as synchronisation coordinator using existing messaging standards; ESA-based settlement via RITS.",
+    findings: "Demonstrated settlement of digital environmental assets with off-chain payment clearance.",
+  },
+  [detailKey("Macropod", "Digital Asset Fund")]: {
+    summary:
+      "Pilot of tokenised units in a wholesale managed investment scheme on Redbelly, with AUDM stablecoin settlement. Issuance, trading and redemption ran through the Tokeniser platform.",
+    participants: ["Macropod"],
+    mechanism: "Permissioned settlement on Redbelly with AUDM stablecoin via Tokeniser.",
+    findings: "Validated digital-native fund distribution and fractionalised manager structures — paired with the corporate-bond pilot.",
+  },
+  [detailKey("ProspEx", "Mining Royalty Interests")]: {
+    summary:
+      "PoC tokenising mining royalties as digital fractionalised interests on public Ethereum, settled via the AUDF stablecoin. A minimum-subscription smart-contract escrow conditionally settled once thresholds were met.",
+    participants: ["ProspEx"],
+    mechanism: "Conditional settlement smart contract with subscription-threshold escrow on Ethereum.",
+    findings: "Showed programmable settlement and fractionalisation enabling smaller minimum investments in alternative assets.",
+  },
+  [detailKey("AP+", "Token Interchange Service")]: {
+    summary:
+      "Pilot of a token interchange service on public-permissioned Hedera and private-permissioned HashSphere, facilitating exchanges between stablecoins and deposit tokens using smart-contract rules. A digital twin of wCBDC (a 'white coin') served as the interchange asset on public networks while the underlying wCBDC remained on private networks.",
+    participants: ["AP+"],
+    mechanism: "'White coin' wCBDC twin on public networks bridged to private-network wCBDC.",
+    findings: "Demonstrated multilateral interoperability between private-money issuers.",
+  },
+  [detailKey("AP+", "NPP-Token Integration")]: {
+    summary:
+      "Research and PoC for an industry utility and scheme rules supporting value transfers between traditional commercial bank accounts and private money tokens via the NPP and the RITS Fast Settlement Service.",
+    participants: ["AP+"],
+    mechanism: "Settlement coordination across NPP-connected bank accounts and tokenised payment networks.",
+    findings: "Examined funding and redeeming stablecoins / deposit tokens from NPP-connected accounts — bridging legacy and tokenised payment infrastructure.",
+  },
 };
 
 /* ────────────────────────────────────────────────
@@ -190,6 +348,8 @@ const infra: Cell[] = [
    ──────────────────────────────────────────────── */
 
 export function Figure1UseCaseMatrix() {
+  const [selected, setSelected] = useState<Cell | null>(null);
+
   return (
     <FigureFrame label="Figure 01" title="Project Acacia use case landscape" source="DFCRC / RBA">
       <div
@@ -220,7 +380,7 @@ export function Figure1UseCaseMatrix() {
         <ColHeader tone="pv" title="Private money used in settlement" />
 
         {matrix.map((r) => (
-          <RowFragment key={r.row} row={r} />
+          <RowFragment key={r.row} row={r} onOpen={setSelected} />
         ))}
 
         {/* Infrastructure row (spans both content cols) */}
@@ -252,7 +412,7 @@ export function Figure1UseCaseMatrix() {
           className="infra-row"
         >
           {infra.map((c) => (
-            <CaseChip key={`${c.lead}-${c.name}`} cell={c} columnTone="neutral" />
+            <CaseChip key={`${c.lead}-${c.name}`} cell={c} columnTone="neutral" onOpen={setSelected} />
           ))}
         </div>
       </div>
@@ -262,8 +422,10 @@ export function Figure1UseCaseMatrix() {
 
       {/* Footnote */}
       <div style={{ marginTop: 12, fontSize: 11, fontStyle: "italic", color: "var(--text-dim)", lineHeight: 1.5 }}>
-        * Tags under each use case name show the settlement assets used. The coloured dot indicates the DLT network.
+        * Tags under each use case name show the settlement assets used. The coloured dot indicates the DLT network. Click any use case for details.
       </div>
+
+      {selected && <UseCaseDetailModal data={cellToModalData(selected)} onClose={() => setSelected(null)} />}
 
       <style>{`
         @media (max-width: 760px) {
@@ -313,7 +475,7 @@ function ColHeader({ tone, title }: { tone: "cb" | "pv"; title: string }) {
 }
 
 /* ───── Row label + two cell groups ───── */
-function RowFragment({ row }: { row: { row: string; cb: Cell[]; pv: Cell[] } }) {
+function RowFragment({ row, onOpen }: { row: { row: string; cb: Cell[]; pv: Cell[] }; onOpen: (c: Cell) => void }) {
   const total = row.cb.length + row.pv.length;
   return (
     <>
@@ -333,13 +495,13 @@ function RowFragment({ row }: { row: { row: string; cb: Cell[]; pv: Cell[] } }) 
           <div style={{ marginTop: 4, fontSize: 11, color: "var(--text-dim)" }}>{total} use cases</div>
         </div>
       </div>
-      <CellGroup cells={row.cb} columnTone="cb" />
-      <CellGroup cells={row.pv} columnTone="pv" />
+      <CellGroup cells={row.cb} columnTone="cb" onOpen={onOpen} />
+      <CellGroup cells={row.pv} columnTone="pv" onOpen={onOpen} />
     </>
   );
 }
 
-function CellGroup({ cells, columnTone }: { cells: Cell[]; columnTone: "cb" | "pv" }) {
+function CellGroup({ cells, columnTone, onOpen }: { cells: Cell[]; columnTone: "cb" | "pv"; onOpen: (c: Cell) => void }) {
   const bg = columnTone === "cb" ? "rgba(252,191,72,0.025)" : "rgba(141,240,204,0.025)";
   return (
     <div
@@ -352,7 +514,7 @@ function CellGroup({ cells, columnTone }: { cells: Cell[]; columnTone: "cb" | "p
       }}
     >
       {cells.map((c) => (
-        <CaseChip key={`${c.lead}-${c.name}`} cell={c} columnTone={columnTone} />
+        <CaseChip key={`${c.lead}-${c.name}`} cell={c} columnTone={columnTone} onOpen={onOpen} />
       ))}
       {cells.length === 0 && <div style={{ color: "var(--text-dim)", fontSize: 12, fontStyle: "italic", padding: "8px 4px" }}>—</div>}
     </div>
@@ -360,12 +522,16 @@ function CellGroup({ cells, columnTone }: { cells: Cell[]; columnTone: "cb" | "p
 }
 
 /* ───── A single use-case chip ───── */
-function CaseChip({ cell, columnTone }: { cell: Cell; columnTone: "cb" | "pv" | "neutral" }) {
+function CaseChip({ cell, columnTone, onOpen }: { cell: Cell; columnTone: "cb" | "pv" | "neutral"; onOpen: (c: Cell) => void }) {
   const primary = family[cell.tags[0].f];
   const netColor = network[cell.net];
 
   return (
-    <div
+    <button
+      type="button"
+      onClick={() => onOpen(cell)}
+      aria-label={`View details for ${cell.lead}: ${cell.name}`}
+      className="case-chip"
       style={{
         position: "relative",
         background: "rgba(0,0,0,0.25)",
@@ -377,6 +543,14 @@ function CaseChip({ cell, columnTone }: { cell: Cell; columnTone: "cb" | "pv" | 
         gap: 8,
         minHeight: 110,
         overflow: "hidden",
+        textAlign: "left",
+        color: "inherit",
+        font: "inherit",
+        cursor: "pointer",
+        width: "100%",
+        // @ts-expect-error CSS custom property
+        "--chip-ring": primary.ring,
+        "--chip-glow": primary.color,
       }}
     >
       {/* Left accent stripe — settlement asset family colour */}
@@ -469,7 +643,13 @@ function CaseChip({ cell, columnTone }: { cell: Cell; columnTone: "cb" | "pv" | 
           {cell.net}
         </span>
       </div>
-    </div>
+
+      <style>{`
+        .case-chip { transition: transform 180ms cubic-bezier(.2,.7,.2,1), border-color 180ms ease, box-shadow 180ms ease; }
+        .case-chip:hover { transform: translateY(-2px); border-color: var(--chip-glow); box-shadow: 0 6px 20px -8px var(--chip-glow); }
+        .case-chip:focus-visible { outline: 2px solid var(--chip-glow); outline-offset: 2px; }
+      `}</style>
+    </button>
   );
 }
 
@@ -572,3 +752,25 @@ function LegendItem({ color, ring, bg, label }: { color: string; ring: string; b
     </span>
   );
 }
+
+function cellToModalData(cell: Cell): UseCaseModalData {
+  const primary = family[cell.tags[0].f];
+  const netColor = network[cell.net];
+  const detail = details[detailKey(cell.lead, cell.name)];
+  return {
+    lead: cell.lead,
+    name: cell.name,
+    type: cell.type,
+    tags: cell.tags.map((t) => {
+      const fam = family[t.f];
+      return { label: t.raw, color: fam.color, bg: fam.bg, ring: fam.ring };
+    }),
+    network: { name: cell.net, color: netColor },
+    accent: { color: primary.color, ring: primary.ring },
+    summary: detail?.summary,
+    mechanism: detail?.mechanism,
+    findings: detail?.findings,
+    participants: detail?.participants,
+  };
+}
+

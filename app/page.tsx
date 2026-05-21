@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { StatCard } from "@/components/StatCard";
 import { Pill } from "@/components/Pill";
+import { RemCTA } from "@/components/RemCTA";
 
 const findings = [
   {
@@ -237,6 +238,8 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      <RemCTA variant="overview" />
     </>
   );
 }

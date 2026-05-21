@@ -13,7 +13,7 @@ const pages: { href: string; label: string }[] = [
   { href: "/regulation", label: "Legal & Regulatory" },
   { href: "/road-ahead", label: "Road Ahead" },
   { href: "/use-cases", label: "Use Cases" },
-  { href: "/companies", label: "Companies Involved" },
+  { href: "/participants", label: "Participants" },
 ];
 
 const REPORT_URL =

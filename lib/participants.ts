@@ -1,4 +1,4 @@
-export type Company = {
+export type Participant = {
   id: string;
   name: string;
   role: string;
@@ -8,7 +8,7 @@ export type Company = {
   summary: string;
 };
 
-export const companies: Company[] = [
+export const participants: Participant[] = [
   {
     id: "abe",
     name: "Australian Bond Exchange",
@@ -303,6 +303,6 @@ export const companies: Company[] = [
   },
 ];
 
-export const companyFilters = {
+export const participantFilters = {
   category: ["Lead Participant", "DLT Platform", "Infrastructure", "Distributor", "Authority"] as const,
 };

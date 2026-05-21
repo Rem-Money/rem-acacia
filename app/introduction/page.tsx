@@ -3,6 +3,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { StatCard } from "@/components/StatCard";
 import { Callout } from "@/components/Callout";
 import { Pill } from "@/components/Pill";
+import { RemCTA } from "@/components/RemCTA";
 import { Graph1RwaGrowth } from "@/components/figures/Graph1RwaGrowth";
 import { Graph2MmfMarket } from "@/components/figures/Graph2MmfMarket";
 
@@ -118,6 +119,8 @@ export default function Introduction() {
           `}</style>
         </div>
       </section>
+
+      <RemCTA variant="introduction" />
     </>
   );
 }

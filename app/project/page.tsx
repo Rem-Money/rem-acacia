@@ -3,6 +3,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { StatCard } from "@/components/StatCard";
 import { Callout } from "@/components/Callout";
 import { Pill } from "@/components/Pill";
+import { RemCTA } from "@/components/RemCTA";
 import { Figure1UseCaseMatrix } from "@/components/figures/Figure1UseCaseMatrix";
 
 export const metadata = { title: "Project Overview — Acacia" };
@@ -121,6 +122,8 @@ export default function ProjectOverview() {
           </Reveal>
         </div>
       </section>
+
+      <RemCTA variant="project" />
     </>
   );
 }
