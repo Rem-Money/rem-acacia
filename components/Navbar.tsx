@@ -14,6 +14,7 @@ const links = [
   { href: "/regulation", label: "Regulation" },
   { href: "/road-ahead", label: "Road Ahead" },
   { href: "/use-cases", label: "Use Cases" },
+  { href: "/companies", label: "Companies" },
 ];
 
 export function Navbar() {

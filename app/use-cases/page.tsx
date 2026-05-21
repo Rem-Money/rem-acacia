@@ -95,7 +95,7 @@ export default function UseCases() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }} className="grid-uc">
             {filtered.map((u, i) => (
               <Reveal key={u.id} delay={(i % 6) * 30}>
-                <article className="card" style={{ height: "100%", display: "flex", flexDirection: "column", gap: 14 }}>
+                <article id={u.id} className="card" style={{ height: "100%", display: "flex", flexDirection: "column", gap: 14, scrollMarginTop: 120 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
                     <div style={{ minWidth: 0 }}>
                       <div style={{ fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--text-dim)", fontWeight: 700 }}>
