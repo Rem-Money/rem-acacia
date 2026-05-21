@@ -1,0 +1,276 @@
+import { Reveal } from "@/components/Reveal";
+import { SectionHeading } from "@/components/SectionHeading";
+import { Figure } from "@/components/Figure";
+import { Callout } from "@/components/Callout";
+import { Pill } from "@/components/Pill";
+
+export const metadata = { title: "Forms of Money — Acacia" };
+
+const moneyForms = [
+  {
+    name: "ESA balances",
+    sub: "Existing central bank money",
+    bullets: [
+      "Liabilities of the RBA — free of counterparty risk.",
+      "Today's foundation for interbank settlement.",
+      "Eligibility restricted to ADIs + select financial institutions.",
+    ],
+    tone: "yellow" as const,
+  },
+  {
+    name: "Wholesale CBDC",
+    sub: "Tokenised central bank money",
+    bullets: [
+      "Pilot issued under a deed poll; real legal claim on the RBA.",
+      "Enabled true atomic settlement and composable smart-contract flows.",
+      "Production form still TBD — could be a digital twin of ESAs, or distinct.",
+    ],
+    tone: "yellow" as const,
+  },
+  {
+    name: "Deposit tokens",
+    sub: "Tokenised commercial bank money",
+    bullets: [
+      "Claim on issuing bank — leverages existing prudential oversight.",
+      "DTWG examined two transferability models (Box D).",
+      "Tested by CBA (repo) and ANZ (corporate bond + trade payable).",
+    ],
+    tone: "green" as const,
+  },
+  {
+    name: "Stablecoins",
+    sub: "Private tokenised money",
+    bullets: [
+      "Used: AUDM, AUDF, AUDD, RLUSD + project-issued.",
+      "Issuer credit risk; lack of remuneration; new tokenised SVF regime incoming.",
+      "Preferred by some when backed (partly/wholly) by central bank money.",
+    ],
+    tone: "green" as const,
+  },
+];
+
+const dtwgModels = [
+  {
+    title: "Model 1 · Burn-and-reissue",
+    summary: "Closer to today's payments. A deposit token isn't transferable to a non-customer — instead, an interbank payment is triggered and the original token is destroyed, with a new token issued by the payee's bank.",
+    feasibility: "Near-term feasible · sits well within existing legal frameworks",
+  },
+  {
+    title: "Model 2 · Assignable",
+    summary: "Novel. Tokens are transferable/assignable across customers of participating banks. The payee receives the bank's token directly and interacts with it in their own bank's wallet.",
+    feasibility: "Stretch · creates a bearer-instrument-like exposure with legal/regulatory friction",
+  },
+];
+
+const synchroModels = [
+  { title: "Lock asset → pay → transfer", note: "Westpac & Northern Trust used this. It's how Austraclear/CHESS work today." },
+  { title: "Lock funds → transfer asset → settle", note: "PEXA's property settlement model today. Not explored in Acacia." },
+  { title: "Lock multiple assets/funds across platforms", note: "BoE's renewed RTGS direction. Not tested in Acacia." },
+];
+
+export default function Money() {
+  return (
+    <>
+      <section className="section" style={{ paddingTop: 140 }}>
+        <div className="container-rem">
+          <Reveal>
+            <Pill>Chapter 5 · Forms of money</Pill>
+          </Reveal>
+          <Reveal delay={80}>
+            <h1 style={{ margin: "20px 0 0", fontSize: "clamp(2rem, 5vw, 3.4rem)", maxWidth: 980, letterSpacing: "-0.03em" }}>
+              Four forms of money. One two-tier monetary system.
+            </h1>
+          </Reveal>
+          <Reveal delay={140}>
+            <p className="lead" style={{ marginTop: 18, maxWidth: 800 }}>
+              The project tested ESA balances, a pilot wCBDC, stablecoins, and deposit tokens. Each plays a different role in supporting
+              atomic settlement, composability, and the singleness of money in a tokenised ecosystem.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Four forms of money */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container-rem">
+          <SectionHeading eyebrow="The four instruments" title="A field guide." />
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }} className="grid-money">
+            {moneyForms.map((f, i) => (
+              <Reveal key={f.name} delay={i * 50}>
+                <div
+                  className="card"
+                  style={{
+                    height: "100%",
+                    background: f.tone === "green" ? "var(--card-plus)" : "var(--card-bg)",
+                    borderColor: f.tone === "green" ? "rgba(141,240,204,0.18)" : "var(--border)",
+                  }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                    <h3 style={{ margin: 0, fontSize: "1.3rem" }}>{f.name}</h3>
+                    <Pill tone={f.tone === "green" ? "green" : "yellow"}>{f.tone === "yellow" ? "Public" : "Private"}</Pill>
+                  </div>
+                  <div style={{ marginTop: 4, color: "var(--text-muted)", fontSize: 13 }}>{f.sub}</div>
+                  <ul style={{ marginTop: 18, listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+                    {f.bullets.map((b) => (
+                      <li key={b} style={{ display: "flex", gap: 10, fontSize: 14, color: "rgba(255,255,255,0.82)" }}>
+                        <span style={{ width: 4, height: 4, borderRadius: 4, background: f.tone === "green" ? "var(--green)" : "var(--yellow)", marginTop: 9 }} />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <style>{`@media (max-width: 880px) { .grid-money { grid-template-columns: 1fr !important; } }`}</style>
+        </div>
+      </section>
+
+      {/* Atomic settlement / composability */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container-rem">
+          <SectionHeading
+            eyebrow="Box C · Composability"
+            title="Atomic settlement vs. traditional DvP."
+            description="In traditional markets, DvP is a chain of linked-but-separate steps across custodians, FMIs, and the RTGS. On a single tokenised platform, the whole chain can become a single all-or-nothing smart-contract operation — and interchange between different money tokens can happen inside the same atomic transaction."
+          />
+          <Reveal>
+            <Figure
+              src="/figures/figures-2-3-dvp-atomic.png"
+              alt="Figures 2 & 3 — Traditional DvP via FMI vs. composed atomic settlement"
+              caption="Figures 2 & 3 — DvP settlement of a fixed-income security with an FMI (top) vs. composed atomic settlement in a tokenised environment (bottom)."
+              source="RBA"
+            />
+          </Reveal>
+
+          <div style={{ marginTop: 30, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="grid-2">
+            <Reveal>
+              <div className="card">
+                <h3 style={{ fontSize: "1.1rem", marginTop: 0 }}>NotCentralised — collateralised loan</h3>
+                <p style={{ color: "var(--text-muted)", fontSize: 14 }}>
+                  Loan, collateral and payment token composed into a single atomic transaction. Collateral released instantly on repayment —
+                  no multi-system orchestration, no delays.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={60}>
+              <div className="card">
+                <h3 style={{ fontSize: "1.1rem", marginTop: 0 }}>Canvas — bond coupon</h3>
+                <p style={{ color: "var(--text-muted)", fontSize: 14 }}>
+                  With the bond and money token on the same ledger, coupon calculation, distribution and settlement execute as a single atomic
+                  transaction governed by the bond token.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* DTWG models */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container-rem">
+          <SectionHeading eyebrow="Box D · DTWG" title="Two deposit-token transferability models." />
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="grid-2">
+            {dtwgModels.map((m, i) => (
+              <Reveal key={m.title} delay={i * 60}>
+                <div className="card" style={{ height: "100%" }}>
+                  <Pill tone={i === 0 ? "green" : "muted"}>{i === 0 ? "Near-term" : "Stretch"}</Pill>
+                  <h3 style={{ margin: "12px 0 8px", fontSize: "1.15rem" }}>{m.title}</h3>
+                  <p style={{ color: "var(--text-muted)", fontSize: 14 }}>{m.summary}</p>
+                  <div style={{ marginTop: 12, padding: "10px 12px", borderRadius: 8, background: "var(--card-bg-2)", fontSize: 12.5, color: "var(--text-muted)" }}>
+                    {m.feasibility}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={120}>
+            <div className="card" style={{ marginTop: 20 }}>
+              <div className="eyebrow">Policy clarifications likely needed</div>
+              <ul style={{ marginTop: 14, listStyle: "none", padding: 0, display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 10 }} className="grid-2">
+                {[
+                  "Confirm deposit token issuance falls within 'banking business' (Banking Act 1959).",
+                  "Declare deposit tokens 'covered financial products' to extend Financial Claims Scheme coverage.",
+                  "Exempt deposit-token platforms from 'financial product' classification.",
+                  "Prescribe deposit tokens as not being 'virtual assets' under the AML/CTF Act.",
+                ].map((s) => (
+                  <li key={s} style={{ display: "flex", gap: 10, fontSize: 13.5, color: "rgba(255,255,255,0.82)" }}>
+                    <span style={{ width: 6, height: 6, borderRadius: 6, background: "var(--green)", marginTop: 8, flexShrink: 0 }} />
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Interchange / Figure 4 */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container-rem">
+          <SectionHeading
+            eyebrow="Figure 4"
+            title="Interchange between forms of private money."
+            description="Use cases mostly aligned with Model E from the consultation paper — wCBDC plays the ESA-like role between issuers of different private monies. The AP+ variant kept wCBDC on a private chain and used a 'white coin' digital twin on the public chain, with a synchroniser keeping them aligned."
+          />
+          <Reveal>
+            <Figure
+              src="/figures/figure-4-interchange.png"
+              alt="Figure 4 — Interchange using wCBDC"
+              caption="Figure 4 — Interchange between private money tokens using wCBDC. Left: Model E with wCBDC on the same chain. Right: AP+ Token Interchange use case using a synchronised white coin."
+              source="DFCRC / RBA"
+            />
+          </Reveal>
+
+          <div style={{ marginTop: 30, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="grid-2">
+            <Reveal>
+              <div className="card">
+                <h3 style={{ marginTop: 0, fontSize: "1.1rem" }}>Bilateral interchange</h3>
+                <p style={{ color: "var(--text-muted)", fontSize: 14 }}>
+                  Token issuers establish one-to-one arrangements. Easy for defined pairs, expensive to scale across many.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={60}>
+              <div className="card" style={{ background: "var(--card-plus)", borderColor: "rgba(141,240,204,0.18)" }}>
+                <h3 style={{ marginTop: 0, fontSize: "1.1rem" }}>Multilateral interchange</h3>
+                <p style={{ color: "var(--text-muted)", fontSize: 14 }}>
+                  Shared infrastructure + rules. Higher upfront cost, lower industry total cost. AP+ Token Interchange demonstrated a single
+                  industry-wide utility.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Box F + ESAs */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container-rem" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} >
+          <Reveal>
+            <Callout label="Box F" title="Issuing wCBDC onto third-party DLT">
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+                <li><b>Transaction finality & ledger integrity</b> — private-permissioned easiest; public-permissioned feasible if deterministic; public-permissionless generally not viable for central banks.</li>
+                <li><b>Governance & compliance</b> — central bank must exclusively control mint/burn and have visibility into validators.</li>
+                <li><b>Integration</b> — EVM compatibility enabled the same wCBDC code to be reused across all platforms in the pilot.</li>
+              </ul>
+            </Callout>
+          </Reveal>
+          <Reveal delay={80}>
+            <Callout label="Box G" title="Synchronisation mechanisms" tone="green">
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+                {synchroModels.map((m) => (
+                  <li key={m.title}>
+                    <b>{m.title}</b>
+                    <div style={{ color: "var(--text-muted)", fontSize: 13.5, marginTop: 2 }}>{m.note}</div>
+                  </li>
+                ))}
+              </ul>
+            </Callout>
+          </Reveal>
+        </div>
+      </section>
+    </>
+  );
+}
