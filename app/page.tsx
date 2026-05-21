@@ -166,7 +166,7 @@ export default function Home() {
         <div className="container-rem">
           <Reveal>
             <div className="eyebrow">Executive summary</div>
-            <h2 style={{ margin: "10px 0 14px", fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>Six findings that frame the rest.</h2>
+            <h2 style={{ margin: "10px 0 14px", fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>Six key findings</h2>
           </Reveal>
           <div
             style={{ marginTop: 30, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}

@@ -110,7 +110,7 @@ export default function Introduction() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }} className="grid-context">
             <Mini year="2018" name="CBA Bond-i" desc="World's first bond issued + managed throughout its lifecycle on DLT, with the World Bank." />
             <Mini year="2022" name="ANZ stablecoin" desc="First A$DC stablecoin payment — early commercial-bank exploration of tokenised money." />
-            <Mini year="2022–23" name="CBDC Pilot" desc="RBA + DFCRC's first wholesale CBDC pilot, exploring early use cases on a central platform." />
+            <Mini year="2022–23" name="CBDC Pilot" desc="RBA + DFCRC's first CBDC Pilot Project, exploring early retail and wholesale use cases on a central platform." />
             <Mini year="2024–26" name="Project Acacia" desc="Twenty industry-led use cases. The pilot wCBDC issued onto third-party DLT platforms for the first time." />
           </div>
           <style>{`

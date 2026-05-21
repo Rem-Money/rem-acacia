@@ -368,7 +368,7 @@ export default function WithRem() {
                     maxWidth: 820,
                   }}
                 >
-                  Bring us the asset, the institution, or the question. We'll bring the build.
+                  Bring us the asset, the institution, or the question. We'll think it through with you.
                 </h2>
                 <p
                   style={{
@@ -380,7 +380,7 @@ export default function WithRem() {
                   }}
                 >
                   A 30-minute conversation is usually enough to know whether there's a fit. If there is, we'll come
-                  back with a design sketch and a sequenced delivery plan within a week.
+                  back with a design sketch you can pressure-test internally.
                 </p>
                 <div style={{ display: "inline-flex", gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
                   <a

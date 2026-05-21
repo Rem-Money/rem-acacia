@@ -218,7 +218,7 @@ export const participants: Participant[] = [
     tags: ["Private", "Collateral"],
     useCaseIds: ["cba-intraday-repo"],
     summary:
-      "JP Morgan's tokenised collateral platform; one of the ledgers in CBA's cross-chain intraday repo experiment.",
+      "JP Morgan's Kinexys Digital Asset platform; one of the ledgers in CBA's cross-chain intraday repo experiment.",
   },
   {
     id: "hqlax",

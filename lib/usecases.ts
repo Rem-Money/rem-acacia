@@ -45,7 +45,7 @@ export const useCases: UseCase[] = [
     settlement: ["wCBDC", "Payment token"],
     network: "Private ZK L2 (Validium)",
     summary:
-      "Tokenised trade invoice (representing a payment obligation + assignment) exchanged for an AUD-referenced payment token, with wCBDC settlement and interchange between buyer/seller preferred tokens.",
+      "Tokenised trade invoice (representing a payment obligation + assignment) exchanged for an AUD-referenced payment token, exploring how wCBDC could settle the invoice and bridge between buyer/seller preferred tokens.",
   },
   {
     id: "apx-npp",
@@ -129,7 +129,7 @@ export const useCases: UseCase[] = [
     settlement: ["AUDF stablecoin"],
     network: "Ethereum (public)",
     summary:
-      "AUS Government bonds tokenised as digital twins on public Ethereum. Atomic DvP via the AUDF stablecoin; AUDF reserves held in a segregated ESA-holder account.",
+      "AUS Government bonds tokenised as digital twins on public Ethereum. Atomic DvP via the AUDF stablecoin; AUDF reserves held by Forte's banker (an ESA holder) in a segregated account in the issuer's name.",
   },
   {
     id: "imperium-term-deposit",
