@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { Pill } from "@/components/Pill";
 import { useCases, filters, type UseCase } from "@/lib/usecases";
+import { getLeadName } from "@/lib/data";
 import { ASSET_CLASS, TYPE, tagSwatch, type Swatch } from "@/lib/palette";
 import { UseCaseDetailModal, type UseCaseModalData } from "@/components/UseCaseDetailModal";
 import { RemCTA } from "@/components/RemCTA";
@@ -22,7 +23,7 @@ export default function UseCases() {
       if (type !== "All" && u.type !== type) return false;
       if (klass !== "All" && u.assetClass !== klass) return false;
       if (q) {
-        const hay = `${u.lead} ${u.name} ${u.network} ${u.settlement.join(" ")} ${u.summary}`.toLowerCase();
+        const hay = `${getLeadName(u)} ${u.name} ${u.network} ${u.settlement.join(" ")} ${u.summary}`.toLowerCase();
         if (!hay.includes(q.toLowerCase())) return false;
       }
       return true;
@@ -151,7 +152,7 @@ export default function UseCases() {
                         setSelected(u);
                       }
                     }}
-                    aria-label={`View details for ${u.lead}: ${u.name}`}
+                    aria-label={`View details for ${getLeadName(u)}: ${u.name}`}
                     style={{
                       height: "100%",
                       display: "flex",
@@ -192,7 +193,7 @@ export default function UseCases() {
                             opacity: 0.92,
                           }}
                         >
-                          {u.lead}
+                          {getLeadName(u)}
                         </div>
                         <h3 style={{ margin: "6px 0 0", fontSize: "1.15rem", letterSpacing: "-0.02em" }}>{u.name}</h3>
                       </div>
@@ -302,7 +303,7 @@ function useCaseToModalData(u: UseCase): UseCaseModalData {
   const classSw = ASSET_CLASS[u.assetClass];
   const netSw = tagSwatch(u.network);
   return {
-    lead: u.lead,
+    lead: getLeadName(u),
     name: u.name,
     type: u.type,
     tags: u.settlement.map((s) => {

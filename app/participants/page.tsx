@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { Pill } from "@/components/Pill";
 import { participants, participantFilters } from "@/lib/participants";
-import { useCases } from "@/lib/usecases";
+import { getUseCasesForParticipant } from "@/lib/data";
 import { CATEGORY, TYPE, tagSwatch, type Swatch } from "@/lib/palette";
 import { RemCTA } from "@/components/RemCTA";
 
@@ -22,7 +22,10 @@ export default function ParticipantsPage() {
     return Array.from(s).sort();
   }, []);
 
-  const useCaseById = useMemo(() => Object.fromEntries(useCases.map((u) => [u.id, u])), []);
+  const useCasesByParticipant = useMemo(
+    () => Object.fromEntries(participants.map((p) => [p.id, getUseCasesForParticipant(p.id)])),
+    []
+  );
 
   const filtered = useMemo(() => {
     return participants.filter((c) => {
@@ -212,7 +215,7 @@ export default function ParticipantsPage() {
                       })}
                     </div>
 
-                    {c.useCaseIds.length > 0 && (
+                    {(useCasesByParticipant[c.id]?.length ?? 0) > 0 && (
                       <div style={{ borderTop: `1px dashed ${catSw.ring}`, paddingTop: 12, marginTop: "auto" }}>
                         <div
                           style={{
@@ -225,17 +228,15 @@ export default function ParticipantsPage() {
                             marginBottom: 6,
                           }}
                         >
-                          Use cases ({c.useCaseIds.length})
+                          Use cases ({useCasesByParticipant[c.id].length})
                         </div>
                         <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 4 }}>
-                          {c.useCaseIds.map((id) => {
-                            const u = useCaseById[id];
-                            if (!u) return null;
+                          {useCasesByParticipant[c.id].map((u) => {
                             const tSw = TYPE[u.type];
                             return (
-                              <li key={id}>
+                              <li key={u.id}>
                                 <Link
-                                  href={`/use-cases#${id}`}
+                                  href={`/use-cases#${u.id}`}
                                   style={{
                                     fontSize: 12.5,
                                     color: "rgba(255,255,255,0.86)",

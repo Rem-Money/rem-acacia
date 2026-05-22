@@ -1,6 +1,7 @@
 export type UseCase = {
   id: string;
-  lead: string;
+  leadId: string;
+  participantIds: string[];
   name: string;
   type: "Pilot" | "PoC";
   assetClass: "Fixed income" | "Other" | "Infrastructure";
@@ -13,7 +14,8 @@ export type UseCase = {
 export const useCases: UseCase[] = [
   {
     id: "abe-corporate-bond",
-    lead: "Australian Bond Exchange",
+    leadId: "abe",
+    participantIds: ["redbelly"],
     name: "Corporate Bond",
     type: "Pilot",
     assetClass: "Fixed income",
@@ -25,7 +27,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "anz-corporate-bond",
-    lead: "ANZ",
+    leadId: "anz",
+    participantIds: [],
     name: "Corporate Bond",
     type: "PoC",
     assetClass: "Fixed income",
@@ -37,7 +40,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "anz-trade-payable",
-    lead: "ANZ",
+    leadId: "anz",
+    participantIds: [],
     name: "Trade Payable",
     type: "PoC",
     assetClass: "Other",
@@ -49,7 +53,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "apx-npp",
-    lead: "AP+",
+    leadId: "apx",
+    participantIds: ["swift"],
     name: "NPP-Token Integration",
     type: "PoC",
     assetClass: "Infrastructure",
@@ -61,7 +66,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "apx-interchange",
-    lead: "AP+",
+    leadId: "apx",
+    participantIds: ["hedera"],
     name: "Token Interchange",
     type: "Pilot",
     assetClass: "Infrastructure",
@@ -73,7 +79,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "canvas-govt-bond",
-    lead: "Canvas",
+    leadId: "canvas",
+    participantIds: ["canvas-connect"],
     name: "Government Bond",
     type: "Pilot",
     assetClass: "Fixed income",
@@ -85,7 +92,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "canvas-private-credit",
-    lead: "Canvas",
+    leadId: "canvas",
+    participantIds: ["canvas-connect"],
     name: "Private Credit Fund",
     type: "Pilot",
     assetClass: "Other",
@@ -97,7 +105,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "cba-intraday-repo",
-    lead: "CBA",
+    leadId: "cba",
+    participantIds: ["kinexys", "hqlax", "gravital"],
     name: "Intraday Repo",
     type: "PoC",
     assetClass: "Fixed income",
@@ -109,7 +118,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "fireblocks-corporate-bond",
-    lead: "Fireblocks",
+    leadId: "fireblocks",
+    participantIds: ["redbelly"],
     name: "Corporate Bond with Interchange",
     type: "PoC",
     assetClass: "Fixed income",
@@ -121,7 +131,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "forte-govt-bond",
-    lead: "Forte Tech Solutions",
+    leadId: "forte",
+    participantIds: ["ethereum"],
     name: "Government Bond",
     type: "Pilot",
     assetClass: "Fixed income",
@@ -133,7 +144,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "imperium-term-deposit",
-    lead: "Imperium Markets",
+    leadId: "imperium",
+    participantIds: ["hedera", "cuscal"],
     name: "Term Deposit",
     type: "Pilot",
     assetClass: "Fixed income",
@@ -145,7 +157,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "imperium-ncd",
-    lead: "Imperium Markets",
+    leadId: "imperium",
+    participantIds: ["hedera", "cuscal"],
     name: "Certificates of Deposit",
     type: "Pilot",
     assetClass: "Fixed income",
@@ -157,7 +170,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "imperium-annuities",
-    lead: "Imperium Markets",
+    leadId: "imperium",
+    participantIds: ["hedera", "cuscal"],
     name: "Annuities",
     type: "Pilot",
     assetClass: "Fixed income",
@@ -169,7 +183,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "macropod-fund",
-    lead: "Macropod",
+    leadId: "macropod",
+    participantIds: ["redbelly"],
     name: "Digital Asset Fund",
     type: "Pilot",
     assetClass: "Other",
@@ -181,7 +196,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "macropod-corporate-bond",
-    lead: "Macropod",
+    leadId: "macropod",
+    participantIds: ["redbelly"],
     name: "Corporate Bond",
     type: "Pilot",
     assetClass: "Fixed income",
@@ -193,7 +209,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "northern-trust-carbon",
-    lead: "Northern Trust",
+    leadId: "northern-trust",
+    participantIds: ["matrix-zenith", "swift"],
     name: "Carbon Credits",
     type: "PoC",
     assetClass: "Other",
@@ -205,7 +222,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "notcentralised-loans",
-    lead: "NotCentralised",
+    leadId: "notcentralised",
+    participantIds: ["redbelly"],
     name: "Collateralised Loans",
     type: "Pilot",
     assetClass: "Other",
@@ -217,7 +235,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "prospex-mining",
-    lead: "ProspEx Group",
+    leadId: "prospex",
+    participantIds: ["ethereum"],
     name: "Mining Royalty Interests",
     type: "PoC",
     assetClass: "Other",
@@ -229,7 +248,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "westpac-term-deposit",
-    lead: "Westpac",
+    leadId: "westpac",
+    participantIds: [],
     name: "Term Deposit",
     type: "PoC",
     assetClass: "Fixed income",
@@ -241,7 +261,8 @@ export const useCases: UseCase[] = [
   },
   {
     id: "zerocap-govt-bond",
-    lead: "Zerocap",
+    leadId: "zerocap",
+    participantIds: ["xrpl"],
     name: "Government Bond",
     type: "Pilot",
     assetClass: "Fixed income",

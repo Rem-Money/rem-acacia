@@ -61,9 +61,9 @@ export default function Home() {
                 maxWidth: 1000,
               }}
             >
-              Project Acacia,{" "}
+              Project Acacia{" "}
               <span style={{ color: "var(--text-muted)" }}>
-                read like a dashboard.
+                -  overview
               </span>
             </h1>
           </Reveal>

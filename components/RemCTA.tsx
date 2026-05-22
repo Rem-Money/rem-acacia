@@ -17,7 +17,7 @@ const COPY: Record<Variant, { eyebrow: string; title: string; body: string }> = 
   overview: {
     eyebrow: "Build with rem",
     title: "The pilots are done. The build is just starting.",
-    body: "rem is the strategic partner for issuers, banks and market infrastructure teams turning Acacia's lessons into production wholesale rails -  without rebuilding the report from scratch.",
+    body: "rem is the strategic partner for issuers, banks and market infrastructure teams turning Acacia's lessons into production wholesale rails.",
   },
   introduction: {
     eyebrow: "Build with rem",
