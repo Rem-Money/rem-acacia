@@ -115,7 +115,7 @@ export default function WithRem() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Book a 30-minute call →
+                Book a call
               </a>
               <a
                 className="btn btn-ghost"
@@ -392,7 +392,7 @@ export default function WithRem() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Book a 30-minute call →
+                    Book a call →
                   </a>
                   <a
                     className="btn btn-ghost"
