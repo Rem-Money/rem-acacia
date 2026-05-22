@@ -7,35 +7,36 @@ import { StatCard } from "@/components/StatCard";
 export const metadata = {
   title: "Build with rem -  Project Acacia",
   description:
-    "rem.money partners with issuers, banks and FMIs thinking through tokenised wholesale finance -  assets, digital money, interoperability and regulation.",
+    "rem.money designs tokenised wholesale finance for issuers, banks and FMIs -  assets, digital money, interoperability and regulation, engineered as one system.",
 };
 
-const CONTACT_EMAIL = "hello@rem.money";
+const CONTACT_EMAIL = "hi@rem.money";
+const CALENDLY_URL = "https://calendly.com/abhi-rem/30min";
 
 const pillars = [
   {
     n: "01",
     label: "Asset tokenisation",
-    title: "Issuance & lifecycle thinking",
-    body: "We help you reason about how to bring an asset on-chain -  fixed income, securitised products, private markets, carbon -  and what issuance, registry, corporate-actions and redemption need to look like for it to be a real security rather than a wrapper.",
+    title: "Issuance & full lifecycle",
+    body: "We take an asset on-chain -  fixed income, securitised products, private markets, carbon -  and design issuance, registry, corporate actions and redemption so it stands up as a security, not a wrapper.",
   },
   {
     n: "02",
     label: "Digital money",
     title: "wCBDC, deposit tokens, stablecoins",
-    body: "We work through the money-leg with you -  central bank money (wCBDC, ESAs), tokenised commercial bank money (deposit tokens) and regulated stablecoins -  and where atomic DvP, PvP or synchronisation is the right pattern for what you're trying to do.",
+    body: "We pick the money-leg that actually settles -  central bank money (wCBDC, ESAs), tokenised commercial bank money (deposit tokens), regulated stablecoins -  and the right pattern for it: atomic DvP, PvP, or synchronisation across rails.",
   },
   {
     n: "03",
     label: "Interoperability",
     title: "Cross-chain & cross-rail design",
-    body: "Bridges, synchronisation, HTLC-style coordination between traditional FMIs (RITS, Austraclear, CHESS), public chains and private permissioned networks -  we'll help you design for the interop story instead of leaving it for later.",
+    body: "Bridges, HTLC coordination and ledger synchronisation across traditional FMIs (RITS, Austraclear, CHESS), public chains and permissioned networks. Designed up front, so it doesn't become next year's integration problem.",
   },
   {
     n: "04",
     label: "Regulation",
     title: "Sandbox-ready experiment design",
-    body: "We help you frame experiments for the DFMI sandbox or ASIC ERS so that settlement finality, prudential treatment, AML/CTF and consumer protection are answered in the design -  not in the regulator's first round of questions.",
+    body: "We frame DFMI sandbox and ASIC ERS submissions so settlement finality, prudential treatment, AML/CTF and consumer protection are answered in the design -  before the regulator's first round of questions, not after.",
   },
 ];
 
@@ -43,25 +44,25 @@ const helpAreas = [
   {
     title: "If you're an issuer",
     bullets: [
-      "Think through tokenising corporate bonds, securitised products or private credit on a DLT that fits your distributor and investor base.",
-      "Reason about the cash-leg -  wCBDC, deposit tokens, or regulated stablecoin -  and what settlement model your counterparties will actually accept.",
-      "Plan the disclosure, registry and corporate-actions layer so the token holds up as a security.",
+      "Tokenise corporate bonds, securitised products or private credit on a DLT that fits your distributors and investor base -  not the one with the loudest pitch.",
+      "Pick the cash-leg your counterparties will actually accept: wCBDC, deposit tokens, or regulated stablecoin, with a settlement model that maps to how they clear today.",
+      "Design the disclosure, registry and corporate-actions layer so the token holds up as a security under audit, not just under demo.",
     ],
   },
   {
     title: "If you're a bank or FMI",
     bullets: [
-      "Frame a deposit-token thesis with bank-on-bank interoperability in mind -  without locking into one rail prematurely.",
-      "Map how existing infrastructure (RITS, Austraclear, CHESS, core ledger) could connect to tokenised asset platforms.",
-      "Think through what a wCBDC distribution role would look like in a next pilot round.",
+      "Build a deposit-token thesis with bank-on-bank interoperability designed in -  without locking into a single rail prematurely.",
+      "Connect existing infrastructure (RITS, Austraclear, CHESS, core ledger) to tokenised asset platforms with a clear settlement and reconciliation path.",
+      "Define your wCBDC distribution role for the next pilot round, with the technical and prudential implications mapped.",
     ],
   },
   {
     title: "If you're a platform or PSP",
     bullets: [
-      "Work through how tokenised assets and tokenised money could plug into your existing wallet, custody or trading product.",
-      "Shape a sandbox submission -  technical design, legal mapping, regulator engagement.",
-      "Reason about the bridge between public-chain liquidity and Australian regulated rails.",
+      "Plug tokenised assets and tokenised money into your existing wallet, custody or trading stack -  without rebuilding the product around them.",
+      "Shape a sandbox submission end-to-end: technical design, legal mapping, regulator engagement.",
+      "Bridge public-chain liquidity to Australian regulated rails with a model that holds for compliance and treasury.",
     ],
   },
 ];
@@ -70,7 +71,7 @@ const proofPoints = [
   { value: "20", label: "Acacia use cases mapped", hint: "Issuer, settlement, DLT pairings indexed" },
   { value: "4", label: "Forms of digital money", hint: "wCBDC, ESAs, deposit tokens, stablecoins" },
   { value: "11", label: "Post-Acacia initiatives tracked", hint: "Across regulator, industry, RBA", accent: "green" as const },
-  { value: "1", label: "Conversation away", hint: "From a design sketch on your problem", accent: "muted" as const },
+  { value: "1", label: "Conversation away", hint: "From a design sketch on the table", accent: "muted" as const },
 ];
 
 export default function WithRem() {
@@ -96,29 +97,31 @@ export default function WithRem() {
                 maxWidth: 980,
               }}
             >
-              Tokenised wholesale finance,{" "}
-              <span style={{ color: "var(--text-muted)" }}>thought through with you.</span>
+              We engineer tokenised finance{" "}
+              <span style={{ color: "var(--text-muted)" }}>for banks, issuers and FMIs.</span>
             </h1>
           </Reveal>
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 22, maxWidth: 780 }}>
-              rem.money is a small team thinking hard about the same questions Project Acacia surfaces -  tokenised
-              assets, programmable money, interoperability, and regulation. If you're sketching what comes after a
-              pilot, we'd like to be in the room with you.
+              rem.money designs the four layers Acacia tests -  tokenised assets, programmable money, interoperability
+              and regulation -  into systems that clear, settle and pass audit. whether you are at the pilot stage or past it, we're the team you bring in.
             </p>
           </Reveal>
           <Reveal delay={200}>
             <div style={{ marginTop: 30, display: "flex", gap: 10, flexWrap: "wrap" }}>
-              <a className="btn btn-primary" href={`mailto:${CONTACT_EMAIL}?subject=Project%20Acacia%20%E2%80%94%20building%20with%20rem`}>
-                Start a conversation →
-              </a>
               <a
-                className="btn btn-ghost"
-                href="https://cal.com/rem-money/intro"
+                className="btn btn-primary"
+                href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Book a 30-minute call
+                Book a 30-minute call →
+              </a>
+              <a
+                className="btn btn-ghost"
+                href={`mailto:${CONTACT_EMAIL}?subject=Project%20Acacia%20%E2%80%94%20building%20with%20rem`}
+              >
+                Email {CONTACT_EMAIL}
               </a>
               <Link className="btn btn-ghost" href="/use-cases">
                 Browse the 20 use cases
@@ -157,8 +160,8 @@ export default function WithRem() {
               Four layers. One conversation.
             </h2>
             <p className="lead" style={{ maxWidth: 760 }}>
-              The Acacia report identifies asset tokenisation, money tokenisation, interoperability and regulation
-              as the four levers. We think about all four together -  because in practice they don't decouple.
+              Acacia names four levers: asset tokenisation, money tokenisation, interoperability, regulation. In
+              practice they don't decouple -  and neither do we.
             </p>
           </Reveal>
 
@@ -300,16 +303,16 @@ export default function WithRem() {
                 className="grid-why"
               >
                 <Reason
-                  title="We read the report -  we built the site."
-                  body="This entire interpretation of Project Acacia was crafted by rem. The same team will sit on the other side of the table with you."
+                  title="Engineers, not advisors."
+                  body="What we leave behind is built to be implemented -  data models, settlement flows, reference code, sandbox submissions. Your team picks up where we stop, or we keep building. Nothing gets laminated."
                 />
                 <Reason
-                  title="DLT-agnostic, asset-agnostic."
-                  body="We don't lead with a preferred rail. The right DLT is the one that fits the asset, the counterparties and the settlement model -  and we'll talk that through honestly."
+                  title="Vendor-neutral by construction."
+                  body="We're not paid by a chain, a stablecoin issuer, or an FMI. What we recommend is what we'd build -  not what we'd resell."
                 />
                 <Reason
-                  title="Money + assets, thought about together."
-                  body="The cash-leg and the asset-leg shape each other. We approach them as one problem rather than two separate workstreams."
+                  title="Acacia-fluent, regulator-fluent."
+                  body="We speak the vocabulary the report and the regulator use -  ESAs, wCBDC, ASIC ERS, DFMI sandbox -  so the design lands in the room without translation."
                 />
               </div>
               <style>{`
@@ -368,7 +371,7 @@ export default function WithRem() {
                     maxWidth: 820,
                   }}
                 >
-                  Bring us the asset, the institution, or the question. We'll think it through with you.
+                  Bring the asset. Bring the question. We'll take it from sketch to ship.
                 </h2>
                 <p
                   style={{
@@ -379,23 +382,23 @@ export default function WithRem() {
                     lineHeight: 1.65,
                   }}
                 >
-                  A 30-minute conversation is usually enough to know whether there's a fit. If there is, we'll come
-                  back with a design sketch you can pressure-test internally.
+                  Thirty minutes to confirm there's a fit. One week to put a working design in front of your risk,
+                  legal and tech teams.
                 </p>
                 <div style={{ display: "inline-flex", gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
                   <a
                     className="btn btn-primary"
-                    href={`mailto:${CONTACT_EMAIL}?subject=Project%20Acacia%20%E2%80%94%20building%20with%20rem`}
-                  >
-                    Email {CONTACT_EMAIL} →
-                  </a>
-                  <a
-                    className="btn btn-ghost"
-                    href="https://cal.com/rem-money/intro"
+                    href={CALENDLY_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Book a 30-minute call
+                    Book a 30-minute call →
+                  </a>
+                  <a
+                    className="btn btn-ghost"
+                    href={`mailto:${CONTACT_EMAIL}?subject=Project%20Acacia%20%E2%80%94%20building%20with%20rem`}
+                  >
+                    Email {CONTACT_EMAIL}
                   </a>
                   <a className="btn btn-ghost" href="https://rem.money" target="_blank" rel="noopener noreferrer">
                     Visit rem.money
