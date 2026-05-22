@@ -38,8 +38,8 @@ export function Navbar() {
         top: 12,
         left: "50%",
         transform: "translateX(-50%)",
-        maxWidth: 1080,
-        width: "calc(100% - 24px)",
+        maxWidth: 1200,
+        width: "calc(100% - 32px)",
         zIndex: 50,
         background: scrolled ? "rgba(11,11,11,0.78)" : "rgba(11,11,11,0.55)",
         backdropFilter: "blur(12px)",
@@ -53,12 +53,13 @@ export function Navbar() {
         transition: "background var(--duration-normal) var(--ease-out-quart)",
       }}
     >
-      <Link href="/" style={{ display: "flex", alignItems: "center", gap: 8, padding: "4px 6px" }}>
+      <Link href="/" style={{ display: "flex", alignItems: "center", gap: 8, padding: "4px 6px", flexShrink: 0 }}>
         <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, letterSpacing: "-0.02em", display: "inline-flex", alignItems: "center", gap: 8 }}>
           Acacia<span style={{ color: "var(--yellow)" }}>.</span>
         </span>
         <span
           aria-hidden
+          className="nav-attribution"
           style={{
             width: 1,
             height: 14,
@@ -67,6 +68,7 @@ export function Navbar() {
           }}
         />
         <span
+          className="nav-attribution"
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -74,9 +76,10 @@ export function Navbar() {
             fontSize: 11,
             color: "var(--text-dim)",
             letterSpacing: "0.02em",
+            whiteSpace: "nowrap",
           }}
         >
-          <span style={{ opacity: 0.85 }}>by</span>
+          <span style={{ opacity: 0.85 }}>explored by</span>
           <Image
             src="/rem.png"
             alt="rem.money"
@@ -206,9 +209,12 @@ export function Navbar() {
       )}
 
       <style>{`
-        @media (max-width: 880px) {
+        @media (max-width: 1024px) {
           .nav-links { display: none !important; }
           .nav-hamburger { display: inline-flex !important; }
+        }
+        @media (max-width: 520px) {
+          .nav-attribution { display: none !important; }
         }
       `}</style>
     </nav>
