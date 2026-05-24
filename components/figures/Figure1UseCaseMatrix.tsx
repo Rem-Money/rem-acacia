@@ -352,7 +352,9 @@ export function Figure1UseCaseMatrix() {
 
   return (
     <FigureFrame label="Figure 01" title="Project Acacia use case landscape" source="DFCRC / RBA">
+      <div className="fig1-scroll">
       <div
+        className="fig1-matrix"
         style={{
           display: "grid",
           gridTemplateColumns: "150px 1fr 1fr",
@@ -416,6 +418,12 @@ export function Figure1UseCaseMatrix() {
           ))}
         </div>
       </div>
+      </div>
+
+      {/* Mobile-only swipe hint */}
+      <div className="fig1-swipe-hint" style={{ display: "none", marginTop: 8, fontSize: 11, color: "var(--text-dim)", letterSpacing: "0.02em" }}>
+        ← Swipe to explore the full matrix →
+      </div>
 
       {/* Legend */}
       <Legend />
@@ -430,6 +438,25 @@ export function Figure1UseCaseMatrix() {
       <style>{`
         @media (max-width: 760px) {
           .infra-row { grid-template-columns: 1fr !important; }
+        }
+        /* Desktop: render naturally, as before. Mobile/tablet: horizontal scroll only. */
+        @media (max-width: 820px) {
+          .fig1-scroll {
+            position: relative;
+            overflow-x: auto;
+            overflow-y: visible;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-color: rgba(255,255,255,0.12) transparent;
+            scrollbar-width: thin;
+          }
+          .fig1-scroll .fig1-matrix {
+            min-width: 760px;
+          }
+          .fig1-scroll::-webkit-scrollbar { height: 8px; }
+          .fig1-scroll::-webkit-scrollbar-track { background: transparent; }
+          .fig1-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.10); border-radius: 8px; }
+          .fig1-scroll::-webkit-scrollbar-thumb:hover { background: rgba(252,191,72,0.35); }
+          .fig1-swipe-hint { display: block !important; }
         }
       `}</style>
     </FigureFrame>
