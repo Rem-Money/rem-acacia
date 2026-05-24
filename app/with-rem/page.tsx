@@ -280,6 +280,102 @@ export default function WithRem() {
         </div>
       </section>
 
+      {/* Case studies */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container-rem">
+          <Reveal>
+            <div className="eyebrow">Case study</div>
+            <h2 style={{ margin: "10px 0 14px", fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
+              What this looks like in practice.
+            </h2>
+          </Reveal>
+
+          <Reveal delay={80}>
+            <a
+              href="https://www.rem.money/case-studies/tokenized-tbill-fund"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="case-study-card"
+              style={{
+                display: "block",
+                marginTop: 24,
+                background: "var(--card-plus)",
+                border: "1px solid rgba(252,191,72,0.22)",
+                borderRadius: 20,
+                padding: 32,
+                textDecoration: "none",
+                color: "inherit",
+                transition: "border-color 180ms ease, transform 180ms ease",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: 20,
+                  flexWrap: "wrap",
+                }}
+              >
+                <div style={{ flex: "1 1 360px", minWidth: 0 }}>
+                  <span
+                    style={{
+                      fontSize: 10.5,
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                      color: "var(--yellow)",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Tokenised T-Bill Fund
+                  </span>
+                  <h3
+                    style={{
+                      margin: "10px 0 8px",
+                      fontSize: "clamp(1.2rem, 2.2vw, 1.5rem)",
+                      letterSpacing: "-0.02em",
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    Designing a tokenised T-Bill fund -  end to end.
+                  </h3>
+                  <p
+                    style={{
+                      margin: 0,
+                      color: "var(--text-muted)",
+                      fontSize: 14,
+                      lineHeight: 1.6,
+                      maxWidth: 640,
+                    }}
+                  >
+                    Issuance, registry, settlement and disclosure for a tokenised treasury-bill fund -  the kind of work
+                    we bring to Acacia-grade projects.
+                  </p>
+                </div>
+                <span
+                  aria-hidden
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 8,
+                    color: "var(--yellow)",
+                    fontFamily: "var(--font-display)",
+                    fontSize: 13,
+                    letterSpacing: "0.02em",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Read case study →
+                </span>
+              </div>
+            </a>
+          </Reveal>
+          <style>{`
+            .case-study-card:hover { border-color: rgba(252,191,72,0.55) !important; transform: translateY(-2px); }
+          `}</style>
+        </div>
+      </section>
+
       {/* Why rem */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container-rem">
