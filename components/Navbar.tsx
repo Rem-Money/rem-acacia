@@ -233,12 +233,12 @@ export function Navbar() {
           )}
         </div>
 
-        <Link href="/participants" style={navLinkStyle(participantsActive)}>
-          Participants
-        </Link>
-
         <Link href="/use-cases" style={navLinkStyle(useCasesActive)}>
           Use Cases
+        </Link>
+
+        <Link href="/participants" style={navLinkStyle(participantsActive)}>
+          Participants
         </Link>
 
         <Link
@@ -400,12 +400,12 @@ export function Navbar() {
 
           <div style={{ height: 1, background: "var(--border)", margin: "6px 8px" }} />
 
-          <Link href="/participants" style={mobileLinkStyle(participantsActive)}>
-            Participants
-          </Link>
-
           <Link href="/use-cases" style={mobileLinkStyle(useCasesActive)}>
             Use Cases
+          </Link>
+
+          <Link href="/participants" style={mobileLinkStyle(participantsActive)}>
+            Participants
           </Link>
 
           <Link

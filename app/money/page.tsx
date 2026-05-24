@@ -3,15 +3,13 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Callout } from "@/components/Callout";
 import { Pill } from "@/components/Pill";
 import { RemCTA } from "@/components/RemCTA";
-import { ChapterTOC } from "@/components/ChapterTOC";
-import { FeaturePanel } from "@/components/FeaturePanel";
 import { Term } from "@/components/Term";
 import { Figure23DvpAtomic } from "@/components/figures/Figure23DvpAtomic";
 import { Figure4Interchange } from "@/components/figures/Figure4Interchange";
 
 export const metadata = { title: "Forms of Money" };
 
-const otherForms = [
+const moneyForms = [
   {
     name: "ESA balances",
     sub: "Existing central bank money",
@@ -19,6 +17,16 @@ const otherForms = [
       "Liabilities of the RBA — free of counterparty risk.",
       "Today's foundation for interbank settlement.",
       "Eligibility restricted to ADIs + select financial institutions.",
+    ],
+    tone: "yellow" as const,
+  },
+  {
+    name: "Wholesale CBDC",
+    sub: "Tokenised central bank money",
+    bullets: [
+      "Pilot issued under a deed poll; real legal claim on the RBA.",
+      "Enabled true atomic settlement and composable smart-contract flows.",
+      "Production form still TBD — could be a digital twin of ESAs, or distinct.",
     ],
     tone: "yellow" as const,
   },
@@ -44,12 +52,6 @@ const otherForms = [
   },
 ];
 
-const wcbdcBullets = [
-  "Pilot issued under a deed poll - real legal claim on the RBA.",
-  "Enabled true atomic settlement and composable smart-contract flows.",
-  "Production form still TBD - could be a digital twin of ESAs, or distinct.",
-];
-
 const dtwgModels = [
   {
     title: "Model 1 · Burn-and-reissue",
@@ -69,19 +71,9 @@ const synchroModels = [
   { title: "Lock multiple assets/funds across platforms", note: "BoE's renewed RTGS direction. Not tested in Acacia." },
 ];
 
-const tocSections = [
-  { id: "forms", label: "Four instruments" },
-  { id: "atomic", label: "Atomic settlement" },
-  { id: "dtwg", label: "Deposit-token models" },
-  { id: "interchange", label: "Interchange" },
-  { id: "wcbdc-dlt", label: "wCBDC on third-party DLT" },
-];
-
 export default function Money() {
   return (
     <>
-      <ChapterTOC sections={tocSections} />
-
       <section className="section" style={{ paddingTop: 140 }}>
         <div className="container-rem">
           <Reveal>
@@ -109,42 +101,12 @@ export default function Money() {
         </div>
       </section>
 
-      {/* Four forms of money — asymmetric: featured wCBDC + 3 others */}
+      {/* Four forms of money */}
       <section className="section" id="forms" style={{ paddingTop: 0 }}>
         <div className="container-rem">
           <SectionHeading eyebrow="The four instruments" title="A field guide." />
-
-          <Reveal>
-            <FeaturePanel
-              tone="warm"
-              label="Headline · Wholesale CBDC"
-              title="Tokenised central bank money — the new keystone."
-              aside={
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
-                  {wcbdcBullets.map((b) => (
-                    <li key={b} style={{ display: "flex", gap: 10, fontSize: 14, color: "rgba(255,255,255,0.88)", lineHeight: 1.55 }}>
-                      <span aria-hidden style={{ width: 5, height: 5, borderRadius: 5, background: "var(--yellow)", marginTop: 8, flexShrink: 0 }} />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              }
-            >
-              The pilot{" "}
-              <Term term="wCBDC" definition="Wholesale Central Bank Digital Currency — a tokenised liability of the central bank, used between financial institutions rather than by the public.">
-                wCBDC
-              </Term>{" "}
-              carried a real legal claim on the RBA and behaved as a programmable settlement asset across three third-party DLT
-              platforms. It is the single instrument whose production form remains genuinely undecided — and the choice will shape how all the
-              other forms compose around it.
-            </FeaturePanel>
-          </Reveal>
-
-          <div
-            style={{ marginTop: 24, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}
-            className="grid-money-others"
-          >
-            {otherForms.map((f, i) => (
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }} className="grid-money">
+            {moneyForms.map((f, i) => (
               <Reveal key={f.name} delay={i * 50}>
                 <div
                   className="card"
@@ -155,14 +117,14 @@ export default function Money() {
                   }}
                 >
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 8 }}>
-                    <h3 style={{ margin: 0, fontSize: "1.15rem" }}>{f.name}</h3>
+                    <h3 style={{ margin: 0, fontSize: "1.3rem" }}>{f.name}</h3>
                     <Pill tone={f.tone === "green" ? "green" : "yellow"}>{f.tone === "yellow" ? "Public" : "Private"}</Pill>
                   </div>
                   <div style={{ marginTop: 4, color: "var(--text-muted)", fontSize: 13 }}>{f.sub}</div>
-                  <ul style={{ marginTop: 16, listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+                  <ul style={{ marginTop: 18, listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
                     {f.bullets.map((b) => (
-                      <li key={b} style={{ display: "flex", gap: 10, fontSize: 13.5, color: "rgba(255,255,255,0.82)" }}>
-                        <span style={{ width: 4, height: 4, borderRadius: 4, background: f.tone === "green" ? "var(--green)" : "rgba(255,255,255,0.4)", marginTop: 8 }} />
+                      <li key={b} style={{ display: "flex", gap: 10, fontSize: 14, color: "rgba(255,255,255,0.82)" }}>
+                        <span style={{ width: 4, height: 4, borderRadius: 4, background: f.tone === "green" ? "var(--green)" : "rgba(255,255,255,0.4)", marginTop: 9 }} />
                         <span>{b}</span>
                       </li>
                     ))}
@@ -171,10 +133,7 @@ export default function Money() {
               </Reveal>
             ))}
           </div>
-          <style>{`
-            @media (max-width: 980px) { .grid-money-others { grid-template-columns: repeat(2, 1fr) !important; } }
-            @media (max-width: 620px) { .grid-money-others { grid-template-columns: 1fr !important; } }
-          `}</style>
+          <style>{`@media (max-width: 880px) { .grid-money { grid-template-columns: 1fr !important; } }`}</style>
         </div>
       </section>
 

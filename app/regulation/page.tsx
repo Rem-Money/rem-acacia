@@ -1,7 +1,6 @@
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Pill } from "@/components/Pill";
-import { ChapterTOC } from "@/components/ChapterTOC";
 import { FeaturePanel } from "@/components/FeaturePanel";
 
 export const metadata = { title: "Legal & Regulatory" };
@@ -79,18 +78,9 @@ const intlModels = [
   },
 ];
 
-const tocSections = [
-  { id: "areas", label: "Six focus areas" },
-  { id: "sandbox", label: "Sandbox runway" },
-  { id: "international", label: "International examples" },
-  { id: "common", label: "Common features" },
-];
-
 export default function Regulation() {
   return (
     <>
-      <ChapterTOC sections={tocSections} />
-
       <section className="section" style={{ paddingTop: 140 }}>
         <div className="container-rem">
           <Reveal>

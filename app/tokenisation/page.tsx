@@ -1,7 +1,6 @@
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Pill } from "@/components/Pill";
-import { ChapterTOC } from "@/components/ChapterTOC";
 import { FeaturePanel } from "@/components/FeaturePanel";
 import { Graph3UseCases } from "@/components/figures/Graph3UseCases";
 
@@ -71,19 +70,9 @@ const barriers = [
   },
 ];
 
-const tocSections = [
-  { id: "structures", label: "Twin vs. native" },
-  { id: "asset-mix", label: "Asset-class mix" },
-  { id: "capabilities", label: "Five capabilities" },
-  { id: "upside", label: "Economic upside" },
-  { id: "barriers", label: "Barriers" },
-];
-
 export default function Tokenisation() {
   return (
     <>
-      <ChapterTOC sections={tocSections} />
-
       <section className="section" style={{ paddingTop: 140 }}>
         <div className="container-rem">
           <Reveal>

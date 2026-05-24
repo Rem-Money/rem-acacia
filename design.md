@@ -294,7 +294,6 @@ All breakpoints are used inline via scoped `<style>` tags inside components.
 | `components/Callout.tsx`           | Box callout (yellow / green / muted)                     |
 | `components/RemCTA.tsx`            | End-of-page conversion card (home, money, road-ahead, use-cases) |
 | `components/FeaturePanel.tsx`      | Statement panel on `--bg-plus` (warm) or `--card-plus` (cool) |
-| `components/ChapterTOC.tsx`        | Sticky left-rail TOC with IntersectionObserver (≥1280px) |
 | `components/Term.tsx`              | Inline acronym tooltip (hover + click + keyboard)        |
 | `components/UseCaseDetailModal.tsx`| Portal-rendered detail modal for use-case cards          |
 
