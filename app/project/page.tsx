@@ -32,7 +32,7 @@ export default function ProjectOverview() {
 
       {/* Funnel + stats */}
       <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container-rem" style={{ display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: 36 }} >
+        <div className="container-rem split-2 funnel-grid" style={{ display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: 36 }} >
           <Reveal>
             <div className="card" style={{ padding: 28 }}>
               <div className="eyebrow">Selection funnel</div>
@@ -71,11 +71,11 @@ export default function ProjectOverview() {
 
       {/* Pilot wCBDC details */}
       <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container-rem" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 36 }}>
+        <div className="container-rem split-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 36 }}>
           <Reveal>
             <div>
               <div className="eyebrow">Pilot wCBDC</div>
-              <h2 style={{ margin: "10px 0 12px", fontSize: "1.8rem" }}>Real legal claim, third-party platforms, controlled issuance.</h2>
+              <h2 style={{ margin: "10px 0 12px", fontSize: "clamp(1.4rem, 3.6vw, 1.8rem)" }}>Real legal claim, third-party platforms, controlled issuance.</h2>
               <p style={{ color: "var(--text-muted)" }}>
                 Distinct from the 2022–2023 CBDC Pilot, Acacia issued pilot wCBDC onto external DLT platforms. The implementation used ERC‑20 on
                 EVM-compatible chains with embedded controls -  mint/burn, pause transfers, allow/block addresses.
@@ -95,7 +95,7 @@ export default function ProjectOverview() {
       </section>
 
       <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container-rem" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+        <div className="container-rem split-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
           <Reveal>
             <Callout label="Box D · Setup" title="Deposit Token Working Group (DTWG)">
               <p>
@@ -124,6 +124,15 @@ export default function ProjectOverview() {
       </section>
 
       <RemCTA variant="project" />
+
+      <style>{`
+        @media (max-width: 860px) {
+          .split-2 { grid-template-columns: 1fr !important; gap: 20px !important; }
+        }
+        @media (max-width: 520px) {
+          .spec-row { grid-template-columns: 1fr !important; gap: 4px !important; }
+        }
+      `}</style>
     </>
   );
 }
@@ -142,7 +151,7 @@ function FunnelRow({ value, label, width, highlight }: { value: string; label: s
 
 function Spec({ k, v }: { k: string; v: string }) {
   return (
-    <li className="card" style={{ padding: 14, borderRadius: 10, display: "grid", gridTemplateColumns: "150px 1fr", gap: 12 }}>
+    <li className="card spec-row" style={{ padding: 14, borderRadius: 10, display: "grid", gridTemplateColumns: "150px 1fr", gap: 12 }}>
       <span style={{ fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--text-dim)" }}>{k}</span>
       <span style={{ fontSize: 14, color: "rgba(255,255,255,0.88)" }}>{v}</span>
     </li>

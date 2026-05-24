@@ -172,6 +172,9 @@ export function Navbar() {
             borderRadius: 12,
             padding: 8,
             backdropFilter: "blur(12px)",
+            maxHeight: "calc(100vh - 96px)",
+            overflowY: "auto",
+            WebkitOverflowScrolling: "touch",
           }}
         >
           {links.map((l) => (
@@ -209,7 +212,7 @@ export function Navbar() {
       )}
 
       <style>{`
-        @media (max-width: 1024px) {
+        @media (max-width: 1100px) {
           .nav-links { display: none !important; }
           .nav-hamburger { display: inline-flex !important; }
         }

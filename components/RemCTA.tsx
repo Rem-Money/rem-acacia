@@ -158,8 +158,11 @@ export function RemCTA({ variant }: { variant: Variant }) {
 
         <style>{`
           @media (max-width: 720px) {
-            .rem-cta { grid-template-columns: 1fr !important; padding: 26px !important; }
+            .rem-cta { grid-template-columns: 1fr !important; padding: 26px !important; gap: 20px !important; }
             .rem-cta-actions { align-items: flex-start !important; }
+          }
+          @media (max-width: 480px) {
+            .rem-cta { padding: 20px !important; border-radius: 16px !important; }
           }
         `}</style>
       </div>

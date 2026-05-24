@@ -51,14 +51,14 @@ export default function Introduction() {
 
       {/* Graph 1 */}
       <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container-rem" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 36, alignItems: "center" }}>
+        <div className="container-rem split-1-1" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 36, alignItems: "center" }}>
           <Reveal>
             <Graph1RwaGrowth />
           </Reveal>
           <Reveal delay={80}>
             <div>
               <div className="eyebrow">Where the activity is</div>
-              <h2 style={{ margin: "10px 0 16px", fontSize: "1.8rem" }}>Fixed income is the centre of gravity.</h2>
+              <h2 style={{ margin: "10px 0 16px", fontSize: "clamp(1.4rem, 3.6vw, 1.8rem)" }}>Fixed income is the centre of gravity.</h2>
               <ul style={{ display: "flex", flexDirection: "column", gap: 14, paddingLeft: 0, listStyle: "none" }}>
                 <Bullet>
                   <b>Public-sector issuances</b> -  Hong Kong digital green bonds, EIB €100M, Slovenia €30M, World Bank/SNB CHF200M.
@@ -116,6 +116,9 @@ export default function Introduction() {
           <style>{`
             @media (max-width: 880px) { .grid-context { grid-template-columns: repeat(2, 1fr) !important; } }
             @media (max-width: 480px) { .grid-context { grid-template-columns: 1fr !important; } }
+            @media (max-width: 860px) {
+              .split-1-1 { grid-template-columns: 1fr !important; gap: 24px !important; }
+            }
           `}</style>
         </div>
       </section>

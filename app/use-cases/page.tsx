@@ -282,7 +282,7 @@ export default function UseCases() {
             .uc-card:hover { transform: translateY(-3px); border-color: var(--card-accent); box-shadow: 0 10px 30px -12px var(--card-accent); }
             .uc-card:focus-visible { outline: 2px solid var(--card-accent); outline-offset: 3px; }
             @media (max-width: 1024px) { .grid-uc { grid-template-columns: repeat(2, 1fr) !important; } }
-            @media (max-width: 640px) {
+            @media (max-width: 720px) {
               .grid-uc { grid-template-columns: 1fr !important; }
               .filter-row { grid-template-columns: 1fr !important; }
             }

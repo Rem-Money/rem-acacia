@@ -263,7 +263,7 @@ export default function ParticipantsPage() {
           </div>
           <style>{`
             @media (max-width: 1024px) { .grid-co { grid-template-columns: repeat(2, 1fr) !important; } }
-            @media (max-width: 640px) {
+            @media (max-width: 720px) {
               .grid-co { grid-template-columns: 1fr !important; }
               .filter-row { grid-template-columns: 1fr !important; }
             }

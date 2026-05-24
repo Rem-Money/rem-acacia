@@ -239,7 +239,7 @@ export default function Money() {
 
       {/* Box F + ESAs */}
       <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container-rem" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} >
+        <div className="container-rem grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} >
           <Reveal>
             <Callout label="Box F" title="Issuing wCBDC onto third-party DLT">
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
@@ -265,6 +265,12 @@ export default function Money() {
       </section>
 
       <RemCTA variant="money" />
+
+      <style>{`
+        @media (max-width: 768px) {
+          .grid-2 { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </>
   );
 }

@@ -160,11 +160,32 @@ a:hover { color: var(--yellow); transition: color var(--duration-fast) var(--eas
 .card:hover { border-color: rgba(255, 255, 255, 0.1); }
 .card-tight { padding: 16px; border-radius: 14px; }
 
+@media (max-width: 480px) {
+  .card { padding: 18px; border-radius: 16px; }
+  .card-tight { padding: 14px; }
+}
+
+/* Prevent horizontal overflow on small screens */
+html, body { overflow-x: hidden; }
+img, svg, video, canvas { max-width: 100%; height: auto; }
+.report-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 480px) {
+  .figure-frame > div { padding: 16px !important; border-radius: 14px !important; }
+}
+
 .divider { height: 1px; background: var(--border); width: 100%; }
 
 .section { padding: 80px 24px; }
 .container-rem { max-width: 1200px; margin-inline: auto; }
 .container-narrow { max-width: 880px; margin-inline: auto; }
+
+@media (max-width: 768px) {
+  .section { padding: 56px 20px; }
+}
+@media (max-width: 480px) {
+  .section { padding: 44px 16px; }
+}
 
 .eyebrow {
   font-size: 12px;
@@ -182,7 +203,7 @@ a:hover { color: var(--yellow); transition: color var(--duration-fast) var(--eas
 
 .stat-value {
   font-family: var(--font-display);
-  font-size: 2.4rem;
+  font-size: clamp(1.7rem, 4.5vw, 2.4rem);
   letter-spacing: var(--tracking-display);
   line-height: 1;
   color: var(--yellow);

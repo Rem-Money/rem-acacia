@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="section noise-bg" style={{ paddingTop: 140, paddingBottom: 80, position: "relative", overflow: "hidden" }}>
+      <section className="section noise-bg hero-section" style={{ paddingTop: 140, paddingBottom: 80, position: "relative", overflow: "hidden" }}>
         <div aria-hidden style={{ position: "absolute", inset: 0, opacity: 0.18 }} className="grid-lines" />
         <div className="container-rem" style={{ position: "relative" }}>
           <Reveal>
@@ -109,6 +109,9 @@ export default function Home() {
             <style>{`
               @media (max-width: 900px) { .hero-stats { grid-template-columns: repeat(2, 1fr) !important; } }
               @media (max-width: 480px) { .hero-stats { grid-template-columns: 1fr !important; } }
+              @media (max-width: 768px) {
+                .hero-section { padding-top: 110px !important; padding-bottom: 48px !important; }
+              }
             `}</style>
           </Reveal>
         </div>

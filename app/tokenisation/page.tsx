@@ -127,14 +127,14 @@ export default function Tokenisation() {
 
       {/* Graph 3 */}
       <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container-rem" style={{ display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: 36, alignItems: "center" }}>
+        <div className="container-rem split-graph" style={{ display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: 36, alignItems: "center" }}>
           <Reveal>
             <Graph3UseCases />
           </Reveal>
           <Reveal delay={80}>
             <div>
               <div className="eyebrow">By the numbers</div>
-              <h2 style={{ margin: "10px 0 12px", fontSize: "1.8rem" }}>13 of 20 use cases were fixed income.</h2>
+              <h2 style={{ margin: "10px 0 12px", fontSize: "clamp(1.4rem, 3.6vw, 1.8rem)" }}>13 of 20 use cases were fixed income.</h2>
               <p style={{ color: "var(--text-muted)" }}>
                 Project Acacia explored a wide spread: managed investment schemes, interbank repos, structured products, carbon credits,
                 mining royalties and receivables. But the centre of gravity stayed in fixed income -  where the manual, multi-party,
@@ -217,6 +217,12 @@ export default function Tokenisation() {
       </section>
 
       <RemCTA variant="tokenisation" />
+
+      <style>{`
+        @media (max-width: 860px) {
+          .split-graph { grid-template-columns: 1fr !important; gap: 24px !important; }
+        }
+      `}</style>
     </>
   );
 }

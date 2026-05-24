@@ -285,6 +285,7 @@ export default function WithRem() {
         <div className="container-rem">
           <Reveal>
             <div
+              className="why-rem-card"
               style={{
                 background: "var(--card-plus)",
                 border: "1px solid rgba(141,240,204,0.18)",
@@ -328,6 +329,7 @@ export default function WithRem() {
         <div className="container-rem">
           <Reveal>
             <div
+              className="strong-cta"
               style={{
                 position: "relative",
                 background:
@@ -409,6 +411,13 @@ export default function WithRem() {
           </Reveal>
         </div>
       </section>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .why-rem-card { padding: 22px !important; border-radius: 16px !important; }
+          .strong-cta { padding: 30px 20px !important; border-radius: 18px !important; }
+        }
+      `}</style>
     </>
   );
 }

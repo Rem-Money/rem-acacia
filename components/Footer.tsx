@@ -27,7 +27,7 @@ export function Footer() {
   const next = idx >= 0 && idx < pages.length - 1 ? pages[idx + 1] : null;
 
   return (
-    <footer style={{ borderTop: "1px solid var(--border)", marginTop: 80, padding: "48px 24px 32px" }}>
+    <footer className="site-footer" style={{ borderTop: "1px solid var(--border)", marginTop: 80, padding: "48px 24px 32px" }}>
       <div
         className="container-rem footer-nav"
         style={{
@@ -95,8 +95,9 @@ export function Footer() {
 
       <style>{`
         @media (max-width: 640px) {
+          .site-footer { margin-top: 48px !important; padding: 32px 18px 24px !important; }
           .footer-nav { grid-template-columns: 1fr !important; }
-          .footer-meta { justify-content: flex-start !important; }
+          .footer-meta { justify-content: flex-start !important; margin-top: 28px !important; }
         }
       `}</style>
     </footer>

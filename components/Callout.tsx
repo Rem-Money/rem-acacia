@@ -16,6 +16,7 @@ export function Callout({
 
   return (
     <aside
+      className="callout-card"
       style={{
         background: bg,
         border: `1px solid ${borderColor}`,
@@ -26,8 +27,9 @@ export function Callout({
       <div style={{ fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", color: accent, fontWeight: 700, marginBottom: 6 }}>
         {label}
       </div>
-      <h3 style={{ margin: 0, fontSize: "1.25rem", color: "#fff" }}>{title}</h3>
+      <h3 style={{ margin: 0, fontSize: "clamp(1.05rem, 3vw, 1.25rem)", color: "#fff" }}>{title}</h3>
       <div style={{ marginTop: 14, color: "rgba(255,255,255,0.78)", lineHeight: 1.65, fontSize: 14 }}>{children}</div>
+      <style>{`@media (max-width: 480px) { .callout-card { padding: 18px !important; border-radius: 14px !important; } }`}</style>
     </aside>
   );
 }

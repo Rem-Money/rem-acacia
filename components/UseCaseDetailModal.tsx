@@ -59,7 +59,7 @@ export function UseCaseDetailModal({ data, onClose }: { data: UseCaseModalData; 
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: 20,
+        padding: 12,
         zIndex: 1000,
         animation: "uc-fade 180ms ease-out",
       }}
@@ -71,8 +71,9 @@ export function UseCaseDetailModal({ data, onClose }: { data: UseCaseModalData; 
           position: "relative",
           width: "100%",
           maxWidth: 640,
-          maxHeight: "85vh",
+          maxHeight: "calc(100dvh - 24px)",
           overflowY: "auto",
+          WebkitOverflowScrolling: "touch",
           background: "var(--card-bg)",
           border: `1px solid ${accent.ring}`,
           borderRadius: 14,
@@ -126,7 +127,7 @@ export function UseCaseDetailModal({ data, onClose }: { data: UseCaseModalData; 
           ✕
         </button>
 
-        <div style={{ padding: "28px 28px 18px" }}>
+        <div className="uc-modal-head" style={{ padding: "28px 28px 18px" }}>
           <div
             style={{
               fontSize: 10,
@@ -181,9 +182,9 @@ export function UseCaseDetailModal({ data, onClose }: { data: UseCaseModalData; 
           )}
         </div>
 
-        <div style={{ height: 1, background: "var(--border)", margin: "0 28px" }} />
+        <div className="uc-modal-divider" style={{ height: 1, background: "var(--border)", margin: "0 28px" }} />
 
-        <div style={{ padding: "20px 28px 8px" }}>
+        <div className="uc-modal-body" style={{ padding: "20px 28px 8px" }}>
           {summary ? (
             <p style={{ margin: 0, fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.82)" }}>{summary}</p>
           ) : (
@@ -228,6 +229,7 @@ export function UseCaseDetailModal({ data, onClose }: { data: UseCaseModalData; 
         </div>
 
         <div
+          className="uc-modal-network"
           style={{
             margin: "20px 28px 24px",
             padding: "12px 14px",
@@ -265,6 +267,13 @@ export function UseCaseDetailModal({ data, onClose }: { data: UseCaseModalData; 
         }
         .uc-modal-panel::-webkit-scrollbar { width: 8px; }
         .uc-modal-panel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 8px; }
+        @media (max-width: 520px) {
+          .uc-modal-head { padding: 22px 18px 14px !important; }
+          .uc-modal-divider { margin: 0 18px !important; }
+          .uc-modal-body { padding: 16px 18px 6px !important; }
+          .uc-modal-network { margin: 16px 18px 18px !important; }
+          .uc-modal-detail-row { grid-template-columns: 1fr !important; gap: 4px !important; }
+        }
       `}</style>
     </div>,
     document.body,
@@ -296,7 +305,7 @@ function TypeTag({ type }: { type: "Pilot" | "PoC" }) {
 
 function DetailRow({ label, value }: { label: string; value: ReactNode }) {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "110px 1fr", gap: 14, alignItems: "start" }}>
+    <div className="uc-modal-detail-row" style={{ display: "grid", gridTemplateColumns: "110px 1fr", gap: 14, alignItems: "start" }}>
       <dt
         style={{
           fontSize: 10,

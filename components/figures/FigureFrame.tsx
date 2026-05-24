@@ -12,7 +12,7 @@ export function FigureFrame({
   height?: number | string;
 }) {
   return (
-    <figure style={{ margin: 0 }}>
+    <figure style={{ margin: 0 }} className="figure-frame">
       <div
         style={{
           background: "var(--card-bg)",

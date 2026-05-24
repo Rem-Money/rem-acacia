@@ -191,6 +191,12 @@ export default function Regulation() {
       </section>
 
       <RemCTA variant="regulation" />
+
+      <style>{`
+        @media (max-width: 768px) {
+          .grid-2 { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </>
   );
 }

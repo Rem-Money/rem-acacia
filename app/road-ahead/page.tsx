@@ -118,10 +118,10 @@ export default function RoadAhead() {
           </Reveal>
 
           <Reveal delay={200}>
-            <div style={{ marginTop: 40, display: "inline-flex", gap: 32, padding: "20px 28px", border: "1px solid var(--border)", borderRadius: 14, background: "var(--card-bg)" }}>
+            <div className="totals-strip" style={{ marginTop: 40, display: "inline-flex", flexWrap: "wrap", gap: 32, padding: "20px 28px", border: "1px solid var(--border)", borderRadius: 14, background: "var(--card-bg)" }}>
               {totals.map((t) => (
                 <div key={t.l}>
-                  <div className="stat-value" style={{ fontSize: "2.2rem" }}>{t.v}</div>
+                  <div className="stat-value" style={{ fontSize: "clamp(1.6rem, 5vw, 2.2rem)" }}>{t.v}</div>
                   <div className="stat-label" style={{ marginTop: 6 }}>{t.l}</div>
                 </div>
               ))}
@@ -165,21 +165,28 @@ export default function RoadAhead() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container-rem">
           <Reveal>
-            <div className="card" style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 24, alignItems: "center", padding: 32 }}>
+            <div className="card feedback-card" style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 24, alignItems: "center", padding: 32 }}>
               <div>
                 <div className="eyebrow">Feedback channel</div>
-                <h3 style={{ margin: "10px 0 6px", fontSize: "1.5rem" }}>Comments + feedback go to the RBA directly.</h3>
+                <h3 style={{ margin: "10px 0 6px", fontSize: "clamp(1.2rem, 3.4vw, 1.5rem)" }}>Comments + feedback go to the RBA directly.</h3>
                 <p style={{ color: "var(--text-muted)", margin: 0 }}>
                   Planning and preliminary engagement has already commenced on many initiatives. All comments can be directed to the project team.
                 </p>
               </div>
-              <a className="btn btn-primary" href="mailto:ProjectAcacia@rba.gov.au">ProjectAcacia@rba.gov.au</a>
+              <a className="btn btn-primary" style={{ wordBreak: "break-all", textAlign: "center" }} href="mailto:ProjectAcacia@rba.gov.au">ProjectAcacia@rba.gov.au</a>
             </div>
           </Reveal>
         </div>
       </section>
 
       <RemCTA variant="road-ahead" />
+
+      <style>{`
+        @media (max-width: 640px) {
+          .totals-strip { padding: 16px 18px !important; gap: 20px !important; }
+          .feedback-card { grid-template-columns: 1fr !important; padding: 22px !important; }
+        }
+      `}</style>
     </>
   );
 }
