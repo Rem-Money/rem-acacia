@@ -3,10 +3,9 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { StatCard } from "@/components/StatCard";
 import { Callout } from "@/components/Callout";
 import { Pill } from "@/components/Pill";
-import { RemCTA } from "@/components/RemCTA";
 import { Figure1UseCaseMatrix } from "@/components/figures/Figure1UseCaseMatrix";
 
-export const metadata = { title: "Project Overview -  Acacia" };
+export const metadata = { title: "Project Overview" };
 
 export default function ProjectOverview() {
   return (
@@ -46,7 +45,7 @@ export default function ProjectOverview() {
           </Reveal>
           <Reveal delay={80}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-              <StatCard value="12" label="Pilots" hint="Real money + real assets" />
+              <StatCard value="12" label="Pilots" hint="Real money + real assets" accent="yellow" />
               <StatCard value="8" label="Proofs of concept" hint="Simulated transactions" accent="muted" />
               <StatCard value="8" label="Used pilot wCBDC" hint="Across 3 third-party DLT platforms" accent="green" />
               <StatCard value="A$4.4M" label="wCBDC issued" hint="Up to A$250k per transaction" />
@@ -61,7 +60,7 @@ export default function ProjectOverview() {
           <SectionHeading
             eyebrow="Figure 1"
             title="The use case landscape."
-            description="Use cases were arranged by asset class (fixed income / other) and by whether settlement used central-bank or private money. The infrastructure row sits below -  AP+ explored token interchange and NPP integration."
+            description="Use cases were arranged by asset class (fixed income / other) and by whether settlement used central-bank or private money. The infrastructure row sits below — AP+ explored token interchange and NPP integration."
           />
           <Reveal>
             <Figure1UseCaseMatrix />
@@ -78,7 +77,7 @@ export default function ProjectOverview() {
               <h2 style={{ margin: "10px 0 12px", fontSize: "clamp(1.4rem, 3.6vw, 1.8rem)" }}>Real legal claim, third-party platforms, controlled issuance.</h2>
               <p style={{ color: "var(--text-muted)" }}>
                 Distinct from the 2022–2023 CBDC Pilot, Acacia issued pilot wCBDC onto external DLT platforms. The implementation used ERC‑20 on
-                EVM-compatible chains with embedded controls -  mint/burn, pause transfers, allow/block addresses.
+                EVM-compatible chains with embedded controls — mint/burn, pause transfers, allow/block addresses.
               </p>
             </div>
           </Reveal>
@@ -103,7 +102,7 @@ export default function ProjectOverview() {
                 tokens. Banks: <b>ANZ, CBA, NAB, Westpac</b>. Observers: <b>RBA, ASIC, APRA, AUSTRAC, Treasury</b>. Legal support from Ashurst.
               </p>
               <p style={{ marginTop: 10 }}>
-                Two transferability models were tested -  a near-term <b>burn-and-reissue</b> approach and a more novel <b>assignable</b> model.
+                Two transferability models were tested — a near-term <b>burn-and-reissue</b> approach and a more novel <b>assignable</b> model.
                 See the Money chapter for the deeper breakdown.
               </p>
             </Callout>
@@ -123,9 +122,7 @@ export default function ProjectOverview() {
         </div>
       </section>
 
-      <RemCTA variant="project" />
-
-      <style>{`
+<style>{`
         @media (max-width: 860px) {
           .split-2 { grid-template-columns: 1fr !important; gap: 20px !important; }
         }

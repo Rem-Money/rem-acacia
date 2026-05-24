@@ -16,10 +16,41 @@ const body = Hanken_Grotesk({
   display: "swap",
 });
 
+const SITE_URL = "https://acacia.rem.money";
+const OG_TITLE = "Project Acacia — Independent reading of the RBA × DFCRC report";
+const OG_DESCRIPTION =
+  "An independent walkthrough of the RBA × DFCRC Project Acacia final report: tokenised wholesale asset markets, digital money, and the road ahead. By rem labs.";
+
 export const metadata: Metadata = {
-  title: "Project Acacia -  Dashboard",
-  description:
-    "An interactive breakdown of the RBA & DFCRC Project Acacia final report: tokenised wholesale asset markets, digital money, and the road ahead.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: OG_TITLE,
+    template: "%s — Project Acacia",
+  },
+  description: OG_DESCRIPTION,
+  applicationName: "Project Acacia",
+  authors: [{ name: "rem labs", url: "https://rem.money" }],
+  openGraph: {
+    type: "website",
+    siteName: "Project Acacia",
+    title: OG_TITLE,
+    description: OG_DESCRIPTION,
+    url: SITE_URL,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Project Acacia — Independent reading of the RBA × DFCRC report",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: OG_TITLE,
+    description: OG_DESCRIPTION,
+    images: ["/opengraph-image"],
+  },
   icons: {
     icon: [
       { url: "/favicon/favicon.ico", sizes: "any" },

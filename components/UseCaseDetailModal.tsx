@@ -41,7 +41,7 @@ export function UseCaseDetailModal({ data, onClose }: { data: UseCaseModalData; 
 
   if (!mounted) return null;
 
-  const { lead, name, type, tags, network, accent, summary, mechanism, findings, participants, meta } = data;
+  const { lead, name, type, tags, network, summary, mechanism, findings, participants, meta } = data;
 
   return createPortal(
     <div
@@ -75,24 +75,11 @@ export function UseCaseDetailModal({ data, onClose }: { data: UseCaseModalData; 
           overflowY: "auto",
           WebkitOverflowScrolling: "touch",
           background: "var(--card-bg)",
-          border: `1px solid ${accent.ring}`,
+          border: "1px solid rgba(255,255,255,0.08)",
           borderRadius: 14,
-          boxShadow: `0 30px 80px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04), 0 0 40px -10px ${accent.color}40`,
+          boxShadow: "0 30px 80px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04)",
         }}
       >
-        <span
-          aria-hidden
-          style={{
-            position: "absolute",
-            left: 0,
-            top: 0,
-            right: 0,
-            height: 3,
-            background: `linear-gradient(90deg, ${accent.color}, ${accent.color}00)`,
-            borderRadius: "14px 14px 0 0",
-          }}
-        />
-
         <button
           type="button"
           onClick={onClose}

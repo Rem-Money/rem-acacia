@@ -22,22 +22,22 @@ const COPY: Record<Variant, { eyebrow: string; title: string; body: string }> = 
   introduction: {
     eyebrow: "Build with rem",
     title: "Tokenisation is moving from experiment to infrastructure. Move with it.",
-    body: "If your team is thinking about RWA issuance, programmable money rails, or on-chain market connectivity -  let's talk about what a first step could look like.",
+    body: "If your team is thinking about RWA issuance, programmable money rails, or on-chain market connectivity — let's talk about what a first step could look like.",
   },
   project: {
     eyebrow: "Build with rem",
     title: "From pilot to production.",
-    body: "rem partners with teams trying to move beyond a one-off pilot -  mapping out what production-grade tokenised market infrastructure could look like for your asset and your stakeholders.",
+    body: "rem partners with teams trying to move beyond a one-off pilot — mapping out what production-grade tokenised market infrastructure could look like for your asset and your stakeholders.",
   },
   tokenisation: {
     eyebrow: "Build with rem",
-    title: "Tokenise an asset class -  with a partner who has read the room.",
-    body: "Whether you're exploring fixed income, securitised products, private markets or carbon -  we'll help you think through the right DLT, the lifecycle, the disclosure, and what an honest MVP looks like.",
+    title: "Tokenise an asset class — with a partner who has read the room.",
+    body: "Whether you're exploring fixed income, securitised products, private markets or carbon — we'll help you think through the right DLT, the lifecycle, the disclosure, and what an honest MVP looks like.",
   },
   money: {
     eyebrow: "Build with rem",
     title: "Think through the money leg.",
-    body: "wCBDC, ESAs, deposit tokens, regulated stablecoins -  the choice of settlement asset shapes everything else. rem can help you reason about which combination fits your use case and what synchronisation actually requires.",
+    body: "wCBDC, ESAs, deposit tokens, regulated stablecoins — the choice of settlement asset shapes everything else. rem can help you reason about which combination fits your use case and what synchronisation actually requires.",
   },
   regulation: {
     eyebrow: "Build with rem",
@@ -47,12 +47,12 @@ const COPY: Record<Variant, { eyebrow: string; title: string; body: string }> = 
   "road-ahead": {
     eyebrow: "Build with rem",
     title: "Join the program. Don't watch it.",
-    body: "Eleven post-Acacia initiatives are in motion -  sandbox, deposit token interoperability, tokenised government bonds, cross-border. If any of them touch your roadmap, let's talk early.",
+    body: "Eleven post-Acacia initiatives are in motion — sandbox, deposit token interoperability, tokenised government bonds, cross-border. If any of them touch your roadmap, let's talk early.",
   },
   "use-cases": {
     eyebrow: "Build with rem",
     title: "See a use case that maps to your business? Let's talk.",
-    body: "Corporate bonds, securitised products, private markets, carbon -  if a pattern from the cohort looks adjacent to what you're building, we'd like to hear about it and think it through with you.",
+    body: "Corporate bonds, securitised products, private markets, carbon — if a pattern from the cohort looks adjacent to what you're building, we'd like to hear about it and think it through with you.",
   },
   participants: {
     eyebrow: "Build with rem",

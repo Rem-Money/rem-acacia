@@ -27,7 +27,7 @@ export function Graph2MmfMarket() {
   const sy = (y: number) => H - padB - (y / yMax) * (H - padT - padB);
 
   return (
-    <FigureFrame label="Graph 02" title="US tokenised money market funds -  AUM trajectory" source="RBA · Securitize · Franklin Templeton">
+    <FigureFrame label="Graph 02" title="US tokenised money market funds — AUM trajectory" source="RBA · Securitize · Franklin Templeton">
       <svg viewBox={`0 0 ${W} ${H}`} width="100%" style={{ display: "block" }} role="img" aria-label="Tokenised MMF growth 2024 to Q2 2026">
         <defs>
           <linearGradient id="mmf-bar" x1="0" x2="0" y1="0" y2="1">

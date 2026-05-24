@@ -2,14 +2,14 @@ export function StatCard({
   value,
   label,
   hint,
-  accent = "yellow",
+  accent = "muted",
 }: {
   value: string;
   label: string;
   hint?: string;
   accent?: "yellow" | "green" | "muted";
 }) {
-  const color = accent === "green" ? "var(--green)" : accent === "muted" ? "#fff" : "var(--yellow)";
+  const color = accent === "green" ? "var(--green)" : accent === "yellow" ? "var(--yellow)" : "#fff";
   return (
     <div className="card" style={{ padding: 20, borderRadius: 14 }}>
       <div className="stat-value" style={{ color }}>{value}</div>

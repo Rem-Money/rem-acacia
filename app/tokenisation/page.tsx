@@ -1,12 +1,11 @@
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { StatCard } from "@/components/StatCard";
-import { Callout } from "@/components/Callout";
 import { Pill } from "@/components/Pill";
-import { RemCTA } from "@/components/RemCTA";
+import { ChapterTOC } from "@/components/ChapterTOC";
+import { FeaturePanel } from "@/components/FeaturePanel";
 import { Graph3UseCases } from "@/components/figures/Graph3UseCases";
 
-export const metadata = { title: "Asset Tokenisation -  Acacia" };
+export const metadata = { title: "Asset Tokenisation" };
 
 const capabilities = [
   {
@@ -15,7 +14,7 @@ const capabilities = [
     points: [
       "Lower-cost issuance via automated legal, compliance and ops tasks.",
       "End-to-end straight-through settlement; shorter, more predictable cycles.",
-      "Automated lifecycle -  coupon calc, bondholder voting, distribution.",
+      "Automated lifecycle — coupon calc, bondholder voting, distribution.",
       "Embedded KYC/AML and sanctions checks in token logic.",
     ],
   },
@@ -23,7 +22,7 @@ const capabilities = [
     n: "02",
     title: "Transferability & fractionalisation",
     points: [
-      "Streamlined transfers -  fewer legal/operational frictions.",
+      "Streamlined transfers — fewer legal/operational frictions.",
       "Smaller minimum investment sizes broaden the investor base.",
       "Illiquid assets (real estate, private credit, royalties) gain access.",
     ],
@@ -60,7 +59,7 @@ const capabilities = [
 const barriers = [
   {
     title: "Legal & regulatory uncertainty",
-    body: "Tokenisation, smart contracts and atomic settlement raise issues current frameworks didn't anticipate -  particularly in post-trade.",
+    body: "Tokenisation, smart contracts and atomic settlement raise issues current frameworks didn't anticipate — particularly in post-trade.",
   },
   {
     title: "Coordination across competing stakeholders",
@@ -72,9 +71,19 @@ const barriers = [
   },
 ];
 
+const tocSections = [
+  { id: "structures", label: "Twin vs. native" },
+  { id: "asset-mix", label: "Asset-class mix" },
+  { id: "capabilities", label: "Five capabilities" },
+  { id: "upside", label: "Economic upside" },
+  { id: "barriers", label: "Barriers" },
+];
+
 export default function Tokenisation() {
   return (
     <>
+      <ChapterTOC sections={tocSections} />
+
       <section className="section" style={{ paddingTop: 140 }}>
         <div className="container-rem">
           <Reveal>
@@ -88,7 +97,7 @@ export default function Tokenisation() {
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 18, maxWidth: 760 }}>
               Participants were prepared to expend serious resources on time-bound experiments. The asset class breakdown mirrored the
-              international picture -  fixed income led, with significant interest in managed funds, repos, structured products, carbon credits,
+              international picture — fixed income led, with significant interest in managed funds, repos, structured products, carbon credits,
               mining royalties and trade receivables.
             </p>
           </Reveal>
@@ -96,7 +105,7 @@ export default function Tokenisation() {
       </section>
 
       {/* Token structures */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section" id="structures" style={{ paddingTop: 0 }}>
         <div className="container-rem">
           <SectionHeading eyebrow="Token structures" title="Digital twin vs. digital native." />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="grid-2">
@@ -126,7 +135,7 @@ export default function Tokenisation() {
       </section>
 
       {/* Graph 3 */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section" id="asset-mix" style={{ paddingTop: 0 }}>
         <div className="container-rem split-graph" style={{ display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: 36, alignItems: "center" }}>
           <Reveal>
             <Graph3UseCases />
@@ -137,7 +146,7 @@ export default function Tokenisation() {
               <h2 style={{ margin: "10px 0 12px", fontSize: "clamp(1.4rem, 3.6vw, 1.8rem)" }}>13 of 20 use cases were fixed income.</h2>
               <p style={{ color: "var(--text-muted)" }}>
                 Project Acacia explored a wide spread: managed investment schemes, interbank repos, structured products, carbon credits,
-                mining royalties and receivables. But the centre of gravity stayed in fixed income -  where the manual, multi-party,
+                mining royalties and receivables. But the centre of gravity stayed in fixed income — where the manual, multi-party,
                 phone-and-email-bound wholesale processes have the most to gain.
               </p>
             </div>
@@ -146,25 +155,25 @@ export default function Tokenisation() {
       </section>
 
       {/* Five capabilities */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section" id="capabilities" style={{ paddingTop: 0 }}>
         <div className="container-rem">
           <SectionHeading
             eyebrow="Five capability categories"
             title="Where the tokenisation prize lives."
-            description="Acacia participants demonstrated benefits across five capability buckets. Some can be achieved with traditional tech in more advanced ways -  but tokenisation makes them simpler, faster, more scalable."
+            description="Acacia participants demonstrated benefits across five capability buckets. Some can be achieved with traditional tech in more advanced ways — but tokenisation makes them simpler, faster, more scalable."
           />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }} className="grid-caps">
             {capabilities.map((c, i) => (
               <Reveal key={c.n} delay={i * 50}>
                 <div className="card" style={{ height: "100%" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
-                    <div style={{ width: 32, height: 32, borderRadius: 8, display: "grid", placeItems: "center", background: "rgba(252,191,72,0.12)", color: "var(--yellow)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13 }}>{c.n}</div>
+                    <div style={{ width: 32, height: 32, borderRadius: 8, display: "grid", placeItems: "center", background: "rgba(255,255,255,0.04)", color: "rgba(255,255,255,0.72)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13 }}>{c.n}</div>
                     <h3 style={{ margin: 0, fontSize: "1.15rem" }}>{c.title}</h3>
                   </div>
                   <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
                     {c.points.map((p) => (
                       <li key={p} style={{ display: "flex", gap: 10, fontSize: 13.5, color: "rgba(255,255,255,0.78)", lineHeight: 1.55 }}>
-                        <span style={{ width: 4, height: 4, borderRadius: 4, background: "var(--yellow)", marginTop: 8, flexShrink: 0 }} />
+                        <span style={{ width: 4, height: 4, borderRadius: 4, background: "rgba(255,255,255,0.35)", marginTop: 8, flexShrink: 0 }} />
                         <span>{p}</span>
                       </li>
                     ))}
@@ -177,11 +186,15 @@ export default function Tokenisation() {
         </div>
       </section>
 
-      {/* Box B */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      {/* Box B — featured */}
+      <section className="section" id="upside" style={{ paddingTop: 0 }}>
         <div className="container-rem">
           <Reveal>
-            <Callout label="Box B" title="DFCRC estimates: A$24B/year of economic upside" tone="green">
+            <FeaturePanel
+              tone="cool"
+              label="Box B · DFCRC estimate"
+              title="A$24B/year of economic upside — if fully realised."
+            >
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14, marginTop: 6 }} className="grid-econ">
                 <Mini label="Better markets" v="A$10B" hint="Liquidity, price discovery, lower intermediation costs" />
                 <Mini label="Better payments" v="A$8B" hint="Atomic settlement, reduced reconciliation, lower failures" />
@@ -192,20 +205,20 @@ export default function Tokenisation() {
                 markets alone are estimated to generate ~A$2B p.a. in gains.
               </p>
               <style>{`@media (max-width: 720px) { .grid-econ { grid-template-columns: 1fr !important; } }`}</style>
-            </Callout>
+            </FeaturePanel>
           </Reveal>
         </div>
       </section>
 
       {/* Barriers */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section" id="barriers" style={{ paddingTop: 0 }}>
         <div className="container-rem">
-          <SectionHeading eyebrow="Adoption barriers" title="Why it hasn't happened yet -  and what unblocks it." />
+          <SectionHeading eyebrow="Adoption barriers" title="Why it hasn't happened yet — and what unblocks it." />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }} className="grid-barriers">
             {barriers.map((b, i) => (
               <Reveal key={b.title} delay={i * 50}>
                 <div className="card" style={{ height: "100%" }}>
-                  <span style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 700, color: "var(--yellow)" }}>0{i + 1}</span>
+                  <span style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 700, color: "var(--text-dim)" }}>0{i + 1}</span>
                   <h3 style={{ margin: "8px 0 8px", fontSize: "1.1rem" }}>{b.title}</h3>
                   <p style={{ color: "var(--text-muted)", fontSize: 14 }}>{b.body}</p>
                 </div>
@@ -216,7 +229,6 @@ export default function Tokenisation() {
         </div>
       </section>
 
-      <RemCTA variant="tokenisation" />
 
       <style>{`
         @media (max-width: 860px) {

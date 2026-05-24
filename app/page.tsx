@@ -7,11 +7,11 @@ import { RemCTA } from "@/components/RemCTA";
 const findings = [
   {
     title: "Two-tier monetary system reaffirmed",
-    body: "Central bank money remains the 'anchor and enabler' -  tokenised forms of private money (stablecoins, deposit tokens) can complement it without displacing it.",
+    body: "Central bank money remains the 'anchor and enabler' — tokenised forms of private money (stablecoins, deposit tokens) can complement it without displacing it.",
   },
   {
     title: "Atomic settlement unlocks real efficiency",
-    body: "Co-locating tokenised assets and money enables instantaneous, all-or-nothing DvP -  cutting counterparty risk and freeing collateral.",
+    body: "Co-locating tokenised assets and money enables instantaneous, all-or-nothing DvP — cutting counterparty risk and freeing collateral.",
   },
   {
     title: "Fixed income leads adoption interest",
@@ -55,7 +55,7 @@ export default function Home() {
             <h1
               style={{
                 margin: "20px 0 0",
-                fontSize: "clamp(2.4rem, 6vw, 4.8rem)",
+                fontSize: "clamp(2.4rem, 6vw, 4.6rem)",
                 lineHeight: 1.02,
                 letterSpacing: "-0.035em",
                 maxWidth: 1000,
@@ -63,15 +63,29 @@ export default function Home() {
             >
               Project Acacia{" "}
               <span style={{ color: "var(--text-muted)" }}>
-                -  overview
+                — overview
               </span>
             </h1>
           </Reveal>
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 22, maxWidth: 760 }}>
-              Australia's flagship study of digital money in wholesale tokenised markets -  twenty industry
+              Australia's flagship study of digital money in wholesale tokenised markets — twenty industry
               experiments, a pilot wCBDC, and a clear-eyed read on what's blocking the next leg. Distilled
               into seven sections you can navigate in an afternoon.
+            </p>
+          </Reveal>
+          <Reveal delay={170}>
+            <p style={{ marginTop: 12, color: "var(--text-dim)", fontSize: 13.5, maxWidth: 760 }}>
+              An independent walkthrough by{" "}
+              <a
+                href="https://rem.money"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "rgba(255,255,255,0.78)", textDecoration: "none" }}
+              >
+                rem labs
+              </a>{" "}
+              — an R&amp;D group for stablecoin and tokenisation infrastructure.
             </p>
           </Reveal>
           <Reveal delay={200}>
@@ -101,7 +115,7 @@ export default function Home() {
               }}
               className="hero-stats"
             >
-              <StatCard value="20" label="Use cases delivered" hint="12 pilots + 8 proofs of concept" />
+              <StatCard value="20" label="Use cases delivered" hint="12 pilots + 8 proofs of concept" accent="yellow" />
               <StatCard value="A$4.4M" label="Pilot wCBDC issued" hint="Up to A$250k per individual transaction" />
               <StatCard value="A$24B" label="Est. annual gains" hint="DFCRC potential if fully realised" accent="green" />
               <StatCard value="11" label="Post-Acacia initiatives" hint="Across regulator, industry, RBA" accent="muted" />
@@ -147,7 +161,7 @@ export default function Home() {
                     <span style={{ fontSize: 12, color: "var(--text-dim)", fontFamily: "var(--font-display)" }}>
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span style={{ color: "var(--yellow)" }}>↗</span>
+                    <span style={{ color: "var(--text-dim)" }}>↗</span>
                   </div>
                   <div style={{ fontFamily: "var(--font-display)", fontSize: 22, letterSpacing: "-0.02em" }}>
                     {s.label}
@@ -183,8 +197,8 @@ export default function Home() {
                       width: 28,
                       height: 28,
                       borderRadius: 8,
-                      background: "rgba(252,191,72,0.12)",
-                      color: "var(--yellow)",
+                      background: "rgba(255,255,255,0.04)",
+                      color: "rgba(255,255,255,0.7)",
                       display: "grid",
                       placeItems: "center",
                       fontFamily: "var(--font-display)",

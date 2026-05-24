@@ -41,63 +41,170 @@ export function Footer() {
       </div>
 
       <div
-        className="container-rem footer-meta"
+        className="container-rem footer-trust"
         style={{
           marginTop: 40,
-          paddingTop: 24,
+          paddingTop: 28,
+          borderTop: "1px solid var(--border)",
+          display: "grid",
+          gridTemplateColumns: "1.4fr 1fr 1fr",
+          gap: 28,
+          color: "var(--text-dim)",
+          fontSize: 12.5,
+          lineHeight: 1.65,
+        }}
+      >
+        <div>
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              fontSize: 13,
+              color: "rgba(255,255,255,0.88)",
+              fontWeight: 600,
+              fontFamily: "var(--font-display)",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            <Image
+              src="/rem.png"
+              alt=""
+              width={18}
+              height={18}
+              style={{ borderRadius: 4, display: "block" }}
+            />
+            rem labs
+          </div>
+          <p style={{ margin: "8px 0 0", maxWidth: 360, color: "var(--text-dim)" }}>
+            Research and development for stablecoin and tokenisation infrastructure.
+          </p>
+        </div>
+
+        <div>
+          <div
+            style={{
+              fontSize: 10.5,
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              color: "var(--text-dim)",
+              fontWeight: 700,
+              marginBottom: 10,
+            }}
+          >
+            Contact
+          </div>
+          <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 6 }}>
+            <li>
+              <a
+                href="mailto:hello@rem.money"
+                style={{ color: "rgba(255,255,255,0.78)", textDecoration: "none" }}
+              >
+                hello@rem.money
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://rem.money"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "rgba(255,255,255,0.78)", textDecoration: "none" }}
+              >
+                rem.money ↗
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div
+            style={{
+              fontSize: 10.5,
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              color: "var(--text-dim)",
+              fontWeight: 700,
+              marginBottom: 10,
+            }}
+          >
+            Legal
+          </div>
+          <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 6 }}>
+            <li>
+              <a
+                href="https://rem.money/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "rgba(255,255,255,0.78)", textDecoration: "none" }}
+              >
+                Privacy
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://rem.money/terms"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "rgba(255,255,255,0.78)", textDecoration: "none" }}
+              >
+                Terms
+              </a>
+            </li>
+            <li>
+              <a
+                href={REPORT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "rgba(255,255,255,0.78)", textDecoration: "none" }}
+              >
+                Source report ↗
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        className="container-rem footer-meta"
+        style={{
+          marginTop: 28,
+          paddingTop: 18,
           borderTop: "1px solid var(--border)",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          gap: 20,
+          gap: 16,
           flexWrap: "wrap",
           color: "var(--text-dim)",
-          fontSize: 12,
-          lineHeight: 1.6,
+          fontSize: 11.5,
+          lineHeight: 1.55,
         }}
       >
-        <p style={{ margin: 0, maxWidth: 560 }}>
-          Interpreting the{" "}
+        <p style={{ margin: 0, maxWidth: 640 }}>
+          Independent interpretation of the{" "}
           <a
             href={REPORT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "rgba(255,255,255,0.78)", textDecoration: "underline", textUnderlineOffset: 2 }}
+            style={{ color: "rgba(255,255,255,0.7)", textDecoration: "underline", textUnderlineOffset: 2 }}
           >
             Project Acacia final report
           </a>{" "}
-          by the Reserve Bank of Australia &amp; Digital Finance CRC, 2026.
+          by the RBA &amp; Digital Finance CRC (2026). Not affiliated with the RBA or DFCRC.
         </p>
 
-        <a
-          href="https://rem.money"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 8,
-            color: "var(--text-dim)",
-            textDecoration: "none",
-          }}
-        >
-          <span>Crafted by</span>
-          <Image
-            src="/rem.png"
-            alt="rem.money"
-            width={20}
-            height={20}
-            style={{ borderRadius: 4, display: "block" }}
-          />
-          <span style={{ color: "rgba(255,255,255,0.78)", fontWeight: 600 }}>rem.money</span>
-        </a>
+        <span style={{ whiteSpace: "nowrap" }}>© {new Date().getFullYear()} rem labs</span>
       </div>
 
       <style>{`
+        @media (max-width: 880px) {
+          .footer-trust { grid-template-columns: 1fr 1fr !important; }
+        }
         @media (max-width: 640px) {
           .site-footer { margin-top: 48px !important; padding: 32px 18px 24px !important; }
           .footer-nav { grid-template-columns: 1fr !important; }
-          .footer-meta { justify-content: flex-start !important; margin-top: 28px !important; }
+          .footer-trust { grid-template-columns: 1fr !important; gap: 22px !important; }
+          .footer-meta { justify-content: flex-start !important; }
         }
       `}</style>
     </footer>

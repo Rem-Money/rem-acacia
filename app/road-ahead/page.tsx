@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Pill } from "@/components/Pill";
 import { RemCTA } from "@/components/RemCTA";
 
-export const metadata = { title: "Road Ahead -  Acacia" };
+export const metadata = { title: "Road Ahead" };
 
 type Stream = {
   name: string;
@@ -26,7 +26,7 @@ const streams: Stream[] = [
       {
         n: 2,
         title: "Exploration of a DFMI sandbox",
-        body: "RBA + ASIC + DFCRC will explore a stage-gated, longer-term sandbox specifically for tokenised finance and digital FMIs -  distinct from ASIC's general ERS.",
+        body: "RBA + ASIC + DFCRC will explore a stage-gated, longer-term sandbox specifically for tokenised finance and digital FMIs — distinct from ASIC's general ERS.",
       },
       {
         n: 3,
@@ -36,7 +36,7 @@ const streams: Stream[] = [
       {
         n: 4,
         title: "C-suite roundtable",
-        body: "Executive-level forum on the future of tokenised finance -  aligning on priorities and international context.",
+        body: "Executive-level forum on the future of tokenised finance — aligning on priorities and international context.",
       },
     ],
   },
@@ -48,7 +48,7 @@ const streams: Stream[] = [
       {
         n: 5,
         title: "Joint Regulator-Industry Tokenisation Advisory Group",
-        body: "The Acacia IAG reconstituted and expanded -  a dedicated advisory forum and coordination body for industry priorities on tokenisation. EOIs to be invited.",
+        body: "The Acacia IAG reconstituted and expanded — a dedicated advisory forum and coordination body for industry priorities on tokenisation. EOIs to be invited.",
       },
       {
         n: 6,
@@ -58,7 +58,7 @@ const streams: Stream[] = [
       {
         n: 7,
         title: "Other industry working groups (as required)",
-        body: "Support deep-dive working groups on specific issues -  particularly where coordination across the industry is essential (e.g. interoperability mechanisms).",
+        body: "Support deep-dive working groups on specific issues — particularly where coordination across the industry is essential (e.g. interoperability mechanisms).",
       },
     ],
   },
@@ -70,7 +70,7 @@ const streams: Stream[] = [
       {
         n: 8,
         title: "Industry consultation on tokenised money + RITS",
-        body: "Explore RITS capabilities -  synchronised settlement, token interchange, new uses of ESAs. Feeds into broader RITS modernisation work.",
+        body: "Explore RITS capabilities — synchronised settlement, token interchange, new uses of ESAs. Feeds into broader RITS modernisation work.",
       },
       {
         n: 9,
@@ -112,7 +112,7 @@ export default function RoadAhead() {
           </Reveal>
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 18, maxWidth: 800 }}>
-              Eleven initiatives, three workstreams, one shared objective -  minimise unnecessary barriers and help industry safely move from
+              Eleven initiatives, three workstreams, one shared objective — minimise unnecessary barriers and help industry safely move from
               ideation to commercialisation. Below is the full set, exactly as outlined in Chapter 7.
             </p>
           </Reveal>

@@ -1,43 +1,43 @@
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Pill } from "@/components/Pill";
-import { Callout } from "@/components/Callout";
-import { RemCTA } from "@/components/RemCTA";
+import { ChapterTOC } from "@/components/ChapterTOC";
+import { FeaturePanel } from "@/components/FeaturePanel";
 
-export const metadata = { title: "Legal & Regulatory -  Acacia" };
+export const metadata = { title: "Legal & Regulatory" };
 
 const legalAreas = [
   {
     title: "Legal structure of money",
     points: [
-      "ESAs -  contractual claims, free of counterparty risk.",
-      "wCBDC -  pilot under deed poll; production form still TBD.",
-      "Stablecoins -  contractual redemption claims; new tokenised SVF regime incoming.",
-      "Deposit tokens -  could mirror deposits; FCS coverage requires explicit declaration.",
+      "ESAs — contractual claims, free of counterparty risk.",
+      "wCBDC — pilot under deed poll; production form still TBD.",
+      "Stablecoins — contractual redemption claims; new tokenised SVF regime incoming.",
+      "Deposit tokens — could mirror deposits; FCS coverage requires explicit declaration.",
     ],
   },
   {
     title: "Legal structure of assets",
     points: [
       "Digital twin dominant; digital native needs clarity on registers + finality.",
-      "Digital Assets Framework Bill passed Apr 2026, commences Apr 2027 -  introduces TCPs.",
-      "MLETR implementation by AGD in progress -  would enable digitised trade records as bearer instruments.",
+      "Digital Assets Framework Bill passed Apr 2026, commences Apr 2027 — introduces TCPs.",
+      "MLETR implementation by AGD in progress — would enable digitised trade records as bearer instruments.",
       "Industry-standard contracts (à la ISDA Master, GMRA) could underpin cross-jurisdiction adoption.",
     ],
   },
   {
     title: "Settlement finality",
     points: [
-      "Technical finality -  depends on consensus mechanism (deterministic vs probabilistic).",
-      "Legal finality -  needs operating rules establishing record authority.",
-      "PSNA 'approved RTGS systems' protect against the zero-hour rule -  currently RITS, Austraclear, CHESS RTGS.",
+      "Technical finality — depends on consensus mechanism (deterministic vs probabilistic).",
+      "Legal finality — needs operating rules establishing record authority.",
+      "PSNA 'approved RTGS systems' protect against the zero-hour rule — currently RITS, Austraclear, CHESS RTGS.",
       "DLT platforms would need PSNA approval for similar protection.",
     ],
   },
   {
     title: "Market-infrastructure regulation",
     points: [
-      "DLT tightly integrates trading + settlement -  current licensing regimes split them.",
+      "DLT tightly integrates trading + settlement — current licensing regimes split them.",
       "Public-DLT 'no clear operator' raises perimeter questions.",
       "Some use cases interposed regulated entities (Fireblocks → ABE) to preserve operator clarity.",
       "Regulators open to engagement; additional ASIC guidance may follow.",
@@ -54,7 +54,7 @@ const legalAreas = [
   {
     title: "Prudential treatment",
     points: [
-      "Banks: awaiting clarity on Basel crypto-asset standard timing -  affects capital + liquidity charges.",
+      "Banks: awaiting clarity on Basel crypto-asset standard timing — affects capital + liquidity charges.",
       "Stress-testing for DLT-specific risks (network congestion, market fragmentation).",
       "Superannuation funds: valuation basis + operational risk questions for APRA.",
     ],
@@ -75,13 +75,22 @@ const intlModels = [
   {
     name: "Digital Securities Sandbox",
     place: "BoE / FCA, UK",
-    body: "4-gate 'glidepath' -  testing → live with limits → scaling → full authorisation outside the DSS. 16 applicants through Gate 1 by report date. Will host the DIGIT (Digital Gilt) pilot.",
+    body: "4-gate 'glidepath' — testing → live with limits → scaling → full authorisation outside the DSS. 16 applicants through Gate 1 by report date. Will host the DIGIT (Digital Gilt) pilot.",
   },
+];
+
+const tocSections = [
+  { id: "areas", label: "Six focus areas" },
+  { id: "sandbox", label: "Sandbox runway" },
+  { id: "international", label: "International examples" },
+  { id: "common", label: "Common features" },
 ];
 
 export default function Regulation() {
   return (
     <>
+      <ChapterTOC sections={tocSections} />
+
       <section className="section" style={{ paddingTop: 140 }}>
         <div className="container-rem">
           <Reveal>
@@ -94,7 +103,7 @@ export default function Regulation() {
           </Reveal>
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 18, maxWidth: 800 }}>
-              Tokenisation raises issues current frameworks didn't anticipate -  especially in post-trade. Acacia identified specific legal
+              Tokenisation raises issues current frameworks didn't anticipate — especially in post-trade. Acacia identified specific legal
               and regulatory areas needing attention, and surfaced clear feedback that time-bound regulatory relief isn't enough on its own.
             </p>
           </Reveal>
@@ -102,19 +111,19 @@ export default function Regulation() {
       </section>
 
       {/* Six legal/regulatory areas */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section" id="areas" style={{ paddingTop: 0 }}>
         <div className="container-rem">
           <SectionHeading eyebrow="Six focus areas" title="Where the work is." />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }} className="grid-areas">
             {legalAreas.map((a, i) => (
               <Reveal key={a.title} delay={i * 40}>
                 <div className="card" style={{ height: "100%" }}>
-                  <span style={{ fontFamily: "var(--font-display)", color: "var(--yellow)", fontWeight: 700, fontSize: 22 }}>0{i + 1}</span>
+                  <span style={{ fontFamily: "var(--font-display)", color: "var(--text-dim)", fontWeight: 700, fontSize: 22 }}>0{i + 1}</span>
                   <h3 style={{ margin: "8px 0 12px", fontSize: "1.15rem" }}>{a.title}</h3>
                   <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 8 }}>
                     {a.points.map((p) => (
                       <li key={p} style={{ display: "flex", gap: 10, fontSize: 13.5, color: "rgba(255,255,255,0.78)", lineHeight: 1.55 }}>
-                        <span style={{ width: 4, height: 4, borderRadius: 4, background: "var(--yellow)", marginTop: 8, flexShrink: 0 }} />
+                        <span style={{ width: 4, height: 4, borderRadius: 4, background: "rgba(255,255,255,0.35)", marginTop: 8, flexShrink: 0 }} />
                         <span>{p}</span>
                       </li>
                     ))}
@@ -127,27 +136,31 @@ export default function Regulation() {
         </div>
       </section>
 
-      {/* Sandbox theme */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      {/* Sandbox theme — featured panel */}
+      <section className="section" id="sandbox" style={{ paddingTop: 0 }}>
         <div className="container-rem">
           <Reveal>
-            <Callout label="Industry feedback" title="Time-bound relief isn't enough" tone="green">
+            <FeaturePanel
+              tone="cool"
+              label="Industry feedback"
+              title="Time-bound relief isn't enough."
+            >
               <p style={{ marginTop: 0 }}>
                 ASIC's project-level class relief and AUSTRAC's targeted exemptions were instrumental in enabling participation. But larger
-                institutions reported that the project's timeframes weren't sufficient for internal risk + compliance reviews -  some shifted from
+                institutions reported that the project's timeframes weren't sufficient for internal risk + compliance reviews — some shifted from
                 real-money pilots to PoCs mid-flight.
               </p>
               <p style={{ marginTop: 12 }}>
                 The clear preference: longer-term <b>regulatory and innovation sandboxes</b> that can host commercialisation pathways, not just
                 experiments. International models offer templates.
               </p>
-            </Callout>
+            </FeaturePanel>
           </Reveal>
         </div>
       </section>
 
       {/* International examples */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section" id="international" style={{ paddingTop: 0 }}>
         <div className="container-rem">
           <SectionHeading
             eyebrow="Box H · International examples"
@@ -170,18 +183,18 @@ export default function Regulation() {
       </section>
 
       {/* Common features */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section" id="common" style={{ paddingTop: 0 }}>
         <div className="container-rem">
           <SectionHeading eyebrow="Common features" title="What good 'commercialisation pathway' regimes share." />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }} className="grid-2">
             <Reveal>
-              <Feat title="Longer timeframes for experimentation" body="Initiatives spanning several years -  or open-ended -  give larger incumbents the 'runway' their internal compliance processes need." />
+              <Feat title="Longer timeframes for experimentation" body="Initiatives spanning several years — or open-ended — give larger incumbents the 'runway' their internal compliance processes need." />
             </Reveal>
             <Reveal delay={50}>
               <Feat title="Regular, broad engagement" body="Ongoing two-way learning between regulated entities and supervisors. Acacia's IAG was praised as a model for this." />
             </Reveal>
             <Reveal delay={100}>
-              <Feat title="Convening of market participants" body="Multi-party coordination on lifecycle issues -  issuance, servicing, trading, settlement -  where interdependencies are strong." />
+              <Feat title="Convening of market participants" body="Multi-party coordination on lifecycle issues — issuance, servicing, trading, settlement — where interdependencies are strong." />
             </Reveal>
             <Reveal delay={150}>
               <Feat title="Availability of safe assets" body="Tokenised government bonds and central bank money provide credible anchors for experimentation in systemic markets." />
@@ -190,7 +203,6 @@ export default function Regulation() {
         </div>
       </section>
 
-      <RemCTA variant="regulation" />
 
       <style>{`
         @media (max-width: 768px) {

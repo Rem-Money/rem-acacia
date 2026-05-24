@@ -118,7 +118,7 @@ export default function UseCases() {
 
           <div style={{ marginTop: 16, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div style={{ color: "var(--text-muted)", fontSize: 13 }}>
-              Showing <span style={{ color: "var(--yellow)", fontWeight: 600 }}>{filtered.length}</span> of {useCases.length} use cases
+              Showing <span style={{ color: "#fff", fontWeight: 700 }}>{filtered.length}</span> of {useCases.length} use cases
             </div>
             <button
               className="btn btn-ghost"
@@ -159,28 +159,11 @@ export default function UseCases() {
                       flexDirection: "column",
                       gap: 14,
                       scrollMarginTop: 120,
-                      position: "relative",
-                      borderColor: classSw.ring,
-                      overflow: "hidden",
                       cursor: "pointer",
                       // @ts-expect-error CSS custom property
                       "--card-accent": classSw.color,
                     }}
                   >
-                    {/* Left accent stripe -  asset class colour */}
-                    <span
-                      aria-hidden
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        bottom: 0,
-                        left: 0,
-                        width: 3,
-                        background: classSw.color,
-                        boxShadow: `0 0 14px ${classSw.color}55`,
-                      }}
-                    />
-
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
                       <div style={{ minWidth: 0 }}>
                         <div
@@ -237,35 +220,33 @@ export default function UseCases() {
                         gap: "6px 12px",
                         margin: 0,
                         fontSize: 12,
-                        paddingTop: 10,
-                        borderTop: `1px dashed ${classSw.ring}`,
+                        paddingTop: 12,
+                        borderTop: "1px solid var(--border)",
                       }}
                     >
-                      <dt style={{ color: classSw.color, letterSpacing: "0.05em", textTransform: "uppercase", fontWeight: 700, opacity: 0.85 }}>
+                      <dt style={{ color: "var(--text-dim)", letterSpacing: "0.05em", textTransform: "uppercase", fontWeight: 700 }}>
                         Class
                       </dt>
                       <dd style={{ margin: 0, color: "rgba(255,255,255,0.88)" }}>{u.assetSubClass}</dd>
-                      <dt style={{ color: classSw.color, letterSpacing: "0.05em", textTransform: "uppercase", fontWeight: 700, opacity: 0.85 }}>
+                      <dt style={{ color: "var(--text-dim)", letterSpacing: "0.05em", textTransform: "uppercase", fontWeight: 700 }}>
                         DLT
                       </dt>
                       <dd
                         style={{
                           margin: 0,
-                          color: netSw.color,
-                          fontWeight: 600,
+                          color: "rgba(255,255,255,0.88)",
                           display: "inline-flex",
                           alignItems: "center",
-                          gap: 6,
+                          gap: 7,
                         }}
                       >
                         <span
                           aria-hidden
                           style={{
-                            width: 7,
-                            height: 7,
+                            width: 6,
+                            height: 6,
                             borderRadius: 999,
                             background: netSw.color,
-                            boxShadow: `0 0 5px ${netSw.color}`,
                             flexShrink: 0,
                           }}
                         />
@@ -278,8 +259,8 @@ export default function UseCases() {
             })}
           </div>
           <style>{`
-            .uc-card { transition: transform 180ms cubic-bezier(.2,.7,.2,1), border-color 180ms ease, box-shadow 180ms ease; }
-            .uc-card:hover { transform: translateY(-3px); border-color: var(--card-accent); box-shadow: 0 10px 30px -12px var(--card-accent); }
+            .uc-card { transition: transform 180ms cubic-bezier(.2,.7,.2,1), border-color 180ms ease; }
+            .uc-card:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.16); }
             .uc-card:focus-visible { outline: 2px solid var(--card-accent); outline-offset: 3px; }
             @media (max-width: 1024px) { .grid-uc { grid-template-columns: repeat(2, 1fr) !important; } }
             @media (max-width: 720px) {

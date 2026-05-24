@@ -281,18 +281,22 @@ All breakpoints are used inline via scoped `<style>` tags inside components.
 
 ## Component Index
 
-| File                               | Description                            |
-|------------------------------------|----------------------------------------|
-| `app/layout.tsx`                   | Root layout, font setup                |
-| `app/globals.css`                  | All tokens, keyframes, utility classes |
-| `components/Navbar.tsx`            | Fixed nav with mobile hamburger        |
-| `components/HeroSection.tsx`       | Full-screen hero, animated pills       |
-| `components/ProductsSection.tsx`   | 3-card feature grid with demos         |
-| `components/FrameworksSection.tsx` | 4-column integration grid              |
-| `components/CustomerSection.tsx`   | Target audience showcase               |
-| `components/NewsletterSection.tsx` | Email signup form                      |
-| `components/Footer.tsx`            | 4-column link grid + bottom bar        |
-| `components/Reveal.tsx`            | Scroll-triggered fade-in wrapper       |
+| File                               | Description                                              |
+|------------------------------------|----------------------------------------------------------|
+| `app/layout.tsx`                   | Root layout, font setup, OG/Twitter metadata             |
+| `app/globals.css`                  | All tokens, keyframes, utility classes                   |
+| `components/Navbar.tsx`            | Fixed nav with Chapters dropdown + mobile drawer         |
+| `components/Footer.tsx`            | Prev/next pagination + trust block + legal links         |
+| `components/Reveal.tsx`            | Scroll-triggered fade-in wrapper                         |
+| `components/Pill.tsx`              | Eyebrow / filter chip (yellow / green / muted tones)     |
+| `components/SectionHeading.tsx`    | Eyebrow + H2 + optional description                      |
+| `components/StatCard.tsx`          | Stat tile — default `muted`, opt in to `yellow`/`green`  |
+| `components/Callout.tsx`           | Box callout (yellow / green / muted)                     |
+| `components/RemCTA.tsx`            | End-of-page conversion card (home, money, road-ahead, use-cases) |
+| `components/FeaturePanel.tsx`      | Statement panel on `--bg-plus` (warm) or `--card-plus` (cool) |
+| `components/ChapterTOC.tsx`        | Sticky left-rail TOC with IntersectionObserver (≥1280px) |
+| `components/Term.tsx`              | Inline acronym tooltip (hover + click + keyboard)        |
+| `components/UseCaseDetailModal.tsx`| Portal-rendered detail modal for use-case cards          |
 
 ---
 
@@ -311,7 +315,7 @@ All breakpoints are used inline via scoped `<style>` tags inside components.
 
 ## Design Principles
 
-1. **Yellow is the signal.** `#fcbf48` is reserved for the logo, primary CTAs, and critical data. It is the "kinetic" energy of moving money.
+1. **Yellow is the signal.** `#fcbf48` is reserved for the logo dot, the primary CTA, the active nav state, and the *one* most important number per page. The `.eyebrow` class is neutral by default — opt in with `.eyebrow-yellow` only when a section earns it. Yellow as ambient color (every eyebrow, every arrow, every link hover) kills the signal.
 2. **Trust through precision.** Consistent spacing, tight type scale, perfect alignment. Zero slop.
 3. **Infrastructure as the hero.** Partners (Tempo, Solana, Base) and protocols (x402, MCP) get visual weight -  they are the trust foundation.
 4. **No wasted surface.** Every section should feel like a premium component of a larger machine.

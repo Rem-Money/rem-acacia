@@ -7,7 +7,6 @@ import { Pill } from "@/components/Pill";
 import { participants, participantFilters } from "@/lib/participants";
 import { getUseCasesForParticipant } from "@/lib/data";
 import { CATEGORY, TYPE, tagSwatch, type Swatch } from "@/lib/palette";
-import { RemCTA } from "@/components/RemCTA";
 
 type Category = "All" | (typeof participantFilters.category)[number];
 
@@ -53,7 +52,7 @@ export default function ParticipantsPage() {
           </Reveal>
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 18, maxWidth: 800 }}>
-              Companies, platforms and authorities behind Acacia -  lead participants, DLT networks, distributors and regulators. Filter by
+              Companies, platforms and authorities behind Acacia — lead participants, DLT networks, distributors and regulators. Filter by
               role or project tag, or jump from a participant straight into the use cases they ran.
             </p>
           </Reveal>
@@ -117,7 +116,7 @@ export default function ParticipantsPage() {
 
           <div style={{ marginTop: 16, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div style={{ color: "var(--text-muted)", fontSize: 13 }}>
-              Showing <span style={{ color: "var(--yellow)", fontWeight: 600 }}>{filtered.length}</span> of {participants.length} participants
+              Showing <span style={{ color: "#fff", fontWeight: 700 }}>{filtered.length}</span> of {participants.length} participants
             </div>
             <button
               className="btn btn-ghost"
@@ -153,7 +152,7 @@ export default function ParticipantsPage() {
                       overflow: "hidden",
                     }}
                   >
-                    {/* Top accent stripe -  category colour */}
+                    {/* Top accent stripe — category colour */}
                     <span
                       aria-hidden
                       style={{
@@ -271,7 +270,6 @@ export default function ParticipantsPage() {
         </div>
       </section>
 
-      <RemCTA variant="participants" />
     </>
   );
 }
