@@ -62,11 +62,11 @@ const barriers = [
   },
   {
     title: "Coordination across competing stakeholders",
-    body: "Network effects and incumbent inertia have slowed wholesale-market innovation. Enduring multi-party forums are essential.",
+    body: "Network effects and incumbent inertia have slowed wholesale-market innovation. Long-lived multi-party forums are the prerequisite.",
   },
   {
     title: "Interoperability across rails",
-    body: "Tokenised, traditional, and DLT platforms must talk to each other. Common standards and synchronisation operators are the path forward.",
+    body: "Tokenised, traditional, and DLT platforms must talk to each other. Common standards and synchronisation operators do that work.",
   },
 ];
 
@@ -149,7 +149,7 @@ export default function Tokenisation() {
           <SectionHeading
             eyebrow="Five capability categories"
             title="Where the tokenisation prize lives."
-            description="Acacia participants demonstrated benefits across five capability buckets. Some can be achieved with traditional tech in more advanced ways — but tokenisation makes them simpler, faster, more scalable."
+            description="Acacia participants demonstrated benefits across five capability buckets. Some can be achieved with traditional tech in more advanced ways, but tokenisation makes them simpler and more scalable."
           />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }} className="grid-caps">
             {capabilities.map((c, i) => (

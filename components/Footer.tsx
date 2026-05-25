@@ -77,7 +77,7 @@ export function Footer() {
             rem labs
           </div>
           <p style={{ margin: "8px 0 0", maxWidth: 360, color: "var(--text-dim)" }}>
-            Research and development for stablecoin and tokenisation infrastructure.
+            R&amp;D for stablecoin and tokenisation infrastructure.
           </p>
         </div>
 

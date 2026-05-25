@@ -15,7 +15,7 @@ export const participants: Participant[] = [
     category: "Lead Participant",
     tags: ["Corporate Bond", "Secondary Market", "wCBDC", "Redbelly"],
     summary:
-      "Operated a tokenised corporate bond secondary-market pilot with wCBDC settlement on Redbelly, including near-instant issuer–investor communications.",
+      "Operated a tokenised corporate bond secondary-market pilot with wCBDC settlement on Redbelly. Also covered near-instant issuer–investor communications.",
   },
   {
     id: "anz",
@@ -33,7 +33,7 @@ export const participants: Participant[] = [
     category: "Lead Participant",
     tags: ["Infrastructure", "NPP", "FSS", "Interchange", "Hedera", "HashSphere"],
     summary:
-      "Designed and tested industry-utility patterns: NPP/FSS integration with tokenised money, and a multi-issuer interchange service on Hedera + HashSphere.",
+      "Designed and tested two industry-utility patterns: NPP/FSS integration with tokenised money, plus a multi-issuer interchange service on Hedera + HashSphere.",
   },
   {
     id: "canvas",
@@ -51,7 +51,7 @@ export const participants: Participant[] = [
     category: "Lead Participant",
     tags: ["Bank", "Repo", "Deposit Token", "Cross-Ledger", "Gravital", "Kinexys", "HQLAx"],
     summary:
-      "Tested intraday repo on a deposit token with wCBDC interchange, orchestrating atomic DvP across Gravital, Kinexys and HQLAx ledgers.",
+      "Tested intraday repo on a deposit token with wCBDC interchange. Atomic DvP was orchestrated across Gravital, Kinexys and HQLAx ledgers.",
   },
   {
     id: "fireblocks",
@@ -60,7 +60,7 @@ export const participants: Participant[] = [
     category: "Lead Participant",
     tags: ["Corporate Bond", "Stablecoin", "Interchange", "Redbelly", "Singleness"],
     summary:
-      "Demonstrated 'singleness' smart contracts that atomically interchange between issuer-specific stablecoins and wCBDC inside a single bond-settlement transaction.",
+      "Built 'singleness' smart contracts that atomically interchange between issuer-specific stablecoins and wCBDC inside a single bond-settlement transaction.",
   },
   {
     id: "forte",
@@ -69,7 +69,7 @@ export const participants: Participant[] = [
     category: "Lead Participant",
     tags: ["Government Bond", "Public Ethereum", "AUDF", "Stablecoin"],
     summary:
-      "Tokenised Australian Government bonds as digital twins on public Ethereum, settled atomically against the AUDF stablecoin backed in an ESA account.",
+      "Tokenised Australian Government bonds as digital twins on public Ethereum. Atomic settlement against the AUDF stablecoin, backed in an ESA account.",
   },
   {
     id: "imperium",
@@ -78,7 +78,7 @@ export const participants: Participant[] = [
     category: "Lead Participant",
     tags: ["Term Deposit", "NCDs", "Annuities", "Hedera", "HashSphere", "Cuscal stablecoin"],
     summary:
-      "Ran three pilots tokenising deposits, NCDs and annuities on Hedera + HashSphere, settling in a wCBDC-backed pilot stablecoin issued by Cuscal.",
+      "Ran three pilots tokenising deposits, NCDs and annuities on Hedera + HashSphere. Settlement asset was a wCBDC-backed pilot stablecoin issued by Cuscal.",
   },
   {
     id: "macropod",
@@ -96,7 +96,7 @@ export const participants: Participant[] = [
     category: "Lead Participant",
     tags: ["Carbon Credits", "SWIFT", "RITS", "Matrix Zenith", "Hyperledger Besu"],
     summary:
-      "Demonstrated synchronised DvP of tokenised carbon credits on Matrix Zenith, with SWIFT MT messaging coordinating HVCS cash settlement across ESAs.",
+      "Ran synchronised DvP of tokenised carbon credits on Matrix Zenith. SWIFT MT messaging coordinated the HVCS cash settlement across ESAs.",
   },
   {
     id: "notcentralised",
@@ -105,7 +105,7 @@ export const participants: Participant[] = [
     category: "Lead Participant",
     tags: ["Structured Finance", "Loans", "Composability", "Redbelly", "Payment Token"],
     summary:
-      "Tokenised a structured-finance security backed by loans on Redbelly, demonstrating atomic repayment + collateral release with a wCBDC-backed payment token.",
+      "Tokenised a structured-finance security backed by loans on Redbelly. Atomic repayment plus collateral release used a wCBDC-backed payment token.",
   },
   {
     id: "prospex",
@@ -114,7 +114,7 @@ export const participants: Participant[] = [
     category: "Lead Participant",
     tags: ["Mining Royalty", "Fractionalisation", "Public Ethereum", "AUDF"],
     summary:
-      "Fractionalised mining royalty interests on public Ethereum with smart-contract escrow and conditional settlement above a subscription threshold.",
+      "Fractionalised mining royalty interests on public Ethereum. Smart-contract escrow held funds until a minimum subscription threshold was hit.",
   },
   {
     id: "westpac",
@@ -132,7 +132,7 @@ export const participants: Participant[] = [
     category: "Lead Participant",
     tags: ["Government Bond", "XRP Ledger", "AMM", "CLOB", "RLUSD"],
     summary:
-      "Ran a full AGB lifecycle on XRP Ledger combining a central limit order book with an AMM, settling in the RLUSD stablecoin.",
+      "Ran a full AGB lifecycle on XRP Ledger that paired a central limit order book with an AMM. Settled in the RLUSD stablecoin.",
   },
 
   {
@@ -251,7 +251,7 @@ export const participants: Participant[] = [
     category: "Infrastructure",
     tags: ["Messaging", "Coordinator"],
     summary:
-      "Acted as settlement coordinator in the AP+ NPP and Northern Trust carbon credits use cases, bridging on-chain and traditional rails.",
+      "Settlement coordinator for the AP+ NPP and Northern Trust carbon credits use cases. Bridged on-chain and traditional rails.",
   },
   {
     id: "cuscal",
@@ -260,7 +260,7 @@ export const participants: Participant[] = [
     category: "Infrastructure",
     tags: ["Stablecoin", "wCBDC-backed"],
     summary:
-      "Issued a pilot stablecoin backed 1:1 by wCBDC, providing the settlement asset for Imperium Markets' three pilots.",
+      "Issued a pilot stablecoin backed 1:1 by wCBDC. Settlement asset for Imperium Markets' three pilots.",
   },
   {
     id: "banking-circle",

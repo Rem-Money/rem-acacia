@@ -97,17 +97,17 @@ const detailKey = (lead: string, name: string) => `${lead}__${name}`;
 const details: Record<string, Detail> = {
   [detailKey("Australian Bond Exchange", "Corporate Bond")]: {
     summary:
-      "Secondary-market transactions in tokenised corporate bonds tested on Redbelly Network, with wCBDC settlement issued on the same network. The pilot connected issuers and investors directly for early redemptions and covenant voting, demonstrating digital-twin tokenisation with on-chain settlement.",
+      "Secondary-market transactions in tokenised corporate bonds tested on Redbelly Network, with wCBDC settlement issued on the same network. The pilot connected issuers and investors directly for early redemptions and covenant voting, using digital-twin tokenisation with on-chain settlement.",
     participants: ["Australian Bond Exchange", "Fieldrock", "Fireblocks", "Rand Low"],
     mechanism: "Digital-twin tokenisation on Redbelly with same-ledger wCBDC settlement.",
-    findings: "Explored efficiency gains in processing times and direct issuer–investor interaction for corporate-action events.",
+    findings: "Tested processing-time efficiency gains and direct issuer/investor interaction for corporate-action events.",
   },
   [detailKey("Canvas", "Government Bond")]: {
     summary:
-      "Canvas tokenised digital twins of Australian Government bonds on Canvas Connect (a private EVM-compatible L2) with wCBDC settlement on the same ledger. Two tokenisation structures were tested — TCP-aligned beneficial ownership and SPV debt claims — alongside collateralised lending, repos, secondary trading and coupon payments.",
+      "Canvas tokenised digital twins of Australian Government bonds on Canvas Connect (a private EVM-compatible L2) with wCBDC settlement on the same ledger. Two tokenisation structures were tested (TCP-aligned beneficial ownership and SPV debt claims) alongside collateralised lending, repos, secondary trading and coupon payments.",
     participants: ["Canvas"],
     mechanism: "Permissioned EVM L2 with underlying bonds held in registered custody (Austraclear off-chain).",
-    findings: "Demonstrated diversified settlement and collateral workflows across multiple tokenisation structures.",
+    findings: "Ran diversified settlement and collateral workflows across multiple tokenisation structures.",
   },
   [detailKey("CBA", "Intraday Repo")]: {
     summary:
@@ -121,39 +121,39 @@ const details: Record<string, Detail> = {
       "PoC demonstrating tokenised corporate bond issuance, trading and settlement on Redbelly using wCBDC and multiple stablecoins. Interchange was achieved via smart contracts converting between stablecoins and wCBDC, with a settlement contract calling 'singleness' contracts deployed by each stablecoin issuer.",
     participants: ["Fireblocks"],
     mechanism: "Settlement contract orchestrating issuer-specific singleness contracts; wCBDC as interchange asset.",
-    findings: "Showed wCBDC could serve as interchange settlement, ultimately delivering the seller's preferred stablecoin.",
+    findings: "Showed wCBDC could act as interchange settlement, ultimately delivering the seller's preferred stablecoin.",
   },
   [detailKey("Westpac", "Term Deposit")]: {
     summary:
-      "Network-agnostic PoC exploring how the NPP PayTo Biller service could facilitate near-real-time atomic settlement of tokenised term deposits. Connects domestic real-time payment infrastructure with emerging tokenised asset platforms.",
+      "Network-agnostic PoC for how the NPP PayTo Biller service could facilitate near-real-time atomic settlement of tokenised term deposits. Connects domestic real-time payment infrastructure with emerging tokenised asset platforms.",
     participants: ["Westpac"],
     mechanism: "PayTo Biller synchronised against RITS Fast Settlement Service.",
-    findings: "Split DvP into a tangible first step using existing RITS rails — a practical path for industry adoption.",
+    findings: "Splits DvP into a tangible first step using existing RITS rails, a practical path for industry adoption.",
   },
   [detailKey("ANZ", "Corporate Bond")]: {
     summary:
       "Private ZK L2 PoC simulating a tokenised corporate bond lifecycle including issuance, coupons and redemption. AUD-referenced payment tokens (stablecoins or deposit tokens) were used for bookbuilds, with wCBDC providing settlement and interchange between the buyer's and seller's preferred tokens.",
     participants: ["ANZ"],
     mechanism: "Multi-token settlement coordination on a private ZK L2; coupon payments in the private payment token.",
-    findings: "Showed how programmable interchange can let counterparties hold different forms of money pre- and post-settlement.",
+    findings: "Showed how programmable interchange lets counterparties hold different forms of money pre- and post-settlement.",
   },
   [detailKey("Imperium", "Term Deposit")]: {
     summary:
       "Pilot of tokenised short-term wholesale term deposits on Hedera and HashSphere, settled using a Cuscal-issued stablecoin backed by wCBDC on private networks. Asset tokens were digital twins recorded and custodied on-chain.",
     participants: ["Imperium Markets", "Cuscal", "AustralianSuper", "major banks", "insurance providers"],
     mechanism: "Settlement coordinator handled smart-contract-based escrow and atomic DvP swaps.",
-    findings: "Demonstrated atomic settlement of wholesale money-market instruments using wCBDC-backed private money.",
+    findings: "Atomic settlement of wholesale money-market instruments using wCBDC-backed private money.",
   },
   [detailKey("Imperium", "Certificates of Deposit")]: {
     summary:
       "Negotiable certificates of deposit (NCDs) issued as digital twins on Hedera and HashSphere, using an AP+-developed settlement coordinator for atomic DvP via smart-contract escrow. Settlement used a wCBDC-backed Cuscal stablecoin on the same DLTs.",
     participants: ["Imperium Markets", "AP+", "Cuscal"],
     mechanism: "Settlement-coordinator escrow with atomic swap on Hedera / HashSphere.",
-    findings: "Demonstrated scalable on-chain money-market infrastructure for NCDs.",
+    findings: "Tested scalable on-chain money-market infrastructure for NCDs.",
   },
   [detailKey("Imperium", "Annuities")]: {
     summary:
-      "Annuities tokenised and traded on Hedera/HashSphere using the same settlement architecture — wCBDC-backed Cuscal stablecoin with settlement-coordinator escrow and atomic swaps. Explored pension and insurance product tokenisation as digital twins.",
+      "Annuities tokenised and traded on Hedera/HashSphere using the same settlement architecture: wCBDC-backed Cuscal stablecoin with settlement-coordinator escrow and atomic swaps. Covers pension and insurance product tokenisation as digital twins.",
     participants: ["Imperium Markets", "Cuscal", "superannuation, banking and insurance participants"],
     mechanism: "Atomic DvP via settlement coordinator on Hedera / HashSphere.",
     findings: "Enabled direct on-chain custody and secondary trading of insurance-style products.",
@@ -163,7 +163,7 @@ const details: Record<string, Detail> = {
       "Pilot of Australian Government bonds as digital twins on public Ethereum, with settlement via the AUDF stablecoin through a purpose-built DvP mechanism. Coupon payments to tokenised bond holders were facilitated in AUDF, with reserves held by an ESA holder (Cuscal) in segregated accounts.",
     participants: ["Forte", "Cuscal"],
     mechanism: "Public-chain DvP with central-bank-money-backed stablecoin reserves.",
-    findings: "Demonstrated government-bond settlement on a public network with regulated stablecoin backing.",
+    findings: "Government-bond settlement on a public network with regulated stablecoin backing.",
   },
   [detailKey("Zerocap", "Government Bond")]: {
     summary:
@@ -181,59 +181,59 @@ const details: Record<string, Detail> = {
   },
   [detailKey("Macropod", "Corporate Bond")]: {
     summary:
-      "Pilot of tokenised corporate bonds on Redbelly — issuance, secondary trading, coupon payments and maturity — via the Imperium Marketplace. Settlement used Macropod's AUD-denominated AUDM stablecoin.",
+      "Pilot of tokenised corporate bonds on Redbelly covering issuance, secondary trading, coupon payments and maturity via the Imperium Marketplace. Settlement used Macropod's AUD-denominated AUDM stablecoin.",
     participants: ["Macropod", "Imperium Markets"],
     mechanism: "Permissioned settlement on Redbelly with AUDM stablecoin.",
-    findings: "Validated digital-native corporate debt markets running alongside Macropod's managed-fund pilot.",
+    findings: "Tested digital-native corporate debt markets running alongside Macropod's managed-fund pilot.",
   },
   [detailKey("Canvas", "Private Credit Fund")]: {
     summary:
-      "Pilot of tokenised shares in an SPV investing in real-estate credit funds on Canvas Connect, exploring primary issuance, secondary trading, distributions and collateralised lending. wCBDC issued on the same permissioned EVM L2 facilitated settlement.",
+      "Pilot of tokenised shares in an SPV investing in real-estate credit funds on Canvas Connect. Covers primary issuance, secondary trading, distributions and collateralised lending. wCBDC issued on the same permissioned EVM L2 handled settlement.",
     participants: ["Canvas"],
     mechanism: "Same-ledger wCBDC settlement on a permissioned EVM L2.",
-    findings: "Extended tokenisation testing beyond government bonds into alternative asset classes and fund distribution.",
+    findings: "Pushes tokenisation testing beyond government bonds into alternative asset classes and fund distribution.",
   },
   [detailKey("ANZ", "Trade Payable")]: {
     summary:
-      "Private ZK L2 PoC addressing trade-finance inefficiencies by tokenising trade invoices as payment obligations and assignments in digital form. The tokenised invoice was exchanged for an AUD-referenced payment token on ANZ's network, with wCBDC providing settlement and interchange between buyer and seller tokens.",
+      "Private ZK L2 PoC targeting trade-finance inefficiencies by tokenising trade invoices as payment obligations and assignments in digital form. The tokenised invoice was exchanged for an AUD-referenced payment token on ANZ's network, with wCBDC providing settlement and interchange between buyer and seller tokens.",
     participants: ["ANZ"],
     mechanism: "Token exchange on private ZK L2 with wCBDC interchange.",
-    findings: "Enabled fractionalised trade finance and direct invoice assignment.",
+    findings: "Supports fractionalised trade finance and direct invoice assignment.",
   },
   [detailKey("Northern Trust", "Carbon Credits")]: {
     summary:
       "Simulated synchronised DvP of tokenised carbon credits on permissioned Matrix Zenith (Hyperledger Besu), using traditional payment rails (RITS via SWIFT) rather than tokenised money.",
     participants: ["Northern Trust", "SWIFT"],
     mechanism: "SWIFT as synchronisation coordinator using existing messaging standards; ESA-based settlement via RITS.",
-    findings: "Demonstrated settlement of digital environmental assets with off-chain payment clearance.",
+    findings: "Settled digital environmental assets with off-chain payment clearance.",
   },
   [detailKey("Macropod", "Digital Asset Fund")]: {
     summary:
       "Pilot of tokenised units in a wholesale managed investment scheme on Redbelly, with AUDM stablecoin settlement. Issuance, trading and redemption ran through the Tokeniser platform.",
     participants: ["Macropod"],
     mechanism: "Permissioned settlement on Redbelly with AUDM stablecoin via Tokeniser.",
-    findings: "Validated digital-native fund distribution and fractionalised manager structures — paired with the corporate-bond pilot.",
+    findings: "Tested digital-native fund distribution and fractionalised manager structures, paired with the corporate-bond pilot.",
   },
   [detailKey("ProspEx", "Mining Royalty Interests")]: {
     summary:
       "PoC tokenising mining royalties as digital fractionalised interests on public Ethereum, settled via the AUDF stablecoin. A minimum-subscription smart-contract escrow conditionally settled once thresholds were met.",
     participants: ["ProspEx"],
     mechanism: "Conditional settlement smart contract with subscription-threshold escrow on Ethereum.",
-    findings: "Showed programmable settlement and fractionalisation enabling smaller minimum investments in alternative assets.",
+    findings: "Showed programmable settlement and fractionalisation that allow smaller minimum investments in alternative assets.",
   },
   [detailKey("AP+", "Token Interchange Service")]: {
     summary:
-      "Pilot of a token interchange service on public-permissioned Hedera and private-permissioned HashSphere, facilitating exchanges between stablecoins and deposit tokens using smart-contract rules. A digital twin of wCBDC (a 'white coin') served as the interchange asset on public networks while the underlying wCBDC remained on private networks.",
+      "Pilot of a token interchange service on public-permissioned Hedera and private-permissioned HashSphere, handling exchanges between stablecoins and deposit tokens via smart-contract rules. A digital twin of wCBDC (a 'white coin') acted as the interchange asset on public networks while the underlying wCBDC stayed on private networks.",
     participants: ["AP+"],
     mechanism: "'White coin' wCBDC twin on public networks bridged to private-network wCBDC.",
-    findings: "Demonstrated multilateral interoperability between private-money issuers.",
+    findings: "Tested multilateral interoperability between private-money issuers.",
   },
   [detailKey("AP+", "NPP-Token Integration")]: {
     summary:
       "Research and PoC for an industry utility and scheme rules supporting value transfers between traditional commercial bank accounts and private money tokens via the NPP and the RITS Fast Settlement Service.",
     participants: ["AP+"],
     mechanism: "Settlement coordination across NPP-connected bank accounts and tokenised payment networks.",
-    findings: "Examined funding and redeeming stablecoins / deposit tokens from NPP-connected accounts — bridging legacy and tokenised payment infrastructure.",
+    findings: "Examined funding and redeeming stablecoins / deposit tokens from NPP-connected accounts, bridging legacy and tokenised payment infrastructure.",
   },
 };
 

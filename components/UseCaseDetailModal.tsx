@@ -176,7 +176,7 @@ export function UseCaseDetailModal({ data, onClose }: { data: UseCaseModalData; 
             <p style={{ margin: 0, fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.82)" }}>{summary}</p>
           ) : (
             <p style={{ margin: 0, fontSize: 13, fontStyle: "italic", color: "var(--text-dim)" }}>
-              Detailed write-up not yet available for this use case.
+              Write-up not yet available for this use case.
             </p>
           )}
 

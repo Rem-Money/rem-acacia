@@ -103,7 +103,7 @@ export default function ProjectOverview() {
               </p>
               <p style={{ marginTop: 10 }}>
                 Two transferability models were tested — a near-term <b>burn-and-reissue</b> approach and a more novel <b>assignable</b> model.
-                See the Money chapter for the deeper breakdown.
+                See the Money chapter for the full breakdown.
               </p>
             </Callout>
           </Reveal>
@@ -114,7 +114,7 @@ export default function ProjectOverview() {
                 class relief from licensing requirements; AUSTRAC granted exemptions from certain AML/CTF obligations for specific participants.
               </p>
               <p style={{ marginTop: 10 }}>
-                An Industry Advisory Group (IAG) chaired by Tony Richards (DFCRC) brought together technology, operations, strategy and
+                An Industry Advisory Group (IAG) chaired by Tony Richards (DFCRC) included technology, operations, strategy and
                 regulation experts from across the financial system.
               </p>
             </Callout>

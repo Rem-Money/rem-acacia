@@ -94,8 +94,8 @@ export default function Money() {
               <Term term="wCBDC" definition="Wholesale Central Bank Digital Currency — a tokenised liability of the central bank, used between financial institutions rather than by the public.">
                 wCBDC
               </Term>
-              , stablecoins, and deposit tokens. Each plays a different role in supporting
-              atomic settlement, composability, and the singleness of money in a tokenised ecosystem.
+              , stablecoins, and deposit tokens. Each plays a different role in atomic settlement,
+              composability, and the singleness of money once assets move on-chain.
             </p>
           </Reveal>
         </div>
@@ -155,9 +155,9 @@ export default function Money() {
                 <div className="eyebrow" style={{ marginBottom: 10 }}>Worked example · NotCentralised</div>
                 <h3 style={{ fontSize: "1.2rem", marginTop: 0 }}>Collateralised loan, atomic.</h3>
                 <p style={{ color: "var(--text-muted)", fontSize: 14.5, lineHeight: 1.65 }}>
-                  Loan, collateral and payment token composed into a single atomic transaction. Collateral released instantly on repayment —
-                  no multi-system orchestration, no delays. The collateral never sits in a half-settled state where it could be re-pledged or
-                  contested. This is what programmable money looks like when the legal and technical layers actually agree.
+                  Loan, collateral and payment token composed into a single atomic transaction. Collateral released on repayment without
+                  multi-system orchestration. The collateral never sits in a half-settled state where it could be re-pledged or contested.
+                  This is what programmable money looks like when the legal and technical layers actually agree.
                 </p>
               </div>
             </Reveal>

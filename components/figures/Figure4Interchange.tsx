@@ -19,7 +19,7 @@ export function Figure4Interchange() {
           tone="green"
           label="B · AP+ Token Interchange"
           title="Two-chain with synchroniser"
-          subtitle="wCBDC stays on a private chain. A 'white coin' digital twin facilitates interchange on the public chain; a synchroniser keeps the two in lockstep."
+          subtitle="wCBDC stays on a private chain. A 'white coin' digital twin handles interchange on the public chain, and a synchroniser keeps the two in lockstep."
           edges={[
             { from: "Buyer", to: "Buyer Bank", label: "Stablecoin A" },
             { from: "Buyer Bank", to: "Seller Bank", label: "White coin (public chain)" },

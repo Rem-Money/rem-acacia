@@ -65,7 +65,7 @@ const streams: Stream[] = [
   {
     name: "RBA workstream",
     tone: "muted",
-    lead: "Continue analysis of how new forms of money and settlement infrastructure could crystallise efficiency and resilience benefits.",
+    lead: "Continue analysis of how new forms of money and settlement infrastructure could deliver efficiency and resilience benefits.",
     initiatives: [
       {
         n: 8,
@@ -85,7 +85,7 @@ const streams: Stream[] = [
       {
         n: 11,
         title: "Cross-border payments exploration",
-        body: "Work with international and domestic partners on how tokenised money and new RTGS uses could enhance the speed and safety of cross-border payments.",
+        body: "Work with international and domestic partners on how tokenised money and new RTGS uses could improve the speed and safety of cross-border payments.",
       },
     ],
   },
@@ -112,8 +112,8 @@ export default function RoadAhead() {
           </Reveal>
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 18, maxWidth: 800 }}>
-              Eleven initiatives, three workstreams, one shared objective — minimise unnecessary barriers and help industry safely move from
-              ideation to commercialisation. Below is the full set, exactly as outlined in Chapter 7.
+              Eleven initiatives across three workstreams, with a shared objective: minimise unnecessary barriers and help industry safely move from
+              ideation to commercialisation. Below is the full set, as outlined in Chapter 7.
             </p>
           </Reveal>
 

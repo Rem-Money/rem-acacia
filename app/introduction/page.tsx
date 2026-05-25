@@ -23,9 +23,9 @@ export default function Introduction() {
           </Reveal>
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 18, maxWidth: 760 }}>
-              Stablecoin issuance has crossed the third of a trillion mark. Tokenised real-world assets are climbing. Central banks and
-              exchanges are running serious pilots. Australia's wholesale markets sit in a system that hasn't been recomposed in a generation -
-              and Project Acacia asked what role digital money should play in rewriting it.
+              Stablecoin issuance has crossed a third of a trillion. Tokenised real-world assets are climbing. Central banks and
+              exchanges are running serious pilots. Australia's wholesale markets sit in a system that hasn't been recomposed in a generation.
+              Project Acacia asked what role digital money should play in rewriting it.
             </p>
           </Reveal>
         </div>
@@ -92,9 +92,9 @@ export default function Introduction() {
           <Reveal>
             <Callout label="Box A" title="International tokenisation initiatives — focus on fixed income">
               <p style={{ marginTop: 0 }}>
-                Fixed income — particularly government bonds — is regarded as the major asset class likely to benefit from tokenisation.
+                Fixed income, particularly government bonds, is the asset class most likely to benefit from tokenisation.
                 Bonds are an estimated US$110T market; government bonds are also collateral, benchmark, and safe-asset bedrock. Tokenised MMFs
-                have emerged as another prominent application, alongside collateral-mobility platforms like JPM's Tokenised Collateral Network
+                have emerged as another application, alongside collateral-mobility platforms like JPM's Tokenised Collateral Network
                 and Broadridge's DLR.
               </p>
             </Callout>
@@ -105,12 +105,12 @@ export default function Introduction() {
       {/* Australian context */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container-rem">
-          <SectionHeading eyebrow="Australia" title="A short — and still nascent — local history." />
+          <SectionHeading eyebrow="Australia" title="A short local history." />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }} className="grid-context">
             <Mini year="2018" name="CBA Bond-i" desc="World's first bond issued + managed throughout its lifecycle on DLT, with the World Bank." />
-            <Mini year="2022" name="ANZ stablecoin" desc="First A$DC stablecoin payment — early commercial-bank exploration of tokenised money." />
-            <Mini year="2022–23" name="CBDC Pilot" desc="RBA + DFCRC's first CBDC Pilot Project, exploring early retail and wholesale use cases on a central platform." />
-            <Mini year="2024–26" name="Project Acacia" desc="Twenty industry-led use cases. The pilot wCBDC issued onto third-party DLT platforms for the first time." />
+            <Mini year="2022" name="ANZ stablecoin" desc="First A$DC stablecoin payment. An early commercial-bank test of tokenised money." />
+            <Mini year="2022–23" name="CBDC Pilot" desc="RBA + DFCRC's first CBDC Pilot Project, with early retail and wholesale use cases on a central platform." />
+            <Mini year="2024–26" name="Project Acacia" desc="Twenty industry-led use cases. The pilot wCBDC was issued onto third-party DLT platforms for the first time." />
           </div>
           <style>{`
             @media (max-width: 880px) { .grid-context { grid-template-columns: repeat(2, 1fr) !important; } }

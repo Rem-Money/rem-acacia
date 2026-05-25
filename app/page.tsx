@@ -15,7 +15,7 @@ const findings = [
   },
   {
     title: "Fixed income leads adoption interest",
-    body: "13 of 20 use cases were in fixed income, mirroring international experience. Largest gains expected from post-trade automation and settlement compression.",
+    body: "13 of 20 use cases were in fixed income, in line with international experience. Largest gains expected from post-trade automation and settlement compression.",
   },
   {
     title: "Interoperability is the bottleneck",
@@ -27,7 +27,7 @@ const findings = [
   },
   {
     title: "Coordination, not just code",
-    body: "Network effects and incumbent inertia have stymied wholesale-market dynamism. Persistent industry-regulator forums are essential.",
+    body: "Network effects and incumbent inertia have held back wholesale-market reform. Persistent industry-regulator forums are essential.",
   },
 ];
 
@@ -69,9 +69,9 @@ export default function Home() {
           </Reveal>
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 22, maxWidth: 760 }}>
-              Australia's flagship study of digital money in wholesale tokenised markets — twenty industry
-              experiments, a pilot wCBDC, and a clear-eyed read on what's blocking the next leg. Distilled
-              into seven sections you can navigate in an afternoon.
+              Australia's flagship study of digital money in wholesale tokenised markets: twenty industry
+              experiments, a pilot wCBDC, and a clear-eyed read on what's blocking the next leg. Seven
+              sections you can read in an afternoon.
             </p>
           </Reveal>
           <Reveal delay={170}>

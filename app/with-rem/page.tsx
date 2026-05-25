@@ -18,25 +18,25 @@ const pillars = [
     n: "01",
     label: "Asset tokenisation",
     title: "Issuance & full lifecycle",
-    body: "We take an asset on-chain — fixed income, securitised products, private markets, carbon — and design issuance, registry, corporate actions and redemption so it stands up as a security, not a wrapper.",
+    body: "We take an asset on-chain (fixed income, securitised products, private markets, carbon) and design issuance, registry, corporate actions and redemption so it holds up as a security, not a wrapper.",
   },
   {
     n: "02",
     label: "Digital money",
     title: "wCBDC, deposit tokens, stablecoins",
-    body: "We pick the money-leg that actually settles — central bank money (wCBDC, ESAs), tokenised commercial bank money (deposit tokens), regulated stablecoins — and the right pattern for it: atomic DvP, PvP, or synchronisation across rails.",
+    body: "We pick the money-leg that actually settles: central bank money (wCBDC, ESAs), tokenised commercial bank money (deposit tokens), or regulated stablecoins. And the right pattern for it: atomic DvP, PvP, or synchronisation across rails.",
   },
   {
     n: "03",
     label: "Interoperability",
     title: "Cross-chain & cross-rail design",
-    body: "Bridges, HTLC coordination and ledger synchronisation across traditional FMIs (RITS, Austraclear, CHESS), public chains and permissioned networks. Designed up front, so it doesn't become next year's integration problem.",
+    body: "Bridges, HTLC coordination and ledger synchronisation across traditional FMIs (RITS, Austraclear, CHESS), public chains and permissioned networks. Designed up front, so it isn't next year's integration problem.",
   },
   {
     n: "04",
     label: "Regulation",
     title: "Sandbox-ready experiment design",
-    body: "We frame DFMI sandbox and ASIC ERS submissions so settlement finality, prudential treatment, AML/CTF and consumer protection are answered in the design — before the regulator's first round of questions, not after.",
+    body: "We frame DFMI sandbox and ASIC ERS submissions so settlement finality, prudential treatment, AML/CTF and consumer protection are answered in the design, before the regulator's first round of questions rather than after.",
   },
 ];
 
@@ -44,15 +44,15 @@ const helpAreas = [
   {
     title: "If you're an issuer",
     bullets: [
-      "Tokenise corporate bonds, securitised products or private credit on a DLT that fits your distributors and investor base — not the one with the loudest pitch.",
+      "Tokenise corporate bonds, securitised products or private credit on a DLT that fits your distributors and investor base, not the one with the loudest pitch.",
       "Pick the cash-leg your counterparties will actually accept: wCBDC, deposit tokens, or regulated stablecoin, with a settlement model that maps to how they clear today.",
-      "Design the disclosure, registry and corporate-actions layer so the token holds up as a security under audit, not just under demo.",
+      "Design the disclosure, registry and corporate-actions layer so the token holds up as a security under audit, not only under demo.",
     ],
   },
   {
     title: "If you're a bank or FMI",
     bullets: [
-      "Build a deposit-token thesis with bank-on-bank interoperability designed in — without locking into a single rail prematurely.",
+      "Build a deposit-token thesis with bank-on-bank interoperability designed in, without locking into a single rail prematurely.",
       "Connect existing infrastructure (RITS, Austraclear, CHESS, core ledger) to tokenised asset platforms with a clear settlement and reconciliation path.",
       "Define your wCBDC distribution role for the next pilot round, with the technical and prudential implications mapped.",
     ],
@@ -60,7 +60,7 @@ const helpAreas = [
   {
     title: "If you're a platform or PSP",
     bullets: [
-      "Plug tokenised assets and tokenised money into your existing wallet, custody or trading stack — without rebuilding the product around them.",
+      "Plug tokenised assets and tokenised money into your existing wallet, custody or trading stack, without rebuilding the product around them.",
       "Shape a sandbox submission end-to-end: technical design, legal mapping, regulator engagement.",
       "Bridge public-chain liquidity to Australian regulated rails with a model that holds for compliance and treasury.",
     ],
@@ -103,8 +103,8 @@ export default function WithRem() {
           </Reveal>
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 22, maxWidth: 780 }}>
-              rem.money designs the four layers Acacia tests — tokenised assets, programmable money, interoperability
-              and regulation — into systems that clear, settle and pass audit. whether you are at the pilot stage or past it, we're the team you bring in.
+              rem.money designs the four layers Acacia tests (tokenised assets, programmable money, interoperability
+              and regulation) into systems that clear, settle and pass audit. Whether you are at the pilot stage or past it, we're the team you bring in.
             </p>
           </Reveal>
           <Reveal delay={200}>
@@ -161,7 +161,7 @@ export default function WithRem() {
             </h2>
             <p className="lead" style={{ maxWidth: 760 }}>
               Acacia names four levers: asset tokenisation, money tokenisation, interoperability, regulation. In
-              practice they don't decouple — and neither do we.
+              practice they don't decouple, and neither do we.
             </p>
           </Reveal>
 
@@ -337,7 +337,7 @@ export default function WithRem() {
                       lineHeight: 1.2,
                     }}
                   >
-                    Designing a tokenised T-Bill fund — end to end.
+                    Designing a tokenised T-Bill fund, end to end.
                   </h3>
                   <p
                     style={{
@@ -348,7 +348,7 @@ export default function WithRem() {
                       maxWidth: 640,
                     }}
                   >
-                    Issuance, registry, settlement and disclosure for a tokenised treasury-bill fund — the kind of work
+                    Issuance, registry, settlement and disclosure for a tokenised treasury-bill fund. The kind of work
                     we bring to Acacia-grade projects.
                   </p>
                 </div>
@@ -401,15 +401,15 @@ export default function WithRem() {
               >
                 <Reason
                   title="Engineers, not advisors."
-                  body="What we leave behind is built to be implemented — data models, settlement flows, reference code, sandbox submissions. Your team picks up where we stop, or we keep building. Nothing gets laminated."
+                  body="What we leave behind is built to be implemented: data models, settlement flows, reference code, sandbox submissions. Your team picks up where we stop, or we keep building. Nothing gets laminated."
                 />
                 <Reason
                   title="Vendor-neutral by construction."
-                  body="We're not paid by a chain, a stablecoin issuer, or an FMI. What we recommend is what we'd build — not what we'd resell."
+                  body="We're not paid by a chain, a stablecoin issuer, or an FMI. What we recommend is what we'd build, not what we'd resell."
                 />
                 <Reason
                   title="Acacia-fluent, regulator-fluent."
-                  body="We speak the vocabulary the report and the regulator use — ESAs, wCBDC, ASIC ERS, DFMI sandbox — so the design lands in the room without translation."
+                  body="We speak the vocabulary the report and the regulator use (ESAs, wCBDC, ASIC ERS, DFMI sandbox) so the design lands in the room without translation."
                 />
               </div>
               <style>{`

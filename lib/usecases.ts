@@ -49,7 +49,7 @@ export const useCases: UseCase[] = [
     settlement: ["wCBDC", "Payment token"],
     network: "Private ZK L2 (Validium)",
     summary:
-      "Tokenised trade invoice (representing a payment obligation + assignment) exchanged for an AUD-referenced payment token, exploring how wCBDC could settle the invoice and bridge between buyer/seller preferred tokens.",
+      "Tokenised trade invoice (representing a payment obligation + assignment) exchanged for an AUD-referenced payment token. Tested wCBDC as the settlement asset and as a bridge between buyer/seller preferred tokens.",
   },
   {
     id: "apx-npp",
@@ -88,7 +88,7 @@ export const useCases: UseCase[] = [
     settlement: ["wCBDC"],
     network: "Canvas Connect L2",
     summary:
-      "Tokenised digital twins of Australian Government bonds: collateralised lending, repos, secondary trading, coupon payments -  settled in wCBDC on the same blockchain.",
+      "Tokenised digital twins of Australian Government bonds: collateralised lending, repos, secondary trading and coupon payments, all settled in wCBDC on the same blockchain.",
   },
   {
     id: "canvas-private-credit",
@@ -101,7 +101,7 @@ export const useCases: UseCase[] = [
     settlement: ["wCBDC"],
     network: "Canvas Connect L2",
     summary:
-      "Tokenised shares in a special purpose vehicle holding a real estate credit fund -  covered primary issuance, secondary trading, distributions and collateralised lending.",
+      "Tokenised shares in a special purpose vehicle holding a real estate credit fund. Covered primary issuance, secondary trading, distributions and collateralised lending.",
   },
   {
     id: "cba-intraday-repo",
@@ -231,7 +231,7 @@ export const useCases: UseCase[] = [
     settlement: ["wCBDC-backed payment token"],
     network: "Redbelly",
     summary:
-      "Tokenised structured finance security backed by loans, with payment flows settled via a private payment token fully backed by wCBDC. Demonstrated atomic loan repayment + collateral release.",
+      "Tokenised structured finance security backed by loans, with payment flows settled via a private payment token fully backed by wCBDC. Atomic loan repayment plus collateral release in a single transaction.",
   },
   {
     id: "prospex-mining",
@@ -257,7 +257,7 @@ export const useCases: UseCase[] = [
     settlement: ["NPP PayTo via RITS FSS"],
     network: "Blockchain-agnostic",
     summary:
-      "Used the NPP PayTo Biller service to facilitate atomic-like settlement of tokenised term deposits -  a tangible first step splitting end-to-end DvP for industry adoption.",
+      "Used the NPP PayTo Biller service to facilitate atomic-like settlement of tokenised term deposits. A tangible first step that splits end-to-end DvP into pieces the industry can adopt.",
   },
   {
     id: "zerocap-govt-bond",

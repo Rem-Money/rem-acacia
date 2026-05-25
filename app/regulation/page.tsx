@@ -88,7 +88,7 @@ export default function Regulation() {
           </Reveal>
           <Reveal delay={80}>
             <h1 style={{ margin: "20px 0 0", fontSize: "clamp(2rem, 5vw, 3.4rem)", maxWidth: 980, letterSpacing: "-0.03em" }}>
-              Clarity is the prerequisite. Sandbox runway is the catalyst.
+              Clarity is the prerequisite. Sandbox runway is what moves it forward.
             </h1>
           </Reveal>
           <Reveal delay={140}>
@@ -136,7 +136,7 @@ export default function Regulation() {
               title="Time-bound relief isn't enough."
             >
               <p style={{ marginTop: 0 }}>
-                ASIC's project-level class relief and AUSTRAC's targeted exemptions were instrumental in enabling participation. But larger
+                ASIC's project-level class relief and AUSTRAC's targeted exemptions made participation possible. But larger
                 institutions reported that the project's timeframes weren't sufficient for internal risk + compliance reviews — some shifted from
                 real-money pilots to PoCs mid-flight.
               </p>
