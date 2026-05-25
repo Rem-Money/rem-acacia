@@ -6,7 +6,8 @@ import { Pill } from "@/components/Pill";
 import { useCases, filters, type UseCase } from "@/lib/usecases";
 import { getLeadName } from "@/lib/data";
 import { ASSET_CLASS, TYPE, tagSwatch, type Swatch } from "@/lib/palette";
-import { UseCaseDetailModal, type UseCaseModalData } from "@/components/UseCaseDetailModal";
+import { UseCaseDetailModal } from "@/components/UseCaseDetailModal";
+import { buildUseCaseModalData } from "@/lib/useCaseDetails";
 import { RemCTA } from "@/components/RemCTA";
 
 type Type = "All" | (typeof filters.type)[number];
@@ -274,30 +275,10 @@ export default function UseCases() {
       <RemCTA variant="use-cases" />
 
       {selected && (
-        <UseCaseDetailModal data={useCaseToModalData(selected)} onClose={() => setSelected(null)} />
+        <UseCaseDetailModal data={buildUseCaseModalData(selected)} onClose={() => setSelected(null)} />
       )}
     </>
   );
-}
-
-function useCaseToModalData(u: UseCase): UseCaseModalData {
-  const classSw = ASSET_CLASS[u.assetClass];
-  const netSw = tagSwatch(u.network);
-  return {
-    lead: getLeadName(u),
-    name: u.name,
-    type: u.type,
-    tags: u.settlement.map((s) => {
-      const sw = tagSwatch(s);
-      return { label: s, color: sw.color, bg: sw.bg, ring: sw.ring };
-    }),
-    network: { name: u.network, color: netSw.color },
-    accent: { color: classSw.color, ring: classSw.ring },
-    summary: u.summary,
-    meta: [
-      { label: "Asset class", value: `${u.assetClass} · ${u.assetSubClass}` },
-    ],
-  };
 }
 
 function TypeBadge({ type }: { type: "Pilot" | "PoC" }) {

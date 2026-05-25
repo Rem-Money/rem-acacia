@@ -68,7 +68,7 @@ export const useCases: UseCase[] = [
     id: "apx-interchange",
     leadId: "apx",
     participantIds: ["hedera"],
-    name: "Token Interchange",
+    name: "Token Interchange Service",
     type: "Pilot",
     assetClass: "Infrastructure",
     assetSubClass: "Infrastructure",
