@@ -55,7 +55,10 @@ export function Footer() {
         }}
       >
         <div>
-          <div
+          <a
+            href="https://rem.money"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -65,17 +68,18 @@ export function Footer() {
               fontWeight: 600,
               fontFamily: "var(--font-display)",
               letterSpacing: "-0.01em",
+              textDecoration: "none",
             }}
           >
             <Image
               src="/rem.png"
-              alt=""
+              alt="rem.money"
               width={18}
               height={18}
               style={{ borderRadius: 4, display: "block" }}
             />
             rem labs
-          </div>
+          </a>
           <p style={{ margin: "8px 0 0", maxWidth: 360, color: "var(--text-dim)" }}>
             R&amp;D for stablecoin and tokenisation infrastructure.
           </p>

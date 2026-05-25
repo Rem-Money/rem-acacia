@@ -103,10 +103,12 @@ export function Navbar() {
         transition: "background var(--duration-normal) var(--ease-out-quart)",
       }}
     >
-      <Link href="/" style={{ display: "flex", alignItems: "center", gap: 8, padding: "4px 6px", flexShrink: 0 }}>
-        <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, letterSpacing: "-0.02em", display: "inline-flex", alignItems: "center", gap: 8 }}>
-          Acacia<span style={{ color: "var(--yellow)" }}>.</span>
-        </span>
+      <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "4px 6px", flexShrink: 0 }}>
+        <Link href="/" style={{ display: "inline-flex", alignItems: "center" }}>
+          <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, letterSpacing: "-0.02em", display: "inline-flex", alignItems: "center", gap: 8 }}>
+            Acacia<span style={{ color: "var(--yellow)" }}>.</span>
+          </span>
+        </Link>
         <span
           aria-hidden
           className="nav-attribution"
@@ -117,7 +119,10 @@ export function Navbar() {
             display: "inline-block",
           }}
         />
-        <span
+        <a
+          href="https://rem.money"
+          target="_blank"
+          rel="noopener noreferrer"
           className="nav-attribution"
           style={{
             display: "inline-flex",
@@ -127,6 +132,7 @@ export function Navbar() {
             color: "var(--text-dim)",
             letterSpacing: "0.02em",
             whiteSpace: "nowrap",
+            textDecoration: "none",
           }}
         >
           <span style={{ opacity: 0.85 }}>explored by</span>
@@ -138,8 +144,8 @@ export function Navbar() {
             style={{ borderRadius: 3, display: "block" }}
           />
           <span style={{ color: "rgba(255,255,255,0.78)", fontWeight: 600 }}>rem</span>
-        </span>
-      </Link>
+        </a>
+      </div>
 
       <div className="nav-links" style={{ display: "flex", gap: 2, alignItems: "center" }}>
         <Link href="/" style={navLinkStyle(overviewActive)}>
