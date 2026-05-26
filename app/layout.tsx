@@ -3,7 +3,7 @@ import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Analytics } from "@vercel/analytics/next"
+import { AnalyticsWithRef } from "@/components/AnalyticsWithRef";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -70,7 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main>
           {children}
-          <Analytics />
+          <AnalyticsWithRef />
         </main>
         <Footer />
       </body>
