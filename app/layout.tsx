@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
+import { LinkedInInsightTag } from 'nextjs-linkedin-insight-tag'
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>
           {children}
           <Analytics />
+          <LinkedInInsightTag />
         </main>
         <Footer />
       </body>
