@@ -6,8 +6,14 @@ import { RemCTA } from "@/components/RemCTA";
 import { Term } from "@/components/Term";
 import { Figure23DvpAtomic } from "@/components/figures/Figure23DvpAtomic";
 import { Figure4Interchange } from "@/components/figures/Figure4Interchange";
+import { routeByPath } from "@/lib/seo";
 
-export const metadata = { title: "Forms of Money" };
+const _r = routeByPath["/money"];
+export const metadata = {
+  title: _r.title,
+  description: _r.description,
+  alternates: { canonical: "/money" },
+};
 
 const moneyForms = [
   {

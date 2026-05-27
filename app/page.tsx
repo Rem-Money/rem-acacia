@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { StatCard } from "@/components/StatCard";
 import { Pill } from "@/components/Pill";
 import { RemCTA } from "@/components/RemCTA";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const findings = [
   {

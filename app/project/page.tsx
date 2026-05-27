@@ -4,8 +4,14 @@ import { StatCard } from "@/components/StatCard";
 import { Callout } from "@/components/Callout";
 import { Pill } from "@/components/Pill";
 import { Figure1UseCaseMatrix } from "@/components/figures/Figure1UseCaseMatrix";
+import { routeByPath } from "@/lib/seo";
 
-export const metadata = { title: "Project Overview" };
+const _r = routeByPath["/project"];
+export const metadata = {
+  title: _r.title,
+  description: _r.description,
+  alternates: { canonical: "/project" },
+};
 
 export default function ProjectOverview() {
   return (

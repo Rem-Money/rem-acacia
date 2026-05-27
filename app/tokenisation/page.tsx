@@ -3,8 +3,14 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Pill } from "@/components/Pill";
 import { FeaturePanel } from "@/components/FeaturePanel";
 import { Graph3UseCases } from "@/components/figures/Graph3UseCases";
+import { routeByPath } from "@/lib/seo";
 
-export const metadata = { title: "Asset Tokenisation" };
+const _r = routeByPath["/tokenisation"];
+export const metadata = {
+  title: _r.title,
+  description: _r.description,
+  alternates: { canonical: "/tokenisation" },
+};
 
 const capabilities = [
   {

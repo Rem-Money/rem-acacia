@@ -2,8 +2,14 @@ import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Pill } from "@/components/Pill";
 import { FeaturePanel } from "@/components/FeaturePanel";
+import { routeByPath } from "@/lib/seo";
 
-export const metadata = { title: "Legal & Regulatory" };
+const _r = routeByPath["/regulation"];
+export const metadata = {
+  title: _r.title,
+  description: _r.description,
+  alternates: { canonical: "/regulation" },
+};
 
 const legalAreas = [
   {

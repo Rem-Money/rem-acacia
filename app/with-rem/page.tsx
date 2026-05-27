@@ -4,10 +4,13 @@ import { Reveal } from "@/components/Reveal";
 import { Pill } from "@/components/Pill";
 import { StatCard } from "@/components/StatCard";
 
+import { routeByPath } from "@/lib/seo";
+
+const _r = routeByPath["/with-rem"];
 export const metadata = {
-  title: "Build with rem",
-  description:
-    "rem labs designs tokenised wholesale finance for issuers, banks and FMIs — assets, digital money, interoperability and regulation, engineered as one system.",
+  title: _r.title,
+  description: _r.description,
+  alternates: { canonical: "/with-rem" },
 };
 
 const CONTACT_EMAIL = "hi@rem.money";

@@ -2,8 +2,14 @@ import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Pill } from "@/components/Pill";
 import { RemCTA } from "@/components/RemCTA";
+import { routeByPath } from "@/lib/seo";
 
-export const metadata = { title: "Road Ahead" };
+const _r = routeByPath["/road-ahead"];
+export const metadata = {
+  title: _r.title,
+  description: _r.description,
+  alternates: { canonical: "/road-ahead" },
+};
 
 type Stream = {
   name: string;

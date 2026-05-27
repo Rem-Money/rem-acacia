@@ -5,8 +5,14 @@ import { Callout } from "@/components/Callout";
 import { Pill } from "@/components/Pill";
 import { Graph1RwaGrowth } from "@/components/figures/Graph1RwaGrowth";
 import { Graph2MmfMarket } from "@/components/figures/Graph2MmfMarket";
+import { routeByPath } from "@/lib/seo";
 
-export const metadata = { title: "Global Context" };
+const _r = routeByPath["/introduction"];
+export const metadata = {
+  title: _r.title,
+  description: _r.description,
+  alternates: { canonical: "/introduction" },
+};
 
 export default function Introduction() {
   return (

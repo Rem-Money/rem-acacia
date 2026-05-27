@@ -4,7 +4,8 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
-import { LinkedInInsightTag } from 'nextjs-linkedin-insight-tag'
+import { LinkedInInsightTag } from 'nextjs-linkedin-insight-tag';
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, PUBLISHER } from "@/lib/seo";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -18,40 +19,30 @@ const body = Hanken_Grotesk({
   display: "swap",
 });
 
-const SITE_URL = "https://acacia.rem.money";
-const OG_TITLE = "Project Acacia — Independent reading of the RBA × DFCRC report";
-const OG_DESCRIPTION =
-  "An independent walkthrough of the RBA × DFCRC Project Acacia final report: tokenised wholesale asset markets, digital money, and the road ahead. By rem labs.";
+const OG_TITLE = `${SITE_NAME} — Independent reading of the RBA × DFCRC report`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: OG_TITLE,
-    template: "%s — Project Acacia",
+    template: `%s — ${SITE_NAME}`,
   },
-  description: OG_DESCRIPTION,
-  applicationName: "Project Acacia",
-  authors: [{ name: "rem labs", url: "https://rem.money" }],
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: PUBLISHER.name, url: PUBLISHER.url }],
   openGraph: {
     type: "website",
-    siteName: "Project Acacia",
+    siteName: SITE_NAME,
     title: OG_TITLE,
-    description: OG_DESCRIPTION,
+    description: SITE_DESCRIPTION,
     url: SITE_URL,
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Project Acacia — Independent reading of the RBA × DFCRC report",
-      },
-    ],
+    // opengraph-image.tsx file convention auto-injects the image
   },
   twitter: {
     card: "summary_large_image",
     title: OG_TITLE,
-    description: OG_DESCRIPTION,
-    images: ["/opengraph-image"],
+    description: SITE_DESCRIPTION,
+    // opengraph-image.tsx is also used for twitter by default
   },
   icons: {
     icon: [
@@ -64,9 +55,60 @@ export const metadata: Metadata = {
   manifest: "/favicon/site.webmanifest",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
+      publisher: { "@id": `${PUBLISHER.url}/#organization` },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${PUBLISHER.url}/#organization`,
+      name: PUBLISHER.name,
+      url: PUBLISHER.url,
+      sameAs: ["https://rem.money"],
+    },
+    {
+      "@type": "Report",
+      "@id": `${SITE_URL}/#report`,
+      name: "Project Acacia Phase 2 — Independent Reading",
+      description: SITE_DESCRIPTION,
+      url: SITE_URL,
+      author: { "@id": `${PUBLISHER.url}/#organization` },
+      about: {
+        "@type": "Thing",
+        name: "Project Acacia",
+        description:
+          "RBA × DFCRC initiative exploring tokenised wholesale asset markets and forms of digital money in Australia.",
+      },
+      datePublished: "2026-05-27",
+      inLanguage: "en-AU",
+      isBasedOn: {
+        "@type": "Report",
+        name: "Project Acacia Phase 2 Final Report",
+        author: [
+          { "@type": "Organization", name: "Reserve Bank of Australia" },
+          { "@type": "Organization", name: "Digital Finance Cooperative Research Centre" },
+        ],
+      },
+    },
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <Navbar />
         <main>

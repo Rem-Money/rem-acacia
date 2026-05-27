@@ -1,0 +1,48 @@
+# Project Acacia — acacia.rem.money
+
+> An independent reading of the RBA × DFCRC Project Acacia Phase 2 final report on tokenised wholesale asset markets and digital money in Australia. Published by rem labs.
+
+## What this site is
+
+This site is an independent walkthrough of the **Project Acacia Phase 2 Final Report** published by the Reserve Bank of Australia (RBA) and the Digital Finance Cooperative Research Centre (DFCRC) in May 2026.
+
+It is not the official report. The official report is published by the RBA and DFCRC. This is rem labs' structured reading and analysis of that report, presented as an interactive reference for practitioners, policymakers, and researchers in wholesale financial markets.
+
+## Key findings from the report
+
+- **Two-tier monetary system reaffirmed**: Central bank money remains the anchor and enabler. Tokenised private money (stablecoins, deposit tokens) can complement it without displacing it.
+- **Atomic settlement unlocks real efficiency**: Co-locating tokenised assets and money enables instantaneous, all-or-nothing Delivery vs Payment (DvP), cutting counterparty risk and freeing collateral.
+- **Fixed income leads adoption**: 13 of 20 use cases were in fixed income. Largest gains expected from post-trade automation and settlement compression.
+- **Interoperability is the bottleneck**: Synchronisation, bridges, and multilateral interchange utilities are needed across new and traditional rails.
+- **Sandbox over short pilots**: A DFMI sandbox with stage-gates is the preferred next step for the industry.
+- **Coordination, not just code**: Persistent industry-regulator forums are essential to overcome network effects and incumbent inertia.
+
+## Site sections
+
+- [Homepage](https://acacia.rem.money/) — Overview, key findings, and site navigation
+- [Global Context](https://acacia.rem.money/introduction) — Where tokenisation stands worldwide; RWA growth, tokenised MMFs, and international experiments leading into Project Acacia
+- [Project Overview](https://acacia.rem.money/project) — Design, governance, and the pilot wholesale CBDC; the 20 industry-led experiments run on real money and real assets
+- [Asset Tokenisation](https://acacia.rem.money/tokenisation) — What worked and what blocked it; programmability, transferability, fractionalisation, and asset class trends
+- [Forms of Money](https://acacia.rem.money/money) — wCBDC, ESA balances, stablecoins, and deposit tokens; how each form of digital money was tested and how they interoperate
+- [Legal & Regulatory](https://acacia.rem.money/regulation) — Settlement finality, prudential treatment, the Digital Assets Framework Bill, MLETR, and the proposed DFMI sandbox
+- [Road Ahead](https://acacia.rem.money/road-ahead) — The 11-initiative program across regulatory, market infrastructure, and policy research workstreams
+- [Use Cases](https://acacia.rem.money/use-cases) — All 20 industry experiments, filterable by type (Pilot / PoC), asset class, participant, and network
+- [Participants](https://acacia.rem.money/participants) — Issuers, banks, FMIs, custodians, technology providers, and regulators that participated in Project Acacia Phase 2
+- [Build with rem](https://acacia.rem.money/with-rem) — rem labs' services for tokenised wholesale finance
+
+## About the underlying report
+
+- **Title**: Project Acacia Phase 2 Final Report
+- **Authors**: Reserve Bank of Australia (RBA) and Digital Finance Cooperative Research Centre (DFCRC)
+- **Published**: May 2026
+- **Phase**: Phase 2 ran August 2025 – February 2026
+- **Scope**: 20 industry-led experiments across 12 live pilots and 8 proofs of concept
+- **Asset classes covered**: Fixed income, repo, FX, carbon credits, private markets
+- **Digital money tested**: Wholesale CBDC (wCBDC), Exchange Settlement Account (ESA) balances, stablecoins, deposit tokens
+
+## About rem labs
+
+rem labs designs and engineers tokenised wholesale finance systems for issuers, banks, and financial market infrastructures (FMIs). Focus areas: asset tokenisation, digital money, interoperability, and regulation.
+
+- Website: https://rem.money
+- Contact: hi@rem.money
