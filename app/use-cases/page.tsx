@@ -4,10 +4,10 @@ import { useMemo, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { Pill } from "@/components/Pill";
 import { useCases, filters, type UseCase } from "@/lib/usecases";
-import { getLeadName } from "@/lib/data";
+import { getLeadName, getParticipantsForUseCase } from "@/lib/data";
 import { ASSET_CLASS, TYPE, tagSwatch, type Swatch } from "@/lib/palette";
 import { UseCaseDetailModal } from "@/components/UseCaseDetailModal";
-import { buildUseCaseModalData } from "@/lib/useCaseDetails";
+import { buildUseCaseModalData, useCaseRichById } from "@/lib/useCaseDetails";
 import { RemCTA } from "@/components/RemCTA";
 
 type Type = "All" | (typeof filters.type)[number];
@@ -19,17 +19,38 @@ export default function UseCases() {
   const [klass, setKlass] = useState<AssetClass>("All");
   const [selected, setSelected] = useState<UseCase | null>(null);
 
+  const haystackById = useMemo(() => {
+    const map: Record<string, string> = {};
+    for (const u of useCases) {
+      const { lead, others } = getParticipantsForUseCase(u.id);
+      const linkedNames = [lead?.name, ...others.map((p) => p.name)].filter(Boolean).join(" ");
+      const displayParticipants = useCaseRichById[u.id]?.participants?.join(" ") ?? "";
+      map[u.id] = [
+        getLeadName(u),
+        u.name,
+        u.network,
+        u.settlement.join(" "),
+        u.summary,
+        u.assetSubClass,
+        linkedNames,
+        displayParticipants,
+      ]
+        .join(" ")
+        .toLowerCase();
+    }
+    return map;
+  }, []);
+
   const filtered = useMemo(() => {
     return useCases.filter((u) => {
       if (type !== "All" && u.type !== type) return false;
       if (klass !== "All" && u.assetClass !== klass) return false;
       if (q) {
-        const hay = `${getLeadName(u)} ${u.name} ${u.network} ${u.settlement.join(" ")} ${u.summary}`.toLowerCase();
-        if (!hay.includes(q.toLowerCase())) return false;
+        if (!haystackById[u.id].includes(q.toLowerCase())) return false;
       }
       return true;
     });
-  }, [q, type, klass]);
+  }, [q, type, klass, haystackById]);
 
   return (
     <>
@@ -59,7 +80,7 @@ export default function UseCases() {
               <input
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
-                placeholder="Search participant, network, settlement asset…"
+                placeholder="Search lead, collaborator, network, settlement asset…"
                 style={{
                   background: "var(--card-bg-2)",
                   border: "1px solid var(--border)",
