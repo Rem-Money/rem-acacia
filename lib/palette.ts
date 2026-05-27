@@ -51,6 +51,7 @@ export const CATEGORY: Record<string, Swatch> = {
   Infrastructure: sw("#fd9a73"),
   Distributor: sw("#8DF0CC"),
   Authority: sw("#e7a8ff"),
+  Collaborator: sw("#a8b3c0"),
 };
 
 /* Use-case asset classes */
