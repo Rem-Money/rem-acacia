@@ -14,7 +14,7 @@ export const metadata = {
 };
 
 const CONTACT_EMAIL = "hi@rem.money";
-const CALENDLY_URL = "https://calendly.com/abhi-rem/30min";
+const CALENDLY_URL = "https://calendar.app.google/1oJJb3QyFQ61Pras7";
 
 const pillars = [
   {
