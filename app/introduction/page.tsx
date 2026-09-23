@@ -47,6 +47,9 @@ export default function Introduction() {
             <StatCard value="US$30T" label="Potential by mid-2030s" hint="Some analyst forecasts of tokenised RWAs" accent="green" />
             <StatCard value="US$368B/d" label="Broadridge DLR repo volume" hint="April 2026 average daily volume" accent="muted" />
           </div>
+          <p style={{ margin: "14px 0 0", fontSize: 12.5, color: "var(--text-dim)" }}>
+            Figures as cited in the RBA &amp; DFCRC Project Acacia Final Report (May 2026), section 2. Forecasts are third-party estimates.
+          </p>
           <style>{`
             @media (max-width: 900px) { .gstats { grid-template-columns: repeat(2, 1fr) !important; } }
             @media (max-width: 480px) { .gstats { grid-template-columns: 1fr !important; } }

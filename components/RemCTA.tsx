@@ -17,32 +17,32 @@ const COPY: Record<Variant, { eyebrow: string; title: string; body: string }> = 
   overview: {
     eyebrow: "Build with rem",
     title: "The pilots are done. The build is just starting.",
-    body: "rem works with issuers, banks and market infrastructure teams turning Acacia's lessons into production wholesale rails.",
+    body: "rem works with the platforms and teams turning Acacia's pilots into production, connecting tokenised assets and money to the systems participants already run.",
   },
   introduction: {
     eyebrow: "Build with rem",
     title: "Tokenisation is moving from experiment to infrastructure. Move with it.",
-    body: "If your team is looking at RWA issuance, programmable money rails, or on-chain market connectivity, we'd like to hear what you're trying to do.",
+    body: "If your platform needs lifecycle data, settlement integration or reconciliation with the systems around it, we'd like to hear what you're trying to do.",
   },
   project: {
     eyebrow: "Build with rem",
     title: "From pilot to production.",
-    body: "We partner with teams trying to move beyond a one-off pilot. That usually means mapping out what production-grade tokenised infrastructure actually looks like for your asset and your stakeholders.",
+    body: "We partner with teams trying to move beyond a one-off pilot. That usually means working out which events have to land in which systems, and how every participant's records stay in agreement.",
   },
   tokenisation: {
     eyebrow: "Build with rem",
-    title: "Tokenise an asset class with a partner who has read the room.",
-    body: "Fixed income, securitised products, private markets, carbon. We'll work through the DLT choice, the lifecycle, the disclosure, and what an honest MVP looks like for your asset.",
+    title: "Tokenised the asset? Now connect it to the books.",
+    body: "Fixed income, securitised products, private markets. We turn lifecycle events on the token ledger into records your registry, servicing and accounting systems can rely on, reconciled against custody and cash.",
   },
   money: {
     eyebrow: "Build with rem",
     title: "Think through the money leg.",
-    body: "wCBDC, ESAs, deposit tokens, regulated stablecoins. The choice of settlement asset shapes everything else, and synchronisation is harder than it looks. We can help you reason about what fits.",
+    body: "wCBDC, ESAs, deposit tokens, regulated stablecoins. Each settlement asset leaves records in a different place, and synchronisation is harder than it looks. We reconcile every leg so the books agree.",
   },
   regulation: {
     eyebrow: "Build with rem",
-    title: "Plan for the sandbox.",
-    body: "If you're heading toward a DFMI sandbox or ASIC ERS submission, we can help you frame the experiment so the settlement-finality, prudential and AML/CTF questions are answered before the regulator has to ask.",
+    title: "Build the evidence in from the start.",
+    body: "If you're heading toward a DFMI sandbox or ASIC ERS submission, you'll be asked how records reconcile and how every action traces back to its source. We build the data, reconciliation and audit trail that answer those questions.",
   },
   "road-ahead": {
     eyebrow: "Build with rem",
@@ -56,8 +56,8 @@ const COPY: Record<Variant, { eyebrow: string; title: string; body: string }> = 
   },
   participants: {
     eyebrow: "Build with rem",
-    title: "Want to be on the next cohort list?",
-    body: "We help prospective participants frame a tokenisation thesis, work through DLT and settlement-asset choices, and prepare for the next round of industry experiments.",
+    title: "Building for the next cohort?",
+    body: "If you're preparing a use case for the next round, plan the integration side now: how ledger activity reaches participants' systems, and how everyone's records stay reconciled.",
   },
 };
 

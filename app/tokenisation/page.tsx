@@ -187,7 +187,7 @@ export default function Tokenisation() {
           <Reveal>
             <FeaturePanel
               tone="cool"
-              label="Box B · DFCRC estimate"
+              label="Box B · DFCRC (2026) estimate, as cited in the Final Report"
               title="A$24B/year of economic upside — if fully realised."
             >
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14, marginTop: 6 }} className="grid-econ">

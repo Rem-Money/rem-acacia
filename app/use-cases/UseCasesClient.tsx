@@ -61,7 +61,7 @@ export default function UseCases() {
           </Reveal>
           <Reveal delay={80}>
             <h1 style={{ margin: "20px 0 0", fontSize: "clamp(2rem, 5vw, 3.4rem)", maxWidth: 980, letterSpacing: "-0.03em" }}>
-              All 20 industry experiments.
+              All 20 use cases.
             </h1>
           </Reveal>
           <Reveal delay={140}>

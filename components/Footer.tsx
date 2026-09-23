@@ -81,7 +81,7 @@ export function Footer() {
             rem labs
           </a>
           <p style={{ margin: "8px 0 0", maxWidth: 360, color: "var(--text-dim)" }}>
-            R&amp;D for stablecoin and tokenisation infrastructure.
+            The financial control plane for tokenised finance.
           </p>
         </div>
 
@@ -101,10 +101,10 @@ export function Footer() {
           <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 6 }}>
             <li>
               <a
-                href="mailto:hello@rem.money"
+                href="mailto:hi@rem.money"
                 style={{ color: "rgba(255,255,255,0.78)", textDecoration: "none" }}
               >
-                hello@rem.money
+                hi@rem.money
               </a>
             </li>
             <li>

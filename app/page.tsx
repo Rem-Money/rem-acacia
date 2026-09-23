@@ -43,7 +43,7 @@ const sections = [
   { href: "/money", label: "Forms of Money", hint: "wCBDC, ESAs, stablecoins, deposit tokens" },
   { href: "/regulation", label: "Legal & Regulatory", hint: "Settlement finality, prudential, sandboxes" },
   { href: "/road-ahead", label: "Road Ahead", hint: "The 11-initiative program" },
-  { href: "/use-cases", label: "Use Cases", hint: "All 20 industry experiments" },
+  { href: "/use-cases", label: "Use Cases", hint: "All 20 use cases" },
 ];
 
 export default function Home() {
@@ -75,7 +75,7 @@ export default function Home() {
           <Reveal delay={140}>
             <p className="lead" style={{ marginTop: 22, maxWidth: 760 }}>
               Australia's flagship study of digital money in wholesale tokenised markets: twenty industry
-              experiments, a pilot wCBDC, and a clear-eyed read on what's blocking the next leg. Seven
+              use cases, a pilot wCBDC, and a clear-eyed read on what's blocking the next leg. Seven
               sections you can read in an afternoon.
             </p>
           </Reveal>
@@ -90,7 +90,7 @@ export default function Home() {
               >
                 rem labs
               </a>{" "}
-              — an R&amp;D group for stablecoin and tokenisation infrastructure.
+              — the financial control plane for tokenised finance.
             </p>
           </Reveal>
           <Reveal delay={200}>
@@ -122,9 +122,12 @@ export default function Home() {
             >
               <StatCard value="20" label="Use cases delivered" hint="12 pilots + 8 proofs of concept" accent="yellow" />
               <StatCard value="A$4.4M" label="Pilot wCBDC issued" hint="Up to A$250k per individual transaction" />
-              <StatCard value="A$24B" label="Est. annual gains" hint="DFCRC potential if fully realised" accent="green" />
+              <StatCard value="A$24B" label="Est. annual gains" hint="DFCRC (2026) potential if fully realised" accent="green" />
               <StatCard value="11" label="Post-Acacia initiatives" hint="Across regulator, industry, RBA" accent="muted" />
             </div>
+            <p style={{ margin: "14px 0 0", fontSize: 12.5, color: "var(--text-dim)" }}>
+              Source: RBA &amp; DFCRC, Project Acacia Final Report, May 2026.
+            </p>
             <style>{`
               @media (max-width: 900px) { .hero-stats { grid-template-columns: repeat(2, 1fr) !important; } }
               @media (max-width: 480px) { .hero-stats { grid-template-columns: 1fr !important; } }
@@ -144,7 +147,7 @@ export default function Home() {
             <h2 style={{ margin: "10px 0 14px", fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>Seven sections, one report.</h2>
             <p className="lead" style={{ maxWidth: 720 }}>
               Each section maps to a chapter of the original report. Skim the headlines, dig into the figures, then jump
-              into the 20 industry experiments.
+              into the 20 use cases.
             </p>
           </Reveal>
 

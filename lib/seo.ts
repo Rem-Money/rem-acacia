@@ -41,7 +41,7 @@ export const ROUTES: Route[] = [
     path: "/project",
     title: "Project Overview",
     description:
-      "Design, governance, and the pilot wholesale CBDC. Twenty industry-led experiments run on real money and real assets across Phase 2 of Project Acacia.",
+      "Design, governance, and the pilot wholesale CBDC. Twenty industry-led use cases across Phase 2 of Project Acacia, twelve on real money and real assets.",
     priority: 0.9,
     changeFrequency: "monthly",
   },
@@ -81,7 +81,7 @@ export const ROUTES: Route[] = [
     path: "/use-cases",
     title: "Use Cases",
     description:
-      "All twenty industry experiments from Project Acacia Phase 2 — fixed income, repo, FX, carbon, and private markets — filterable by type, asset class, and participant.",
+      "All twenty use cases from Project Acacia Phase 2 — fixed income, repo, FX, carbon, and private markets — filterable by type, asset class, and participant.",
     priority: 0.9,
     changeFrequency: "monthly",
   },
@@ -97,7 +97,7 @@ export const ROUTES: Route[] = [
     path: "/with-rem",
     title: "Build with rem",
     description:
-      "rem labs designs tokenised wholesale finance for issuers, banks and FMIs — assets, digital money, interoperability and regulation, engineered as one system.",
+      "rem connects tokenised wholesale markets to the systems participants already run: lifecycle data, settlement integration and reconciliation for the platforms and institutions behind Acacia's use cases.",
     priority: 0.7,
     changeFrequency: "monthly",
   },

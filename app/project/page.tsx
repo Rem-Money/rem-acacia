@@ -23,7 +23,7 @@ export default function ProjectOverview() {
           </Reveal>
           <Reveal delay={80}>
             <h1 style={{ margin: "20px 0 0", fontSize: "clamp(2rem, 5vw, 3.4rem)", maxWidth: 980, letterSpacing: "-0.03em" }}>
-              Twenty industry-led experiments, run on real money and real assets.
+              Twenty industry-led use cases. Twelve ran on real money and real assets.
             </h1>
           </Reveal>
           <Reveal delay={140}>
@@ -45,7 +45,7 @@ export default function ProjectOverview() {
                 <FunnelRow value="~50" label="Expressions of interest" width="100%" />
                 <FunnelRow value="40" label="RFI shortlist" width="80%" />
                 <FunnelRow value="24" label="Conditionally selected" width="48%" />
-                <FunnelRow value="20" label="Completed experiments" width="40%" highlight />
+                <FunnelRow value="20" label="Completed use cases" width="40%" highlight />
               </div>
             </div>
           </Reveal>
